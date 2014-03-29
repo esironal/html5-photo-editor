@@ -1,0 +1,9 @@
+# view AndroidManifest.xml #generated:6
+-keep class com.cordova.photoeditor.PhotoEditor { <init>(...); }
+
+# view AndroidManifest.xml #generated:12
+-keep class com.jcjee.plugins.EmailAttachmentProvider { <init>(...); }
+
+# view AndroidManifest.xml #generated:13
+-keep class com.synconset.MultiImageChooserActivity { <init>(...); }
+
