@@ -263,6 +263,8 @@ Ext.define('PhotoEditor.controller.Main', {
     },
 
     renderTransformCanvas: function(imageEl) {
+        this.imgUrl = null; // free it
+
         var canvasContainer = document.createElement("div");
         this.getTransformCanvasView().setHtml(canvasContainer);
 
@@ -281,9 +283,7 @@ Ext.define('PhotoEditor.controller.Main', {
         this.processingImg = new Kinetic.Image({
             x: 0,
             y: 0,
-            image: imageEl,
-            draggable: true,
-            // dragBoundFunc: Ext.bind(this.onImageMoving, this)
+            image: imageEl
         });
 
         // if image width or height > canvas width or height
@@ -325,15 +325,30 @@ Ext.define('PhotoEditor.controller.Main', {
         this.lastDist = 0;
 
         var stageContent = this.transformingStage.getContent();
-        stageContent.addEventListener('touchmove', Ext.bind(this.onPinch, this), false);
-        stageContent.addEventListener('touchend', Ext.bind(this.onPinchEnd, this), false);
+        stageContent.addEventListener('touchstart', Ext.bind(this.onPinchOrMoveStart, this), false);
+        stageContent.addEventListener('touchmove', Ext.bind(this.onPinchOrMove, this), false);
+        stageContent.addEventListener('touchend', Ext.bind(this.onPinchOrMoveEnd, this), false);
+
+        // show the crop frame as default
+        this.onCrop1();
     },
 
-    onPinch: function(e) {
-        var touch1 = e.touches[0];
-        var touch2 = e.touches[1];
-        
-        if (touch1 && touch2) {
+    onPinchOrMoveStart: function(e) {
+        if (e.touches.length) {
+            if (e.touches.length >= 2) {
+                this.isPinching = true;
+            } else {
+                this.imageMoveX = e.touches[0].clientX;
+                this.imageMoveY = e.touches[0].clientY;
+            }
+        }
+    },
+
+    onPinchOrMove: function(e) {
+        if (this.isPinching) {
+            var touch1 = e.touches[0],
+                touch2 = e.touches[1];
+
             var dist = this.getDistance({
                 x: touch1.clientX,
                 y: touch1.clientY
@@ -352,48 +367,49 @@ Ext.define('PhotoEditor.controller.Main', {
                 x: this.processingImg.scaleX() * scaleRatio,
                 y: this.processingImg.scaleY() * scaleRatio
             });
-            this.transformingStage.draw();
+            
             this.lastDist = dist;
-        }
-    },
+        } else {
+            var moveX = e.touches[0].clientX - this.imageMoveX, 
+                moveY = e.touches[0].clientY - this.imageMoveY,
+                curX = this.processingImg.x(),
+                curY = this.processingImg.y();
+            
+            this.imageMoveX = e.touches[0].clientX;
+            this.imageMoveY = e.touches[0].clientY;
 
-    onPinchEnd: function() {
-        var restrictScale;
-        if (this.processingImg.scaleX() > 2) {
-            restrictScale = 2;
-        } else if (this.processingImg.scaleX() < 0.5) {
-            restrictScale = 0.5;
-        }
-
-        if (restrictScale) {
-            var tween = new Kinetic.Tween({
-                node: this.processingImg, 
-                duration: 0.25,
-                scaleX: restrictScale,
-                scaleY: restrictScale
+            this.processingImg.position({
+                x: curX + moveX,
+                y: curY + moveY
             });
-
-            tween.play();
         }
 
-        this.lastDist = 0;
+        this.transformingLayer.batchDraw();
     },
 
-    onImageMoving: function(pos) {
-        var w = this.processingImg.width(), h = this.processingImg.height();
-        var newX = pos.x, newY = pos.y;
-        var maxX = this.transformingStage.width() - w/2;
-        var maxY = this.transformingStage.height() - h/2;
+    onPinchOrMoveEnd: function(e) {
+        if (this.isPinching) {
+            var restrictScale;
+            if (this.processingImg.scaleX() > 2) {
+                restrictScale = 2;
+            } else if (this.processingImg.scaleX() < 0.5) {
+                restrictScale = 0.5;
+            }
 
-        if (newX - w/2 < 0) newX = w/2;
-        if (newY - h/2 < 0) newY = h/2;
-        if (newX > maxX) newX = maxX;
-        if (newY > maxY) newY = maxY;
+            if (restrictScale) {
+                var tween = new Kinetic.Tween({
+                    node: this.processingImg, 
+                    duration: 0.25,
+                    scaleX: restrictScale,
+                    scaleY: restrictScale
+                });
 
-        return {
-            x: newX,
-            y: newY
-        };
+                tween.play();
+            }
+
+            this.lastDist = 0;
+            this.isPinching = false;
+        }
     },
 
     onNavBarCancel: function() {
@@ -404,6 +420,7 @@ Ext.define('PhotoEditor.controller.Main', {
         this.cropZone = null;
         this.overlayLayer = null;
         this.isRotating = null;
+        this.isPinching = null;
 
         this.onNavBarBack();
     },
@@ -531,9 +548,12 @@ Ext.define('PhotoEditor.controller.Main', {
 
         if (this.getNavBarGrayscaleBtn().getText() === "Normal") {
             this.getNavBarGrayscaleBtn().setText("Grayscale");
+
             Pixastic.revert(canvas);
+            Pixastic.process(imageEl, "brightness", {brightness: 0, contrast: 0});
         } else {
             this.getNavBarGrayscaleBtn().setText("Normal");
+            
             Pixastic.process(canvas, "desaturate", {average : false});
         }
     },
@@ -593,15 +613,11 @@ Ext.define('PhotoEditor.controller.Main', {
     },
 
     onRulerTouchStart: function(e) {
-        this.startX = e.pageX;
-
-        this.rulerDragDirection = true;
-        var distanceX = e.pageX - e.previousX;
-        this.rulerDragDirection = (distanceX > 0);
+        this.rulerMoveX = e.pageX;
     },
 
     onRulerTouchEnd: function(e) {
-        if (e.pageX - this.startX < 0) {
+        if (e.pageX - this.rulerMoveX < 0) {
             this.getHomeView().pop();
         }
     },
@@ -641,12 +657,20 @@ Ext.define('PhotoEditor.controller.Main', {
     },
 
     calculateCroppingRect: function(widthRatio, heightRatio) {
-        var imgWidth = this.processingImg.width(),
-            imgHeight = this.processingImg.height(),
-            width = imgWidth - (imgWidth*widthRatio),
-            height = imgHeight - (imgHeight*heightRatio),
-            x = (this.transformingStage.width() - width)/2,
-            y = (this.transformingStage.height() - height)/2;
+        var sWidth = this.transformingStage.width(),
+            sHeight = this.transformingStage.height(),
+            width, height;
+
+        if (widthRatio < heightRatio) {
+            width = sWidth - 20;
+            height = sHeight - (sHeight*heightRatio);
+        } else {
+            width = sWidth - (sWidth*widthRatio);
+            height = sHeight - 20;
+        }
+
+        var x = (sWidth - width)/2,
+            y = (sHeight - height)/2;
 
         return {
             x: x,
@@ -666,16 +690,6 @@ Ext.define('PhotoEditor.controller.Main', {
             y1 = frame.y,
             y2 = frame.y + frame.height,
             y3 = stage.height();
-        
-        // add new crop zone layer
-        if (!this.overlayLayer) {
-            this.overlayLayer = new Kinetic.Layer();
-            this.transformingStage.add(this.overlayLayer);
-
-            this.overlayLayer.on('touchstart', Ext.bind(this.onOverlayLayerTouchStart, this));
-            this.overlayLayer.on('touchmove', Ext.bind(this.onOverlayLayerTouchMove, this));
-            this.overlayLayer.on('touchend', Ext.bind(this.onOverlayLayerTouchEnd, this));
-        }
 
         // Upper rect
         var upperRect = this.rectWithId('upperRect');
@@ -712,28 +726,6 @@ Ext.define('PhotoEditor.controller.Main', {
             width: x3 - x0,
             height: y3 - y2
         });
-
-        if (this.overlayLayer) {
-            if (!this.overlayLayer.isVisible()) this.overlayLayer.show();
-            this.overlayLayer.batchDraw();
-        } else stage.draw();
-    },
-
-    onOverlayLayerTouchStart: function() {
-        this.isTouchMoving = false;
-    },
-
-    onOverlayLayerTouchMove: function() {
-        this.isTouchMoving = true;
-    },
-
-    onOverlayLayerTouchEnd: function() {
-        if (!this.isTouchMoving) {
-            this.cropZone.hide();
-            this.overlayLayer.hide();
-
-            this.transformingLayer.moveToTop();
-        }
     },
 
     rectWithId: function(id) {
@@ -758,12 +750,9 @@ Ext.define('PhotoEditor.controller.Main', {
                 width: frame.width,
                 height: frame.height,
                 fill: 'transparent',
-                draggable: true,
-                dragBoundFunc: Ext.bind(this.onCropZoneMoving, this)
             });
 
-            var layer = new Kinetic.Layer();
-            this.transformingStage.add(layer.add(this.cropZone));
+            this.overlayLayer.add(this.cropZone);
         } else {
             if (!this.cropZone.isVisible()) {
                 this.cropZone.show();
@@ -772,39 +761,22 @@ Ext.define('PhotoEditor.controller.Main', {
 
             this.cropZone.setAttrs(frame);
         }
-
-        this.transformingStage.draw();
-    },
-
-    onCropZoneMoving: function(pos) {
-        var newX = pos.x, newY = pos.y;
-        var w = this.cropZone.width(), h = this.cropZone.height();
-        var maxX = this.transformingStage.width() - w;
-        var maxY = this.transformingStage.height() - h;
-
-        if (newX < 0) newX = 0;
-        if (newY < 0) newY = 0;
-        if (newX > maxX) newX = maxX;
-        if (newY > maxY) newY = maxY;
-
-        // render all overlays
-        this.renderOverlay({
-            x: newX,
-            y: newY,
-            width: w,
-            height: h
-        });
-
-        return {
-            x: newX,
-            y: newY
-        };
     },
 
     doCropping: function(frame) {
+        // add new crop zone layer
+        if (!this.overlayLayer) {
+            this.overlayLayer = new Kinetic.Layer();
+            this.transformingStage.add(this.overlayLayer);
+
+            this.transformingStage.draw();   
+        }
+
         // render overlay + crop zone
         this.renderOverlay(frame);
         this.renderCropZone(frame);
+
+        this.overlayLayer.batchDraw();
     },
 
     getDistance: function(p1, p2) {
