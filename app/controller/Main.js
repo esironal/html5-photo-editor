@@ -334,12 +334,14 @@ Ext.define('PhotoEditor.controller.Main', {
     },
 
     onPinchOrMoveStart: function(e) {
-        if (e.touches.length) {
-            if (e.touches.length >= 2) {
-                this.isPinching = true;
-            } else {
-                this.imageMoveX = e.touches[0].clientX;
-                this.imageMoveY = e.touches[0].clientY;
+        if (!this.isPinching) {
+            if (e.touches.length) {
+                if (e.touches.length >= 2) {
+                    this.isPinching = true;
+                } else {
+                    this.imageMoveX = e.touches[0].clientX;
+                    this.imageMoveY = e.touches[0].clientY;
+                }
             }
         }
     },
@@ -369,6 +371,7 @@ Ext.define('PhotoEditor.controller.Main', {
             });
             
             this.lastDist = dist;
+            this.numOfTouches = 2;
         } else {
             var moveX = e.touches[0].clientX - this.imageMoveX, 
                 moveY = e.touches[0].clientY - this.imageMoveY,
@@ -408,7 +411,8 @@ Ext.define('PhotoEditor.controller.Main', {
             }
 
             this.lastDist = 0;
-            this.isPinching = false;
+            this.numOfTouches--;
+            if (!this.numOfTouches) this.isPinching = false;
         }
     },
 
@@ -553,7 +557,7 @@ Ext.define('PhotoEditor.controller.Main', {
             Pixastic.process(imageEl, "brightness", {brightness: 0, contrast: 0});
         } else {
             this.getNavBarGrayscaleBtn().setText("Normal");
-            
+
             Pixastic.process(canvas, "desaturate", {average : false});
         }
     },
