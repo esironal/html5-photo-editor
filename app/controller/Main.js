@@ -464,6 +464,7 @@ Ext.define('PhotoEditor.controller.Main', {
 
                 // keep image
                 this.adjustImage = $(imageEl);
+                this.adjustImage.attr('id', 'adjust-image');
 
                 // center image
                 var sWidth = container.element.getWidth(),
@@ -474,6 +475,10 @@ Ext.define('PhotoEditor.controller.Main', {
                     x: (sWidth - imgWidth)/2,
                     y: (sHeight - imgHeight)/2
                 });
+
+                if (device.platform === "Android") {
+                    Pixastic.process(imageEl, "brightness", {brightness: 0, contrast: 0});
+                }
             });
 
             // handle brightness adjust
@@ -598,22 +603,37 @@ Ext.define('PhotoEditor.controller.Main', {
             if (this.contrast >= 200) this.contrast = 200;
         }
 
-        this.adjustImage.css('-webkit-filter', 'brightness(' + this.brightness + '%) contrast(' + this.contrast + '%)');
+        if (device.platform === "Android") {
+            Pixastic.revert($('#adjust-image')[0]);
+            Pixastic.process($('#adjust-image')[0], "brightness", {brightness: this.brightness - 100, contrast: (this.contrast - 100)/100});
+        } else {
+            this.adjustImage.css('-webkit-filter', 'brightness(' + this.brightness + '%) contrast(' + this.contrast + '%)');
+        }
+
         this.getNavBarGrayscaleBtn().setText("Grayscale");
     },
 
     onGrayscale: function() {
-        var text = this.getNavBarGrayscaleBtn().getText(),
-            grayscale = 0;
-
+        var text = this.getNavBarGrayscaleBtn().getText();
         if (text === "Normal") {
             this.getNavBarGrayscaleBtn().setText("Grayscale");
-        } else {
-            grayscale = 100;
-            this.getNavBarGrayscaleBtn().setText("Normal");
-        }
 
-        this.adjustImage.css('-webkit-filter', 'grayscale(' + grayscale + '%)');
+            if (device.platform === "Android") {
+                Pixastic.revert($('#adjust-image')[0]);
+                Pixastic.process($('#adjust-image')[0], "brightness", {brightness: 0, contrast: 0});
+            } else {
+                this.adjustImage.css('-webkit-filter', 'grayscale(0%)');
+            }
+        } else {
+            this.getNavBarGrayscaleBtn().setText("Normal");
+
+            if (device.platform === "Android") {
+                Pixastic.revert($('#adjust-image')[0]);
+                Pixastic.process($('#adjust-image')[0], "desaturate", {average : false});
+            } else {
+                this.adjustImage.css('-webkit-filter', 'grayscale(100%)');
+            }
+        }
     },
 
     onShowShareActionSheet: function() {
@@ -624,6 +644,7 @@ Ext.define('PhotoEditor.controller.Main', {
     onSave: function() {
         this.onShareCancel();
 
+        var canvas = (device.platform === "Android" ? $('#adjust-image')[0] : this.adjustImageToCanvas());
         window.canvas2ImagePlugin.saveImageDataToLibrary(
             function(msg) {
                 setTimeout(function() {
@@ -631,14 +652,14 @@ Ext.define('PhotoEditor.controller.Main', {
                 }, 0);
             },
             function() {},
-            this.adjustImageToCanvas()
+            canvas
         );
     },
 
     onEmail: function() {
         this.onShareCancel();
 
-        var canvas = this.adjustImageToCanvas(),
+        var canvas = (device.platform === "Android" ? $('#adjust-image')[0] : this.adjustImageToCanvas()),
             filename = this.makeFilename() + ".png",
             imageData = canvas.toDataURL("image/png").split(",")[1];
         

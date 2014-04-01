@@ -103,6 +103,8 @@
 /Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/assets/www/resources/js/caman.min.js \
 /Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/assets/www/resources/js/fabric.min.js \
 /Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/assets/www/resources/js/html2canvas.js \
+/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/assets/www/resources/js/jquery-2.1.0.min.js \
+/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/assets/www/resources/js/jquery.transit.min.js \
 /Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/assets/www/resources/js/kinetic-v5.0.1.min.js \
 /Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/assets/www/resources/js/pixastic.custom.js \
 /Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/assets/www/resources/startup/1496x2048.png \
