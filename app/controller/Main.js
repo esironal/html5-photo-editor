@@ -30,7 +30,7 @@ Ext.define('PhotoEditor.controller.Main', {
 
             // transform view
             transformView: 'transform',
-            transformCanvasView: 'transform panel[cls=canvas-container]',
+            transformContainer: 'transform panel[cls=transform-container]',
             navBarCancelBtn: 'titlebar button[cls=navbar-cancel-btn]',
             navBarApplyBtn: 'titlebar button[cls=navbar-apply-btn]',
             cropBtn1: 'toolbar button[cls=crop-btn crop1]',
@@ -41,7 +41,7 @@ Ext.define('PhotoEditor.controller.Main', {
 
             // adjustment view
             adjustmentView: 'adjustment',
-            adjustmentCanvasView: 'adjustment panel[cls=canvas-container]',
+            adjustmentContainer: 'adjustment panel[cls=transform-container]',
             navBarBackBtn: 'titlebar button[cls=navbar-back-btn]',
             navBarGrayscaleBtn: 'titlebar button[cls=navbar-grayscale-btn]',
             shareBtn: 'toolbar button[cls=share-btn]',
@@ -257,176 +257,155 @@ Ext.define('PhotoEditor.controller.Main', {
     onPickPhotoFailure: function(msg) {},
 
     onTransformViewShow: function() {
-        if (!this.getTransformCanvasView().element.down('canvas')) {
-            this.imageElement(this.imgUrl, this.renderTransformCanvas);
-        }
-    },
+        if (!this.transformImage) {
+            this.imageElement(this.imgUrl, function(imageEl) {
+                this.imgUrl = null;
 
-    renderTransformCanvas: function(imageEl) {
-        this.imgUrl = null; // free it
+                // add image to container
+                var container = this.getTransformContainer(),
+                    sWidth = container.element.getWidth(),
+                    sHeight = container.element.getHeight();
+                container.setHtml(imageEl);
 
-        var canvasContainer = document.createElement("div");
-        this.getTransformCanvasView().setHtml(canvasContainer);
+                // keep track of transform image
+                this.transformImage = $(imageEl);
 
-        var canvasWidth = this.getTransformCanvasView().element.getWidth(),
-            canvasHeight = this.getTransformCanvasView().element.getHeight();
+                // resize image to fit the screen
+                if (this.transformImage.width() > sWidth ||
+                    this.transformImage.height() > sHeight) {
+                    var iWidth = this.transformImage.width(),
+                        iHeight = this.transformImage.height(),
+                        iRatio = iWidth/iHeight,
+                        sRatio = sWidth/sHeight;
 
-        // create stage and layer
-        this.transformingStage = new Kinetic.Stage({
-            container: canvasContainer,
-            width: canvasWidth,
-            height: canvasHeight
-        });
-        this.transformingLayer = new Kinetic.Layer();
+                    if (sRatio > iRatio) {
+                        this.transformImage.width(iWidth*sHeight/iHeight);
+                        this.transformImage.height(sHeight);
+                    } else {
+                        this.transformImage.width(sWidth);
+                        this.transformImage.height(iHeight*sWidth/iWidth);
+                    }
+                }
 
-        // create processing image
-        this.processingImg = new Kinetic.Image({
-            x: 0,
-            y: 0,
-            image: imageEl
-        });
+                // center image
+                this.transformImage.css({
+                    x: (sWidth - this.transformImage.width())/2,
+                    y: (sHeight - this.transformImage.height())/2
+                });
+            });
 
-        // if image width or height > canvas width or height
-        // we will scale down to fit the canvas
-        if (this.processingImg.width() > canvasWidth ||
-            this.processingImg.height() > canvasHeight) {
-            var iWidth = this.processingImg.width(),
-                iHeight = this.processingImg.height(),
-                iRatio = iWidth/iHeight,
-                sRatio = canvasWidth/canvasHeight;
+            // handle for image zooming + moving
+            this.getTransformContainer().element.on({
+                scope: this,
+                touchstart: this.onPinchOrMoveStart,
+                touchmove: this.onPinchOrMove,
+                touchend: this.onPinchOrMoveEnd
+            });
 
-            if (sRatio > iRatio) {
-                this.processingImg.width(iWidth*canvasHeight/iHeight);
-                this.processingImg.height(canvasHeight);
-            } else {
-                this.processingImg.width(canvasWidth);
-                this.processingImg.height(iHeight*canvasWidth/iWidth);
+            // show crop frame as default
+            this.onCrop1();
+        } else {
+            // android has bug on missing image
+            // we will add new one
+            if (device.platform === "Android") {
+                var imageClone = this.transformImage.clone(true);
+
+                // remove old image since it is disappeared
+                this.transformImage.remove();
+                this.transformImage = null;
+
+                // add new image to container
+                var container = this.getTransformContainer();
+                container.setHtml(imageClone[0]);
+
+                // keep track of transform image
+                this.transformImage = imageClone;
             }
         }
-
-        // center the image
-        this.processingImg.setAttrs({
-            x: canvasWidth/2,
-            y: canvasHeight/2,
-            // offset for rotating
-            offset: {
-                x: this.processingImg.width()/2,
-                y: this.processingImg.height()/2
-            }
-        });
-
-        // add the shape to the layer
-        this.transformingLayer.add(this.processingImg);
-
-        // add the layer to the stage
-        this.transformingStage.add(this.transformingLayer);
-
-        // handle pinch
-        this.lastDist = 0;
-
-        var stageContent = this.transformingStage.getContent();
-        stageContent.addEventListener('touchstart', Ext.bind(this.onPinchOrMoveStart, this), false);
-        stageContent.addEventListener('touchmove', Ext.bind(this.onPinchOrMove, this), false);
-        stageContent.addEventListener('touchend', Ext.bind(this.onPinchOrMoveEnd, this), false);
-
-        // show the crop frame as default
-        this.onCrop1();
     },
 
     onPinchOrMoveStart: function(e) {
         if (!this.isPinching) {
-            if (e.touches.length) {
-                if (e.touches.length >= 2) {
-                    this.isPinching = true;
-                } else {
-                    this.imageMoveX = e.touches[0].clientX;
-                    this.imageMoveY = e.touches[0].clientY;
-                }
+            if (e.touches.length == 2) {
+                this.isPinching = true;
+            } else {
+                this.imageMoveX = e.touch.pageX;
+                this.imageMoveY = e.touch.pageY;
             }
         }
     },
 
     onPinchOrMove: function(e) {
-        if (this.isPinching) {
-            var touch1 = e.touches[0],
-                touch2 = e.touches[1];
-
-            var dist = this.getDistance({
-                x: touch1.clientX,
-                y: touch1.clientY
-            }, {
-                x: touch2.clientX,
-                y: touch2.clientY
-            });
+        if (this.isPinching && e.touches.length >= 2) {
+            var touch1 = e.touches[0];
+                touch2 = e.touches[1],
+                dist = this.getDistance({
+                    x: touch1.pageX,
+                    y: touch1.pageY
+                }, {
+                    x: touch2.pageX,
+                    y: touch2.pageY
+                });
 
             if (!this.lastDist) {
                 this.lastDist = dist;
             }
 
-            var scaleRatio = dist / this.lastDist;
+            var scaleRatio = dist / this.lastDist,
+                scale = parseFloat(this.transformImage.css('scale'));
 
-            this.processingImg.scale({
-                x: this.processingImg.scaleX() * scaleRatio,
-                y: this.processingImg.scaleY() * scaleRatio
-            });
-            
+            this.transformImage.css({scale: scale*scaleRatio});
             this.lastDist = dist;
-            this.numOfTouches = 2;
         } else {
-            var moveX = e.touches[0].clientX - this.imageMoveX, 
-                moveY = e.touches[0].clientY - this.imageMoveY,
-                curX = this.processingImg.x(),
-                curY = this.processingImg.y();
+            var moveX = e.touch.pageX - this.imageMoveX, 
+                moveY = e.touch.pageY - this.imageMoveY,
+                translate = this.transformImage.css('translate'),
+                curX = curY = 0;
             
-            this.imageMoveX = e.touches[0].clientX;
-            this.imageMoveY = e.touches[0].clientY;
+            this.imageMoveX = e.touch.pageX;
+            this.imageMoveY = e.touch.pageY;
 
-            this.processingImg.position({
+            if (translate) {
+                translate = translate.split(",");
+                curX = parseInt(translate[0], 10);
+                curY = parseInt(translate[1], 10);
+            }
+
+            this.transformImage.css({
                 x: curX + moveX,
                 y: curY + moveY
             });
         }
-
-        this.transformingLayer.batchDraw();
     },
 
     onPinchOrMoveEnd: function(e) {
         if (this.isPinching) {
-            var restrictScale;
-            if (this.processingImg.scaleX() > 2) {
-                restrictScale = 2;
-            } else if (this.processingImg.scaleX() < 0.5) {
-                restrictScale = 0.5;
-            }
+            var scale = parseFloat(this.transformImage.css('scale')),
+                restrictScale;
 
+            // check scale limit
+            if (scale > 2) restrictScale = 2;
+            else if (scale < 0.5) restrictScale = 0.5;
+
+            // resvers to limit only
             if (restrictScale) {
-                var tween = new Kinetic.Tween({
-                    node: this.processingImg, 
-                    duration: 0.25,
-                    scaleX: restrictScale,
-                    scaleY: restrictScale
-                });
-
-                tween.play();
+                this.transformImage.transition({scale: restrictScale});
             }
 
             this.lastDist = 0;
-            this.numOfTouches--;
-            if (!this.numOfTouches) this.isPinching = false;
+            this.isPinching = false;
         }
     },
 
     onNavBarCancel: function() {
-        // free all unused variables
-        this.transformingStage = null;
-        this.transformingLayer = null;
-        this.processingImg = null;
-        this.cropZone = null;
-        this.overlayLayer = null;
-        this.isRotating = null;
-        this.isPinching = null;
-
         this.onNavBarBack();
+
+        // free all unused variables
+        this.transformImage = null;
+        this.overlayLayer = null;
+        this.cropZone = null;
+        this.isPinching = null;
+        this.lastDist = null;
     },
 
     onNavBarBack: function() {
@@ -434,7 +413,6 @@ Ext.define('PhotoEditor.controller.Main', {
     },
 
     onNavBarApply: function() {
-        // push adjustment view
         this.getHomeView().push({
             xtype: 'adjustment'
         });
@@ -460,65 +438,144 @@ Ext.define('PhotoEditor.controller.Main', {
         if (!this.isRotating) {
             this.isRotating = true;
 
-            var tween = new Kinetic.Tween({
-                node: this.processingImg, 
-                duration: 0.25,
-                rotation: this.processingImg.rotation() + 90,
-                easing: Kinetic.Easings.EaseInOut,
-                onFinish: Ext.bind(this.onRotateFinished, this)
-            });
-
-            tween.play();
+            var deg = parseInt(this.transformImage.css('rotate'), 10);
+            this.transformImage.transition({
+                rotate: (deg + 90) + 'deg'
+            }, 250, Ext.bind(this.onRotateFinished, this));
         }
     },
 
     onRotateFinished: function() {
-        if (this.processingImg.rotation() >= 360)
-            this.processingImg.rotation(0);
+        var deg = parseInt(this.transformImage.css('rotate'), 10);
+        if (deg >= 360) this.transformImage.css({rotate: '0deg'});
 
         this.isRotating = false;
     },
 
     onAdjustmentViewShow: function() {
         // get image data from crop zone
-        var imageData = null;
-        if (this.cropZone && this.cropZone.isVisible()) {
-            imageData = this.processingImg.toDataURL({
-                x: this.cropZone.x(),
-                y: this.cropZone.y(),
-                width: this.cropZone.width(),
-                height: this.cropZone.height()
-            });
-        } else {
-            var w = this.processingImg.width() * this.processingImg.scaleX(),
-                h = this.processingImg.height() * this.processingImg.scaleY();
+        var imageData = this.exportTransformImageData();
+        
+        if (imageData) {
+            // add image to page
+            this.imageElement(imageData, function(imageEl) {
+                var container = this.getAdjustmentContainer();
+                container.setHtml(imageEl);
 
-            imageData = this.processingImg.toDataURL({
-                x: this.processingImg.x() - w/2,
-                y: this.processingImg.y() - h/2,
-                width: w,
-                height: h
+                // keep image
+                this.adjustImage = $(imageEl);
+
+                // center image
+                var sWidth = container.element.getWidth(),
+                    sHeight = container.element.getHeight(),
+                    imgWidth = this.adjustImage.width(),
+                    imgHeight = this.adjustImage.height();
+                this.adjustImage.css({
+                    x: (sWidth - imgWidth)/2,
+                    y: (sHeight - imgHeight)/2
+                });
+            });
+
+            // handle brightness adjust
+            this.getOverlayView().element.on({
+                scope: this,
+                drag: this.onAdjustBrightness
             });
         }
 
-        // add image to page
-        this.imageElement(imageData, this.renderAdjustmentCanvas);
-
-        // handle brightness adjust
-        this.getOverlayView().element.on({
-            scope: this,
-            drag: this.onAdjustBrightness
-        });
-
-        this.contrast = 0;
-        this.brightness = 0;
+        this.contrast = 100;
+        this.brightness = 100;
     },
 
-    renderAdjustmentCanvas: function(imageEl) {
-        imageEl.setAttribute('id', 'adjustment-image');
-        this.getAdjustmentCanvasView().setHtml(imageEl);
+    exportTransformImageData: function() {
+        var view = this.getTransformContainer().element,
+            container = document.createElement('div'),
+            canvasWidth = view.getWidth(),
+            canvasHeight = view.getHeight(),
+            imgWidth = this.transformImage.width(),
+            imgHeight = this.transformImage.height(),
+            imgScale = parseFloat(this.transformImage.css('scale')),
+            imgDeg = parseInt(this.transformImage.css('rotate'), 10),
+            translate = this.transformImage.css('translate'),
+            imgX = imgY = 0;
 
-        Pixastic.process(imageEl, "brightness", {brightness: 0, contrast: 0});
+        if (translate) {
+            translate = translate.split(",");
+            imgX = parseInt(translate[0], 10);
+            imgY = parseInt(translate[1], 10);
+        }
+
+        var stage = new Kinetic.Stage({
+            container: container,
+            width: canvasWidth,
+            height: canvasHeight
+        });
+
+        var layer = new Kinetic.Layer();
+
+        var image = new Kinetic.Image({
+            width: imgWidth,
+            height: imgHeight,
+            x: imgWidth/2 + imgX,
+            y: imgHeight/2 + imgY,
+            image: this.transformImage.clone()[0],
+            offset: {
+                x: imgWidth/2,
+                y: imgHeight/2
+            },
+            scale: {
+                x: imgScale,
+                y: imgScale
+            }
+        });
+        image.rotate(imgDeg);
+
+        layer.add(image);
+        stage.add(layer);
+
+        // check whether image is inside the crop zone
+        var iWidth, iHeight;
+        if (imgDeg == 90 || imgDeg == 270) {
+            iHeight = image.width()*imgScale;
+            iWidth = image.height()*imgScale;
+        } else {
+            iWidth = image.width()*imgScale;
+            iHeight = image.height()*imgScale;
+        }
+        
+        var imageRect = {
+            x: image.x() - iWidth/2,
+            y: image.y() - iHeight/2,
+            width: iWidth,
+            height: iHeight
+        };
+
+        var cropRect = {
+            x: this.cropZone.position().left,
+            y: this.cropZone.position().top,
+            width: this.cropZone.width(),
+            height: this.cropZone.height()
+        };
+
+        console.log(imageRect, cropRect);
+        var intersectingRect = this.intersectingRect(imageRect, cropRect);
+        console.log(intersectingRect);
+        return image.toDataURL(intersectingRect);
+
+        return false;
+    },
+
+    intersectingRect: function(r1, r2) {
+        var x = Math.max(r1.x, r2.x);
+        var y = Math.max(r1.y, r2.y);
+        var xx = Math.min(r1.x + r1.width, r2.x + r2.width);
+        var yy = Math.min(r1.y + r1.height, r2.y + r2.height);
+        return ({
+            x: x,
+            y: y,
+            width: xx - x,
+            height: yy - y
+        });
     },
 
     onAdjustBrightness: function(e, target, eOpts) {
@@ -527,39 +584,36 @@ Ext.define('PhotoEditor.controller.Main', {
         
         if (distanceX > 0) {
             this.brightness += 1;
-            if (this.brightness >= 100) this.brightness = 100;
+            if (this.brightness >= 200) this.brightness = 200;
         } else {
             this.brightness -= 1;
-            if (this.brightness <= -100) this.brightness = -100;
+            if (this.brightness <= 0) this.brightness = 0;
         }
 
         if (distanceY > 0) {
-            this.contrast -= 0.05;
-            if (this.contrast <= -1) this.contrast = -1;
+            this.contrast -= 1;
+            if (this.contrast <= 0) this.contrast = 0;
         } else {
-            this.contrast += 0.05;
-            if (this.contrast >= 1) this.contrast = 1;
+            this.contrast += 1;
+            if (this.contrast >= 200) this.contrast = 200;
         }
 
-        Pixastic.revert(document.getElementById('adjustment-image'));
-        Pixastic.process(document.getElementById('adjustment-image'), "brightness", {brightness: this.brightness, contrast: this.contrast});
-
+        this.adjustImage.css('-webkit-filter', 'brightness(' + this.brightness + '%) contrast(' + this.contrast + '%)');
         this.getNavBarGrayscaleBtn().setText("Grayscale");
     },
 
     onGrayscale: function() {
-        var canvas = document.getElementById('adjustment-image');
+        var text = this.getNavBarGrayscaleBtn().getText(),
+            grayscale = 0;
 
-        if (this.getNavBarGrayscaleBtn().getText() === "Normal") {
+        if (text === "Normal") {
             this.getNavBarGrayscaleBtn().setText("Grayscale");
-
-            Pixastic.revert(canvas);
-            Pixastic.process(imageEl, "brightness", {brightness: 0, contrast: 0});
         } else {
+            grayscale = 100;
             this.getNavBarGrayscaleBtn().setText("Normal");
-
-            Pixastic.process(canvas, "desaturate", {average : false});
         }
+
+        this.adjustImage.css('-webkit-filter', 'grayscale(' + grayscale + '%)');
     },
 
     onShowShareActionSheet: function() {
@@ -573,19 +627,19 @@ Ext.define('PhotoEditor.controller.Main', {
         window.canvas2ImagePlugin.saveImageDataToLibrary(
             function(msg) {
                 setTimeout(function() {
-                    alert('Your image has been saved!');
+                    alert(msg);
                 }, 0);
             },
             function() {},
-            document.getElementById('adjustment-image')
+            this.adjustImageToCanvas()
         );
     },
 
     onEmail: function() {
         this.onShareCancel();
 
-        var filename = this.makeFilename() + ".png",
-            canvas = document.getElementById('adjustment-image'),
+        var canvas = this.adjustImageToCanvas(),
+            filename = this.makeFilename() + ".png",
             imageData = canvas.toDataURL("image/png").split(",")[1];
         
         window.plugins.emailComposer.showEmailComposerWithCallback(
@@ -602,6 +656,30 @@ Ext.define('PhotoEditor.controller.Main', {
             null, null , true, null, 
             [[filename, imageData]]
         );
+    },
+
+    adjustImageToCanvas: function() {
+        var imgClone = this.adjustImage.clone(),
+            container = $('<div style="position: absolute; top: -99999px; left: -99999px;"></div');
+
+        // container for canvas from clone image
+        container.append(imgClone);
+        $(document.body).append(container);
+
+        // do exactly the same as css
+        if (this.getNavBarGrayscaleBtn().getText() === "Normal") {
+            Pixastic.process(imgClone[0], "desaturate", {average : false});
+        } else {
+            Pixastic.process(imgClone[0], "brightness", {brightness: this.brightness - 100, contrast: (this.contrast - 100)/100});
+        }
+
+        // canvas to return
+        var canvas = container.find('canvas')[0];
+
+        // remove after finishing
+        container.remove();
+
+        return canvas;
     },
 
     onShareCancel: function() {
@@ -660,73 +738,85 @@ Ext.define('PhotoEditor.controller.Main', {
         imageEl.onload = Ext.bind(onComplete, this, [imageEl]);
     },
 
-    calculateCroppingRect: function(widthRatio, heightRatio) {
-        var sWidth = this.transformingStage.width(),
-            sHeight = this.transformingStage.height(),
+    calculateCroppingRect: function(heightRatio, widthRatio) {
+        var sWidth = this.getTransformContainer().element.getWidth(),
+            sHeight = this.getTransformContainer().element.getHeight(),
+            ratioA = sHeight/sWidth,
+            ratioB = heightRatio/widthRatio,
             width, height;
 
-        if (widthRatio < heightRatio) {
+        if (ratioA >= ratioB) {
             width = sWidth - 20;
-            height = sHeight - (sHeight*heightRatio);
+            height = Math.ceil(width * (heightRatio/widthRatio));
         } else {
-            width = sWidth - (sWidth*widthRatio);
             height = sHeight - 20;
+            width = Math.ceil(height * (widthRatio/heightRatio));
         }
 
-        var x = (sWidth - width)/2,
-            y = (sHeight - height)/2;
-
+        var left = Math.ceil((sWidth - width)/2),
+            top = Math.ceil((sHeight - height)/2);
+        
         return {
-            x: x,
-            y: y,
+            top: top,
+            left: left,
             width: width,
             height: height
         };
     },
 
     renderOverlay: function(frame) {
-        var stage = this.transformingStage,
+        var view = this.getTransformContainer().element,
             x0 = 0,
-            x1 = frame.x,
-            x2 = frame.x + frame.width,
-            x3 = stage.width(),
+            x1 = frame.left,
+            x2 = frame.left + frame.width,
+            x3 = view.getWidth(),
             y0 = 0,
-            y1 = frame.y,
-            y2 = frame.y + frame.height,
-            y3 = stage.height();
+            y1 = frame.top,
+            y2 = frame.top + frame.height,
+            y3 = view.getHeight();
+
+        // add overlay layer if no existed
+        if (!this.overlayLayer) {
+            this.overlayLayer = $('<div class="overlay-layer"></div>');
+            this.overlayLayer.css({
+                width: view.getWidth(),
+                height: view.getHeight()
+            });
+            $(view.dom).append(this.overlayLayer);
+        }
 
         // Upper rect
         var upperRect = this.rectWithId('upperRect');
-        upperRect.setAttrs({
-            x: x0,
-            y: y0,
+        upperRect.css({
+            top: y0,
+            left: x0,
             width: x3 - x0,
             height: y1 - y0
         });
 
         // Left rect
         var leftRect = this.rectWithId('leftRect');
-        leftRect.setAttrs({
-            x: x0,
-            y: y1,
+        leftRect.css({
+            top: y1,
+            left: x0,
             width: x1 - x0,
             height: y2 - y1
         });
 
         // Right rect
         var rightRect = this.rectWithId('rightRect');
-        rightRect.setAttrs({
-            x: x2,
-            y: y1,
+        rightRect.css({
+            top: y1,
+            left: x2,
             width: x3 - x2,
             height: y2 - y1
         });
 
         // Down rect
         var downRect = this.rectWithId('downRect');
-        downRect.setAttrs({
-            x: x0,
-            y: y2,
+        downRect.css({
+            top: y2,
+            left: x0,
             width: x3 - x0,
             height: y3 - y2
         });
@@ -735,52 +825,39 @@ Ext.define('PhotoEditor.controller.Main', {
     rectWithId: function(id) {
         var rect = this.overlayLayer.find('#' + id);
         if (!rect.length) {
-            rect = new Kinetic.Rect({
-                fill: 'rgba(0, 0, 0, 0.5)',
-                id: id
-            });
+            rect = $('<div class="overlay-rect" id="' + id + '"></div>');
+            this.overlayLayer.append(rect);
+        }
 
-            this.overlayLayer.add(rect);
-        } else rect = rect[0];
-
-        return rect;
+        return $(rect);
     },
 
     renderCropZone: function(frame) {
         if (!this.cropZone) {
-            this.cropZone = new Kinetic.Rect({
-                x: frame.x,
-                y: frame.y,
-                width: frame.width,
-                height: frame.height,
-                fill: 'transparent',
-            });
+            this.cropZone = $('<div class="crop-zone"></div>');
 
-            this.overlayLayer.add(this.cropZone);
-        } else {
-            if (!this.cropZone.isVisible()) {
-                this.cropZone.show();
-                this.transformingLayer.moveToBottom();
+            // add 9 small boxes
+            for (var i = 0; i < 3; i++) {
+                $('<div class="box-row">\
+                    <div class="box"></div>\
+                    <div class="box"></div>\
+                    <div class="box"></div>\
+                </div>').appendTo(this.cropZone);
             }
 
-            this.cropZone.setAttrs(frame);
+            // add crop zone to overlay layer
+            this.overlayLayer.append(this.cropZone);
         }
+
+        // positioning for crop zone
+        this.cropZone.css(frame);
+        this.cropZone.find('.box-row .box').height(frame.height/3);
     },
 
     doCropping: function(frame) {
-        // add new crop zone layer
-        if (!this.overlayLayer) {
-            this.overlayLayer = new Kinetic.Layer();
-            this.transformingStage.add(this.overlayLayer);
-
-            this.transformingStage.draw();   
-        }
-
         // render overlay + crop zone
         this.renderOverlay(frame);
         this.renderCropZone(frame);
-
-        this.overlayLayer.batchDraw();
     },
 
     getDistance: function(p1, p2) {

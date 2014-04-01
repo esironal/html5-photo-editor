@@ -56,6 +56,12 @@
             "x-bootstrap": true
         },
         {
+            "path": "resources/js/jquery-2.1.0.min.js"
+        },
+        {
+            "path": "resources/js/jquery.transit.min.js"
+        },
+        {
             "path": "resources/js/kinetic-v5.0.1.min.js"
         },
         {

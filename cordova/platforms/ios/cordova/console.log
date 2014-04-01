@@ -921,3 +921,29 @@
 2014-03-31 20:48:04.027 PhotoEditor[6666:80b] Resetting plugins due to page load.
 2014-03-31 20:48:04.168 PhotoEditor[6666:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/2689200D-55CD-4E23-A43C-ABA179AFA477/PhotoEditor.app/www/index.html
 2014-03-31 20:48:18.382 PhotoEditor[6666:80b] THREAD WARNING: ['Camera'] took '40.030762' ms. Plugin should use a background thread.
+2014-03-31 23:00:01.740 PhotoEditor[7801:80b] Multi-tasking -> Device: YES, App: YES
+2014-03-31 23:00:01.745 PhotoEditor[7801:80b] Unlimited access to network resources
+2014-03-31 23:00:01.760 PhotoEditor[7801:80b] [CDVTimer][canvas2imageplugin] 0.038028ms
+2014-03-31 23:00:01.760 PhotoEditor[7801:80b] [CDVTimer][TotalPluginStartup] 0.447989ms
+2014-03-31 23:00:01.807 PhotoEditor[7801:80b] Resetting plugins due to page load.
+2014-03-31 23:00:01.954 PhotoEditor[7801:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/2689200D-55CD-4E23-A43C-ABA179AFA477/PhotoEditor.app/www/index.html
+2014-03-31 23:00:09.916 PhotoEditor[7801:80b] THREAD WARNING: ['Camera'] took '57.356934' ms. Plugin should use a background thread.
+2014-03-31 23:02:00.799 PhotoEditor[7801:80b] -[__NSCFString countByEnumeratingWithState:objects:count:]: unrecognized selector sent to instance 0xbc94ec0
+2014-03-31 23:02:00.800 PhotoEditor[7801:80b] EmailComposer - Cannot set TO recipients; error: -[__NSCFString countByEnumeratingWithState:objects:count:]: unrecognized selector sent to instance 0xbc94ec0
+2014-04-01 23:11:42.231 PhotoEditor[7174:80b] Multi-tasking -> Device: YES, App: YES
+2014-04-01 23:11:42.273 PhotoEditor[7174:80b] Unlimited access to network resources
+2014-04-01 23:11:42.290 PhotoEditor[7174:80b] [CDVTimer][canvas2imageplugin] 0.032008ms
+2014-04-01 23:11:42.290 PhotoEditor[7174:80b] [CDVTimer][TotalPluginStartup] 0.488997ms
+2014-04-01 23:11:42.432 PhotoEditor[7174:80b] Resetting plugins due to page load.
+2014-04-01 23:11:42.595 PhotoEditor[7174:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/index.html
+2014-04-01 23:11:42.787 PhotoEditor[7174:80b] THREAD WARNING: ['Device'] took '178.695068' ms. Plugin should use a background thread.
+2014-04-01 23:11:45.822 PhotoEditor[7174:80b] THREAD WARNING: ['Camera'] took '39.152832' ms. Plugin should use a background thread.
+2014-04-01 23:12:52.469 PhotoEditor[7453:80b] Multi-tasking -> Device: YES, App: YES
+2014-04-01 23:12:52.477 PhotoEditor[7453:80b] Unlimited access to network resources
+2014-04-01 23:12:52.496 PhotoEditor[7453:80b] [CDVTimer][canvas2imageplugin] 0.033975ms
+2014-04-01 23:12:52.497 PhotoEditor[7453:80b] [CDVTimer][TotalPluginStartup] 0.464022ms
+2014-04-01 23:12:52.549 PhotoEditor[7453:80b] Resetting plugins due to page load.
+2014-04-01 23:12:52.753 PhotoEditor[7453:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/index.html
+2014-04-01 23:12:58.007 PhotoEditor[7453:80b] THREAD WARNING: ['Camera'] took '38.433838' ms. Plugin should use a background thread.
+2014-04-01 23:13:26.908 PhotoEditor[7453:80b] -[__NSCFString countByEnumeratingWithState:objects:count:]: unrecognized selector sent to instance 0xbe711b0
+2014-04-01 23:13:26.908 PhotoEditor[7453:80b] EmailComposer - Cannot set TO recipients; error: -[__NSCFString countByEnumeratingWithState:objects:count:]: unrecognized selector sent to instance 0xbe711b0

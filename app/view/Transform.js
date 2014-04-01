@@ -21,7 +21,7 @@ Ext.define('PhotoEditor.view.Transform', {
 		}, {
 			xtype: 'panel',
 			layout: 'fit',
-			cls: 'canvas-container',
+			cls: 'transform-container',
 		}, {
 			xtype: 'toolbar',
 			layout: {

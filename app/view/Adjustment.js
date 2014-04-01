@@ -21,7 +21,7 @@ Ext.define('PhotoEditor.view.Adjustment', {
 		}, {
 			xtype: 'panel',
 			layout: 'fit',
-			cls: 'canvas-container',
+			cls: 'transform-container',
 		}, {
 			xtype: 'panel',
 			top: 0,
