@@ -38,7 +38,7 @@ Ext.define('PhotoEditor.controller.android.Main', {
         this.getHomeView().getLayout().setAnimation('slide');
 
         // save the img from picker
-        if (this.androidVersionGT44) this.imgUrl = "data:image/png;base64," + this.imgUrl;
+        if (this.androidVersionGT44) this.imgUrl = "data:image/png;base64," + imgUrl;
         else this.imgUrl = imgUrl;
 
         // push transform view
