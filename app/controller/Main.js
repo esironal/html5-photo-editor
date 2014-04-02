@@ -190,6 +190,7 @@ Ext.define('PhotoEditor.controller.Main', {
 
     onPhotoPicker: function(source) {
         var destination = 'file';
+        if (this.androidVersionGT44) destination = 'data';
 
         this.onCameraCancel();
 
