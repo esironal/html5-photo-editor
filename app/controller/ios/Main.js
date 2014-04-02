@@ -118,6 +118,9 @@ Ext.define('PhotoEditor.controller.ios.Main', {
         if (text === "Normal") {
             this.getNavBarGrayscaleBtn().setText("Grayscale");
             this.adjustImage.css('-webkit-filter', 'grayscale(0%)');
+
+            this.brightness = 100;
+            this.contrast = 100;
         } else {
             this.getNavBarGrayscaleBtn().setText("Normal");
             this.adjustImage.css('-webkit-filter', 'grayscale(100%)');
