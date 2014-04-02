@@ -17,14 +17,14 @@ Ext.application({
         'Ext.MessageBox'
     ],
 
+    profiles: [
+        'Android', 'iOS'
+    ],
+
     views: [
         'Main', 'Tutorial', 'Home', 
         'CameraActionSheet', 'Transform', 'Adjustment',
         'Info', 'ShareActionSheet', 'Ruler'
-    ],
-
-    controllers: [
-        'Main'
     ],
 
     icon: {

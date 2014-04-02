@@ -743,6 +743,10 @@ Ext.ClassManager.addNameAlternateMappings({
     "Ext.viewport.WP"
   ],
   "PhotoEditor.controller.Main": [],
+  "PhotoEditor.controller.android.Main": [],
+  "PhotoEditor.controller.ios.Main": [],
+  "PhotoEditor.profile.Android": [],
+  "PhotoEditor.profile.iOS": [],
   "PhotoEditor.view.Adjustment": [],
   "PhotoEditor.view.CameraActionSheet": [],
   "PhotoEditor.view.Home": [],
@@ -1689,6 +1693,10 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.viewport.Viewport": [],
   "Ext.viewport.WindowsPhone": [],
   "PhotoEditor.controller.Main": [],
+  "PhotoEditor.controller.android.Main": [],
+  "PhotoEditor.controller.ios.Main": [],
+  "PhotoEditor.profile.Android": [],
+  "PhotoEditor.profile.iOS": [],
   "PhotoEditor.view.Adjustment": [
     "widget.adjustment"
   ],

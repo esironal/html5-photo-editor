@@ -69,9 +69,6 @@ Ext.define('PhotoEditor.controller.Main', {
         	},
 
             // home view
-            homeView: {
-                show: 'onHomeViewShow'
-            },
             cameraBtn: {
                 tap: 'onShowCameraActionSheet'
             },
@@ -164,18 +161,6 @@ Ext.define('PhotoEditor.controller.Main', {
 		this.getMainView().setActiveItem(1);
 	},
 
-    onHomeViewShow: function() {
-        this.androidVersionGT44 = false;
-        if (device && device.platform === "Android") {
-            var splits = device.version.split(".");
-            if (splits.length >= 2) {
-                if (parseInt(splits[0]) >= 4 && parseInt(splits[1]) >= 4) {
-                    this.androidVersionGT44 = true;
-                }
-            }
-        }
-    },
-
     onShowCameraActionSheet: function() {
         this.getCameraActionSheetView().show();
         this.moveActionSheetUp(this.getCameraActionSheetView());
@@ -203,20 +188,8 @@ Ext.define('PhotoEditor.controller.Main', {
         this.onPhotoPicker('camera');
     },
 
-    onChooseExisting: function() {
-        // for iPad
-        if (device.model.indexOf('iPad') >= 0) {
-            var successHandler = Ext.bind(this.onPickPhotoSuccess, this);
-            window.imagePicker.getPictures(successHandler, null, {maximumImagesCount: 1});
-            this.onCameraCancel();
-        } else {
-            this.onPhotoPicker('library');
-        }
-    },
-
     onPhotoPicker: function(source) {
         var destination = 'file';
-        if (this.androidVersionGT44) destination = 'data';
 
         this.onCameraCancel();
 
@@ -236,93 +209,7 @@ Ext.define('PhotoEditor.controller.Main', {
         this.moveActionSheetDown(this.getCameraActionSheetView());
     },
 
-    // photo picker callback
-    onPickPhotoSuccess: function(imgUrl) {
-        if (imgUrl !== "Canceled") {
-            this.getHomeView().getLayout().setAnimation('slide');
-
-            // save the img from picker
-            if (this.androidVersionGT44)
-                this.imgUrl = "data:image/png;base64," + imgUrl;
-            else
-                this.imgUrl = imgUrl;
-
-            // push transform view
-            this.getHomeView().push({
-                xtype: 'transform'
-            });
-        }
-    },
-
     onPickPhotoFailure: function(msg) {},
-
-    onTransformViewShow: function() {
-        if (!this.transformImage) {
-            this.imageElement(this.imgUrl, function(imageEl) {
-                this.imgUrl = null;
-
-                // add image to container
-                var container = this.getTransformContainer(),
-                    sWidth = container.element.getWidth(),
-                    sHeight = container.element.getHeight();
-                container.setHtml(imageEl);
-
-                // keep track of transform image
-                this.transformImage = $(imageEl);
-
-                // resize image to fit the screen
-                if (this.transformImage.width() > sWidth ||
-                    this.transformImage.height() > sHeight) {
-                    var iWidth = this.transformImage.width(),
-                        iHeight = this.transformImage.height(),
-                        iRatio = iWidth/iHeight,
-                        sRatio = sWidth/sHeight;
-
-                    if (sRatio > iRatio) {
-                        this.transformImage.width(iWidth*sHeight/iHeight);
-                        this.transformImage.height(sHeight);
-                    } else {
-                        this.transformImage.width(sWidth);
-                        this.transformImage.height(iHeight*sWidth/iWidth);
-                    }
-                }
-
-                // center image
-                this.transformImage.css({
-                    x: (sWidth - this.transformImage.width())/2,
-                    y: (sHeight - this.transformImage.height())/2
-                });
-            });
-
-            // handle for image zooming + moving
-            this.getTransformContainer().element.on({
-                scope: this,
-                touchstart: this.onPinchOrMoveStart,
-                touchmove: this.onPinchOrMove,
-                touchend: this.onPinchOrMoveEnd
-            });
-
-            // show crop frame as default
-            this.onCrop1();
-        } else {
-            // android has bug on missing image
-            // we will add new one
-            if (device.platform === "Android") {
-                var imageClone = this.transformImage.clone(true);
-
-                // remove old image since it is disappeared
-                this.transformImage.remove();
-                this.transformImage = null;
-
-                // add new image to container
-                var container = this.getTransformContainer();
-                container.setHtml(imageClone[0]);
-
-                // keep track of transform image
-                this.transformImage = imageClone;
-            }
-        }
-    },
 
     onPinchOrMoveStart: function(e) {
         if (!this.isPinching) {
@@ -402,6 +289,7 @@ Ext.define('PhotoEditor.controller.Main', {
 
         // free all unused variables
         this.transformImage = null;
+        this.realImageEl = null;
         this.overlayLayer = null;
         this.cropZone = null;
         this.isPinching = null;
@@ -472,13 +360,9 @@ Ext.define('PhotoEditor.controller.Main', {
                     imgWidth = this.adjustImage.width(),
                     imgHeight = this.adjustImage.height();
                 this.adjustImage.css({
-                    x: (sWidth - imgWidth)/2,
-                    y: (sHeight - imgHeight)/2
+                    left: (sWidth - imgWidth)/2,
+                    top: (sHeight - imgHeight)/2
                 });
-
-                if (device.platform === "Android") {
-                    Pixastic.process(imageEl, "brightness", {brightness: 0, contrast: 0});
-                }
             });
 
             // handle brightness adjust
@@ -487,9 +371,6 @@ Ext.define('PhotoEditor.controller.Main', {
                 drag: this.onAdjustBrightness
             });
         }
-
-        this.contrast = 100;
-        this.brightness = 100;
     },
 
     exportTransformImageData: function() {
@@ -523,7 +404,7 @@ Ext.define('PhotoEditor.controller.Main', {
             height: imgHeight,
             x: imgWidth/2 + imgX,
             y: imgHeight/2 + imgY,
-            image: this.transformImage.clone()[0],
+            image: (this.realImageEl ? this.realImageEl[0] : this.transformImage[0]),
             offset: {
                 x: imgWidth/2,
                 y: imgHeight/2
@@ -562,9 +443,7 @@ Ext.define('PhotoEditor.controller.Main', {
             height: this.cropZone.height()
         };
 
-        console.log(imageRect, cropRect);
         var intersectingRect = this.intersectingRect(imageRect, cropRect);
-        console.log(intersectingRect);
         return image.toDataURL(intersectingRect);
 
         return false;
@@ -583,59 +462,6 @@ Ext.define('PhotoEditor.controller.Main', {
         });
     },
 
-    onAdjustBrightness: function(e, target, eOpts) {
-        var distanceX = e.pageX - e.previousX,
-            distanceY = e.pageY - e.previousY;
-        
-        if (distanceX > 0) {
-            this.brightness += 1;
-            if (this.brightness >= 200) this.brightness = 200;
-        } else {
-            this.brightness -= 1;
-            if (this.brightness <= 0) this.brightness = 0;
-        }
-
-        if (distanceY > 0) {
-            this.contrast -= 1;
-            if (this.contrast <= 0) this.contrast = 0;
-        } else {
-            this.contrast += 1;
-            if (this.contrast >= 200) this.contrast = 200;
-        }
-
-        if (device.platform === "Android") {
-            Pixastic.revert($('#adjust-image')[0]);
-            Pixastic.process($('#adjust-image')[0], "brightness", {brightness: this.brightness - 100, contrast: (this.contrast - 100)/100});
-        } else {
-            this.adjustImage.css('-webkit-filter', 'brightness(' + this.brightness + '%) contrast(' + this.contrast + '%)');
-        }
-
-        this.getNavBarGrayscaleBtn().setText("Grayscale");
-    },
-
-    onGrayscale: function() {
-        var text = this.getNavBarGrayscaleBtn().getText();
-        if (text === "Normal") {
-            this.getNavBarGrayscaleBtn().setText("Grayscale");
-
-            if (device.platform === "Android") {
-                Pixastic.revert($('#adjust-image')[0]);
-                Pixastic.process($('#adjust-image')[0], "brightness", {brightness: 0, contrast: 0});
-            } else {
-                this.adjustImage.css('-webkit-filter', 'grayscale(0%)');
-            }
-        } else {
-            this.getNavBarGrayscaleBtn().setText("Normal");
-
-            if (device.platform === "Android") {
-                Pixastic.revert($('#adjust-image')[0]);
-                Pixastic.process($('#adjust-image')[0], "desaturate", {average : false});
-            } else {
-                this.adjustImage.css('-webkit-filter', 'grayscale(100%)');
-            }
-        }
-    },
-
     onShowShareActionSheet: function() {
         this.getShareActionSheetView().show();
         this.moveActionSheetUp(this.getShareActionSheetView());
@@ -644,7 +470,7 @@ Ext.define('PhotoEditor.controller.Main', {
     onSave: function() {
         this.onShareCancel();
 
-        var canvas = (device.platform === "Android" ? $('#adjust-image')[0] : this.adjustImageToCanvas());
+        var canvas = this.adjustImageToCanvas();
         window.canvas2ImagePlugin.saveImageDataToLibrary(
             function(msg) {
                 setTimeout(function() {
@@ -659,7 +485,7 @@ Ext.define('PhotoEditor.controller.Main', {
     onEmail: function() {
         this.onShareCancel();
 
-        var canvas = (device.platform === "Android" ? $('#adjust-image')[0] : this.adjustImageToCanvas()),
+        var canvas = this.adjustImageToCanvas(),
             filename = this.makeFilename() + ".png",
             imageData = canvas.toDataURL("image/png").split(",")[1];
         
@@ -677,30 +503,6 @@ Ext.define('PhotoEditor.controller.Main', {
             null, null , true, null, 
             [[filename, imageData]]
         );
-    },
-
-    adjustImageToCanvas: function() {
-        var imgClone = this.adjustImage.clone(),
-            container = $('<div style="position: absolute; top: -99999px; left: -99999px;"></div');
-
-        // container for canvas from clone image
-        container.append(imgClone);
-        $(document.body).append(container);
-
-        // do exactly the same as css
-        if (this.getNavBarGrayscaleBtn().getText() === "Normal") {
-            Pixastic.process(imgClone[0], "desaturate", {average : false});
-        } else {
-            Pixastic.process(imgClone[0], "brightness", {brightness: this.brightness - 100, contrast: (this.contrast - 100)/100});
-        }
-
-        // canvas to return
-        var canvas = container.find('canvas')[0];
-
-        // remove after finishing
-        container.remove();
-
-        return canvas;
     },
 
     onShareCancel: function() {
