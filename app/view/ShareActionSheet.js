@@ -4,11 +4,9 @@ Ext.define('PhotoEditor.view.ShareActionSheet', {
 
 	config: {
 		left: 0,
-		width: '100%',
-		padding: 10,
 
 		modal: {
-			cls: 'share-action-sheet-modal-view'
+			cls: 'modal-view'
 		},
 		hidden: true,
 		hideOnMaskTap: true,
@@ -25,28 +23,23 @@ Ext.define('PhotoEditor.view.ShareActionSheet', {
 		hideAnimation: 'fadeOut',
 
 		items: [{
-			xtype: 'spacer'
-		}, {
 			xtype: 'button',
+			flex: 1,
 			cls: 'share-action-sheet-btn save-btn',
 			pressedCls: 'default-button-pressed',
 			text: 'Save'
 		}, {
-			xtype: 'spacer'
-		}, {
 			xtype: 'button',
+			flex: 1,
 			cls: 'share-action-sheet-btn email-btn',
 			pressedCls: 'default-button-pressed',
 			text: 'Email'
 		}, {
-			xtype: 'spacer'
-		}, {
 			xtype: 'button',
+			flex: 1,
 			cls: 'share-action-sheet-btn cancel-btn',
 			pressedCls: 'default-button-pressed',
 			text: 'Cancel'
-		}, {
-			xtype: 'spacer'
 		}]
 	}
 });

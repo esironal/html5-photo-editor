@@ -13,37 +13,83 @@
     background: transparent !important;
 }
 
+/*
+ * TABLET CSS
+ */
+
 /* HOME VIEW */
 .ruler-btn, .camera-btn, .info-btn {
 	border: none !important;
 	padding: 0;
 }
-
-.action-sheet-btn {
-	padding: 0;
-	color: white;
-	border: none !important;
+.ruler-btn, .camera-btn {
+	width: 145px;
+	height: 145px;
+}
+.ruler-btn {
+	background: url(../images/tablet/ruler_btn.png) no-repeat !important;
+	background-size: 145px 145px !important;
+}
+.camera-btn {
+	background: url(../images/tablet/camera_btn.png) no-repeat !important;
+	background-size: 145px 145px !important;
+}
+.info-btn {
+	width: 75px;
+	height: 75px;
+	background: url(../images/tablet/info_btn.png) no-repeat !important;
+	background-size: 75px 75px !important;
 }
 
+.action-sheet-view {
+	height: 250px !important;
+	-webkit-transform: translate3d(0, 250px, 0);
+}
 .action-sheet-view.overlay-view {
 	background: white !important;
 }
 .action-sheet-view.overlay-view .x-panel-inner {
 	background: white !important;
 }
+.action-sheet-btn {
+	width: 368px;
+	height: 70px;
+	padding: 0;
+	color: white;
+	border: none !important;
+}
+.action-sheet-btn.take-btn {
+	background: url(../images/tablet/camera_actionsheet_take_btn.png) no-repeat !important;
+	background-size: 368px 70px !important;
+}
+.action-sheet-btn.choose-btn {
+	background: url(../images/tablet/camera_actionsheet_choose_btn.png) no-repeat !important;
+	background-size: 368px 70px !important;
+}
+.action-sheet-btn.cancel-btn {
+	background: url(../images/tablet/camera_actionsheet_cancel_btn.png) no-repeat !important;
+	background-size: 368px 70px !important;
+}
 
 /* TRANSFORM VIEW */
-.navbar {
+.navbar, .bottom-bar {
+	height: 81px !important;
 	background: white !important;
 }
 .navbar-left-btn, .navbar-right-btn {
+	height: 81px !important;
 	border: none !important;
 	background: #4cff6b !important;
 	padding: 0;
 	border-radius: 0 !important;
 	color: white;
 }
-
+.navbar-left-btn {
+	border-bottom-right-radius: 25px !important;
+}
+.navbar-right-btn {
+	border-bottom-left-radius: 25px !important;
+}
 .navbar-left-btn .x-button-label {
 	border-right: 1px solid #33c551;
 }
@@ -51,8 +97,8 @@
 .bottom-bar {
 	background: #4cff6b !important;
 }
-
 .crop-btn {
+	height: 81px !important;
 	border: none !important;
 	padding: 0;
 	border-radius: 0 !important;
@@ -63,9 +109,14 @@
 }
 .crop-btn .x-button-label {
 	border-right: 1px solid #33c551;
+	font-weight: normal !important;
 }
 .rotate-btn {
 	border: none !important;
+	border-radius: 0;
+	height: 91px;
+	background: url(../images/tablet/rotate_btn.png) no-repeat center center !important;
+	background-size: 37px 39px !important;
 }
 
 .transform-container {
@@ -128,87 +179,20 @@
 	border-right: none;
 }
 
-/*
- * TABLET CSS
- */
-
-/* HOME VIEW */
-.ruler-btn, .camera-btn {
-	width: 145px;
-	height: 145px;
-}
-.ruler-btn {
-	background: url(../images/tablet/ruler_btn.png) no-repeat !important;
-	background-size: 145px 145px !important;
-}
-.camera-btn {
-	background: url(../images/tablet/camera_btn.png) no-repeat !important;
-	background-size: 145px 145px !important;
-}
-.info-btn {
-	width: 75px;
-	height: 75px;
-	background: url(../images/tablet/info_btn.png) no-repeat !important;
-	background-size: 75px 75px !important;
-}
-
-.action-sheet-view {
-	height: 250px !important;
-	-webkit-transform: translate3d(0, 250px, 0);
-}
-.action-sheet-btn {
-	width: 368px;
-	height: 70px;
-}
-.action-sheet-btn.take-btn {
-	background: url(../images/tablet/camera_actionsheet_take_btn.png) no-repeat !important;
-	background-size: 368px 70px !important;
-}
-.action-sheet-btn.choose-btn {
-	background: url(../images/tablet/camera_actionsheet_choose_btn.png) no-repeat !important;
-	background-size: 368px 70px !important;
-}
-.action-sheet-btn.cancel-btn {
-	background: url(../images/tablet/camera_actionsheet_cancel_btn.png) no-repeat !important;
-	background-size: 368px 70px !important;
-}
-
-/* TRANSFORM VIEW */
-.navbar, .bottom-bar {
-	height: 81px !important;
-}
-.navbar-left-btn, .navbar-right-btn {
-	height: 81px !important;
-}
-.navbar-left-btn {
-	border-bottom-right-radius: 25px !important;
-}
-.navbar-right-btn {
-	border-bottom-left-radius: 25px !important;
-}
-
-.crop-btn {
-	height: 81px !important;
-	font-size: 38px;
-}
-.crop-btn .x-button-label {
-	font-weight: normal !important;
-}
-.rotate-btn {
-	width: 37px;
-	height: 39px;
-	background: url(../images/tablet/rotate_btn.png) no-repeat center center !important;
-	background-size: 37px 39px !important;
-}
-
 /* ADJUSTMENT VIEW */
-.share-action-sheet-modal-view {
+.modal-view {
 	background: rgba(0,0,0,0) !important;
 }
 .share-action-sheet-view {
-	padding: 0 0 10px !important;
+	padding: 0 0 20px !important;
     border-radius: 0 !important;
     box-shadow: none !important;
+
+    bottom: 91px !important;
+    width: 728px;
+	height: 241px;
+	background: url(../images/tablet/share_actionsheet_bg.png) no-repeat !important;
+	background-size: 728px 241px !important;
 }
 .share-action-sheet-view .x-panel-inner {
     background: transparent !important;
@@ -216,12 +200,72 @@
 
 .share-action-sheet-btn {
 	border: none !important;
+	border-radius: 0;
 	background: transparent !important;
 	color: white;
-	width: 200px !important;
+	width: 100% !important;
+}
+.share-action-sheet-btn.email-btn, 
+.share-action-sheet-btn.save-btn,
+.share-action-sheet-btn.cancel-btn {
+	padding: 10px 0;
+}
+.share-action-sheet-btn.email-btn {
+	border-top: 1px solid #33c551 !important;
+	border-bottom: 1px solid #33c551 !important;
 }
 .share-btn {
 	border: none !important;
+	border-radius: 0;
+	width: 33px;
+	height: 47px;
+	background: url(../images/tablet/share_btn.png) no-repeat !important;
+	background-size: 33px 47px !important;
+}
+
+/* RULER VIEW */
+.ruler-popup-view {
+	border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 10px 0 0 0 !important;
+    color: white;
+
+    width: 409px;
+    height: 335px;
+    background: url(../images/tablet/ruler_popup_bg.png) no-repeat !important;
+    background-size: 409px 335px !important;
+}
+.ruler-popup-view .x-panel-inner {
+    background: transparent !important;
+}
+.slide_to_left_icon {
+	width: 80px;
+	height: 74px;
+	background: url(../images/tablet/slide_to_left_icon.png) no-repeat;
+	background-size: 80px 74px;
+}
+.ruler_popup_btn {
+	background: transparent !important;
+	border: none !important;
+	border-radius: 0;
+	color: white;
+	width: 100%;
+}
+.ruler_popup_btn.ok_btn {
+	padding: 35px 0;
+	border-top: 1px solid #33c551 !important;
+	border-bottom: 1px solid #33c551 !important;
+}
+.ruler_popup_btn.show_again_btn {
+	padding: 35px 0;
+}
+.ruler-tri-btn {
+	border: none;
+	border-radius: 0;
+	width: 50px;
+	height: 37px;
+	background: url(../images/tablet/ruler_tri_btn.png) no-repeat !important;
+	background-size: 50px 37px !important;
 }
 
 /*
@@ -282,31 +326,52 @@
 	.navbar-right-btn {
 		border-bottom-left-radius: 20px !important;
 	}
-	
 	.crop-btn {
 		height: 57px !important;
-		font-size: 24px;
+		font-size: 22px;
 	}
 	.rotate-btn {
-		width: 19px;
-		height: 20px;
+		height: 57px;
 		background: url(../images/phone/rotate_btn.png) no-repeat center center !important;
 		background-size: 19px 20px !important;
 	}
 
 	/* ADJUSTMENT VIEW */
 	.share-action-sheet-view {
+		padding: 0 0 20px !important;
 		bottom: 67px !important;
+		width: 310px;
 		height: 194px;
-		background: url(../images/phone/share_actionsheet_bg.png) no-repeat center center !important;
+		background: url(../images/phone/share_actionsheet_bg.png) no-repeat !important;
 		background-size: 310px 194px !important;
 	}
-
 	.share-btn {
 		width: 23px;
 		height: 33px;
 		background: url(../images/phone/share_btn.png) no-repeat !important;
 		background-size: 23px 33px !important;
+	}
+	.share-action-sheet-btn.email-btn, 
+	.share-action-sheet-btn.save-btn,
+	.share-action-sheet-btn.cancel-btn {
+		padding: 5px 0;
+	}
+
+	/* RULER VIEW */
+	.ruler-popup-view {
+		width: 310px;
+	    height: 254px;
+	    background: url(../images/phone/ruler_popup_bg.png) no-repeat !important;
+	    background-size: 310px 254px !important;
+	}
+	.slide_to_left_icon {
+		width: 61px;
+		height: 56px;
+		background: url(../images/phone/slide_to_left_icon.png) no-repeat;
+		background-size: 61px 56px;
+	}
+	.ruler_popup_btn.ok_btn, .ruler_popup_btn.show_again_btn {
+		padding: 20px 0;
 	}
 }
 

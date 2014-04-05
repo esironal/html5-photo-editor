@@ -1465,3 +1465,263 @@
 2014-04-05 12:30:54.711 PhotoEditor[13738:80b] THREAD WARNING: ['Camera'] took '37.160156' ms. Plugin should use a background thread.
 2014-04-05 12:31:55.150 PhotoEditor[13738:80b] -[__NSCFString countByEnumeratingWithState:objects:count:]: unrecognized selector sent to instance 0xd1a7a60
 2014-04-05 12:31:55.151 PhotoEditor[13738:80b] EmailComposer - Cannot set TO recipients; error: -[__NSCFString countByEnumeratingWithState:objects:count:]: unrecognized selector sent to instance 0xd1a7a60
+2014-04-05 13:46:39.359 PhotoEditor[14395:80b] Multi-tasking -> Device: YES, App: YES
+2014-04-05 13:46:39.367 PhotoEditor[14395:80b] Unlimited access to network resources
+2014-04-05 13:46:39.387 PhotoEditor[14395:80b] [CDVTimer][canvas2imageplugin] 0.047982ms
+2014-04-05 13:46:39.387 PhotoEditor[14395:80b] [CDVTimer][TotalPluginStartup] 0.379026ms
+2014-04-05 13:46:39.493 PhotoEditor[14395:80b] Resetting plugins due to page load.
+2014-04-05 13:46:39.791 PhotoEditor[14395:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/index.html
+2014-04-05 16:24:14.401 PhotoEditor[14904:80b] Multi-tasking -> Device: YES, App: YES
+2014-04-05 16:24:14.406 PhotoEditor[14904:80b] Unlimited access to network resources
+2014-04-05 16:24:14.421 PhotoEditor[14904:80b] [CDVTimer][canvas2imageplugin] 0.029981ms
+2014-04-05 16:24:14.422 PhotoEditor[14904:80b] [CDVTimer][TotalPluginStartup] 0.265002ms
+2014-04-05 16:24:14.460 PhotoEditor[14904:80b] Resetting plugins due to page load.
+2014-04-05 16:24:14.621 PhotoEditor[14904:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/index.html
+2014-04-05 16:24:17.428 PhotoEditor[14904:80b] THREAD WARNING: ['Camera'] took '39.740967' ms. Plugin should use a background thread.
+2014-04-05 17:12:37.058 PhotoEditor[15354:80b] Multi-tasking -> Device: YES, App: YES
+2014-04-05 17:12:37.063 PhotoEditor[15354:80b] Unlimited access to network resources
+2014-04-05 17:12:37.078 PhotoEditor[15354:80b] [CDVTimer][canvas2imageplugin] 0.033975ms
+2014-04-05 17:12:37.079 PhotoEditor[15354:80b] [CDVTimer][TotalPluginStartup] 0.274003ms
+2014-04-05 17:12:37.120 PhotoEditor[15354:80b] Resetting plugins due to page load.
+2014-04-05 17:12:37.281 PhotoEditor[15354:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/index.html
+2014-04-05 17:12:39.720 PhotoEditor[15354:80b] THREAD WARNING: ['Camera'] took '39.148926' ms. Plugin should use a background thread.
+2014-04-05 17:17:56.760 PhotoEditor[15750:80b] Multi-tasking -> Device: YES, App: YES
+2014-04-05 17:17:56.765 PhotoEditor[15750:80b] Unlimited access to network resources
+2014-04-05 17:17:56.780 PhotoEditor[15750:80b] [CDVTimer][canvas2imageplugin] 0.033975ms
+2014-04-05 17:17:56.780 PhotoEditor[15750:80b] [CDVTimer][TotalPluginStartup] 0.272989ms
+2014-04-05 17:17:56.825 PhotoEditor[15750:80b] Resetting plugins due to page load.
+2014-04-05 17:17:57.010 PhotoEditor[15750:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/index.html
+2014-04-05 17:17:59.812 PhotoEditor[15750:80b] THREAD WARNING: ['Camera'] took '40.063721' ms. Plugin should use a background thread.
+2014-04-05 17:18:49.168 PhotoEditor[16124:80b] Multi-tasking -> Device: YES, App: YES
+2014-04-05 17:18:49.173 PhotoEditor[16124:80b] Unlimited access to network resources
+2014-04-05 17:18:49.188 PhotoEditor[16124:80b] [CDVTimer][canvas2imageplugin] 0.033975ms
+2014-04-05 17:18:49.188 PhotoEditor[16124:80b] [CDVTimer][TotalPluginStartup] 0.270009ms
+2014-04-05 17:18:49.231 PhotoEditor[16124:80b] Resetting plugins due to page load.
+2014-04-05 17:18:49.402 PhotoEditor[16124:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/index.html
+2014-04-05 17:20:57.875 PhotoEditor[16124:80b] THREAD WARNING: ['Camera'] took '37.656250' ms. Plugin should use a background thread.
+2014-04-05 17:21:07.827 PhotoEditor[16124:80b] -[__NSCFString countByEnumeratingWithState:objects:count:]: unrecognized selector sent to instance 0xbc8abc0
+2014-04-05 17:21:07.827 PhotoEditor[16124:80b] EmailComposer - Cannot set TO recipients; error: -[__NSCFString countByEnumeratingWithState:objects:count:]: unrecognized selector sent to instance 0xbc8abc0
+2014-04-05 17:31:59.858 PhotoEditor[16531:80b] Multi-tasking -> Device: YES, App: YES
+2014-04-05 17:31:59.863 PhotoEditor[16531:80b] Unlimited access to network resources
+2014-04-05 17:31:59.878 PhotoEditor[16531:80b] [CDVTimer][canvas2imageplugin] 0.030994ms
+2014-04-05 17:31:59.878 PhotoEditor[16531:80b] [CDVTimer][TotalPluginStartup] 0.281990ms
+2014-04-05 17:31:59.890 PhotoEditor[16531:80b] Resetting plugins due to page load.
+2014-04-05 17:32:00.030 PhotoEditor[16531:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/index.html
+2014-04-05 17:32:28.306 PhotoEditor[16531:80b] THREAD WARNING: ['Camera'] took '37.960938' ms. Plugin should use a background thread.
+2014-04-05 17:48:13.227 PhotoEditor[16946:80b] Multi-tasking -> Device: YES, App: YES
+2014-04-05 17:48:13.232 PhotoEditor[16946:80b] Unlimited access to network resources
+2014-04-05 17:48:13.248 PhotoEditor[16946:80b] [CDVTimer][canvas2imageplugin] 0.033975ms
+2014-04-05 17:48:13.248 PhotoEditor[16946:80b] [CDVTimer][TotalPluginStartup] 0.310004ms
+2014-04-05 17:48:13.295 PhotoEditor[16946:80b] Resetting plugins due to page load.
+2014-04-05 17:48:13.461 PhotoEditor[16946:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/index.html
+2014-04-05 17:48:15.284 PhotoEditor[16946:80b] THREAD WARNING: ['Camera'] took '39.438965' ms. Plugin should use a background thread.
+2014-04-05 18:05:16.804 PhotoEditor[17389:80b] Multi-tasking -> Device: YES, App: YES
+2014-04-05 18:05:16.809 PhotoEditor[17389:80b] Unlimited access to network resources
+2014-04-05 18:05:16.824 PhotoEditor[17389:80b] [CDVTimer][canvas2imageplugin] 0.033975ms
+2014-04-05 18:05:16.824 PhotoEditor[17389:80b] [CDVTimer][TotalPluginStartup] 0.266969ms
+2014-04-05 18:05:16.837 PhotoEditor[17389:80b] Resetting plugins due to page load.
+2014-04-05 18:05:16.973 PhotoEditor[17389:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/index.html
+2014-04-05 18:05:20.381 PhotoEditor[17389:80b] THREAD WARNING: ['Camera'] took '37.826904' ms. Plugin should use a background thread.
+2014-04-05 18:06:49.994 PhotoEditor[17772:80b] Multi-tasking -> Device: YES, App: YES
+2014-04-05 18:06:49.999 PhotoEditor[17772:80b] Unlimited access to network resources
+2014-04-05 18:06:50.019 PhotoEditor[17772:80b] [CDVTimer][canvas2imageplugin] 0.036001ms
+2014-04-05 18:06:50.019 PhotoEditor[17772:80b] [CDVTimer][TotalPluginStartup] 0.271976ms
+2014-04-05 18:06:50.064 PhotoEditor[17772:80b] Resetting plugins due to page load.
+2014-04-05 18:06:50.227 PhotoEditor[17772:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/index.html
+2014-04-05 18:08:25.531 PhotoEditor[17772:80b] THREAD WARNING: ['Camera'] took '41.064941' ms. Plugin should use a background thread.
+2014-04-05 19:31:36.165 PhotoEditor[18225:80b] Multi-tasking -> Device: YES, App: YES
+2014-04-05 19:31:36.171 PhotoEditor[18225:80b] Unlimited access to network resources
+2014-04-05 19:31:36.186 PhotoEditor[18225:80b] [CDVTimer][canvas2imageplugin] 0.036001ms
+2014-04-05 19:31:36.186 PhotoEditor[18225:80b] [CDVTimer][TotalPluginStartup] 0.271022ms
+2014-04-05 19:31:36.307 PhotoEditor[18225:80b] Resetting plugins due to page load.
+2014-04-05 19:31:36.609 PhotoEditor[18225:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/index.html
+2014-04-05 19:31:36.638 PhotoEditor[18225:80b] THREAD WARNING: ['Device'] took '10.010010' ms. Plugin should use a background thread.
+2014-04-05 19:31:39.452 PhotoEditor[18225:80b] THREAD WARNING: ['Camera'] took '289.680908' ms. Plugin should use a background thread.
+2014-04-05 19:32:33.526 PhotoEditor[18600:80b] Multi-tasking -> Device: YES, App: YES
+2014-04-05 19:32:33.531 PhotoEditor[18600:80b] Unlimited access to network resources
+2014-04-05 19:32:33.546 PhotoEditor[18600:80b] [CDVTimer][canvas2imageplugin] 0.034988ms
+2014-04-05 19:32:33.546 PhotoEditor[18600:80b] [CDVTimer][TotalPluginStartup] 0.290036ms
+2014-04-05 19:32:33.559 PhotoEditor[18600:80b] Resetting plugins due to page load.
+2014-04-05 19:32:33.697 PhotoEditor[18600:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/index.html
+2014-04-05 19:32:43.641 PhotoEditor[18600:80b] THREAD WARNING: ['Camera'] took '38.294922' ms. Plugin should use a background thread.
+2014-04-05 19:35:12.703 PhotoEditor[18987:80b] Multi-tasking -> Device: YES, App: YES
+2014-04-05 19:35:12.708 PhotoEditor[18987:80b] Unlimited access to network resources
+2014-04-05 19:35:12.723 PhotoEditor[18987:80b] [CDVTimer][canvas2imageplugin] 0.032008ms
+2014-04-05 19:35:12.723 PhotoEditor[18987:80b] [CDVTimer][TotalPluginStartup] 0.291049ms
+2014-04-05 19:35:12.764 PhotoEditor[18987:80b] Resetting plugins due to page load.
+2014-04-05 19:35:12.927 PhotoEditor[18987:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/index.html
+2014-04-05 19:35:17.783 PhotoEditor[18987:80b] THREAD WARNING: ['Camera'] took '38.504150' ms. Plugin should use a background thread.
+2014-04-05 19:45:46.214 PhotoEditor[19517:80b] Multi-tasking -> Device: YES, App: YES
+2014-04-05 19:45:46.221 PhotoEditor[19517:80b] Unlimited access to network resources
+2014-04-05 19:45:46.240 PhotoEditor[19517:80b] [CDVTimer][canvas2imageplugin] 0.048995ms
+2014-04-05 19:45:46.240 PhotoEditor[19517:80b] [CDVTimer][TotalPluginStartup] 0.378966ms
+2014-04-05 19:45:46.336 PhotoEditor[19517:80b] Resetting plugins due to page load.
+2014-04-05 19:45:46.512 PhotoEditor[19517:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/index.html
+2014-04-05 19:45:49.072 PhotoEditor[19517:80b] THREAD WARNING: ['Camera'] took '40.031250' ms. Plugin should use a background thread.
+2014-04-05 19:52:04.012 PhotoEditor[19941:80b] Multi-tasking -> Device: YES, App: YES
+2014-04-05 19:52:04.016 PhotoEditor[19941:80b] Unlimited access to network resources
+2014-04-05 19:52:04.033 PhotoEditor[19941:80b] [CDVTimer][canvas2imageplugin] 0.037014ms
+2014-04-05 19:52:04.033 PhotoEditor[19941:80b] [CDVTimer][TotalPluginStartup] 0.297010ms
+2014-04-05 19:52:04.076 PhotoEditor[19941:80b] Resetting plugins due to page load.
+2014-04-05 19:52:04.280 PhotoEditor[19941:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/index.html
+2014-04-05 19:52:08.068 PhotoEditor[19941:80b] THREAD WARNING: ['Camera'] took '39.274902' ms. Plugin should use a background thread.
+2014-04-05 20:15:46.312 PhotoEditor[20401:80b] Multi-tasking -> Device: YES, App: YES
+2014-04-05 20:15:46.318 PhotoEditor[20401:80b] Unlimited access to network resources
+2014-04-05 20:15:46.333 PhotoEditor[20401:80b] [CDVTimer][canvas2imageplugin] 0.033975ms
+2014-04-05 20:15:46.333 PhotoEditor[20401:80b] [CDVTimer][TotalPluginStartup] 0.317037ms
+2014-04-05 20:15:46.379 PhotoEditor[20401:80b] Resetting plugins due to page load.
+2014-04-05 20:15:46.539 PhotoEditor[20401:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/index.html
+2014-04-05 20:18:35.963 PhotoEditor[20795:80b] Multi-tasking -> Device: YES, App: YES
+2014-04-05 20:18:35.967 PhotoEditor[20795:80b] Unlimited access to network resources
+2014-04-05 20:18:35.983 PhotoEditor[20795:80b] [CDVTimer][canvas2imageplugin] 0.032008ms
+2014-04-05 20:18:35.983 PhotoEditor[20795:80b] [CDVTimer][TotalPluginStartup] 0.271976ms
+2014-04-05 20:18:36.026 PhotoEditor[20795:80b] Resetting plugins due to page load.
+2014-04-05 20:18:36.193 PhotoEditor[20795:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/index.html
+2014-04-05 20:18:43.199 PhotoEditor[20795:80b] THREAD WARNING: ['Camera'] took '37.950195' ms. Plugin should use a background thread.
+2014-04-05 20:26:56.857 PhotoEditor[21211:80b] Multi-tasking -> Device: YES, App: YES
+2014-04-05 20:26:56.862 PhotoEditor[21211:80b] Unlimited access to network resources
+2014-04-05 20:26:56.878 PhotoEditor[21211:80b] [CDVTimer][canvas2imageplugin] 0.030994ms
+2014-04-05 20:26:56.879 PhotoEditor[21211:80b] [CDVTimer][TotalPluginStartup] 0.268996ms
+2014-04-05 20:26:56.919 PhotoEditor[21211:80b] Resetting plugins due to page load.
+2014-04-05 20:26:57.087 PhotoEditor[21211:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/index.html
+2014-04-05 20:26:59.848 PhotoEditor[21211:80b] THREAD WARNING: ['Camera'] took '38.025146' ms. Plugin should use a background thread.
+2014-04-05 20:27:47.207 PhotoEditor[21591:80b] Multi-tasking -> Device: YES, App: YES
+2014-04-05 20:27:47.212 PhotoEditor[21591:80b] Unlimited access to network resources
+2014-04-05 20:27:47.228 PhotoEditor[21591:80b] [CDVTimer][canvas2imageplugin] 0.033975ms
+2014-04-05 20:27:47.228 PhotoEditor[21591:80b] [CDVTimer][TotalPluginStartup] 0.272989ms
+2014-04-05 20:27:47.271 PhotoEditor[21591:80b] Resetting plugins due to page load.
+2014-04-05 20:27:47.435 PhotoEditor[21591:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/index.html
+2014-04-05 20:31:47.213 PhotoEditor[21985:80b] Multi-tasking -> Device: YES, App: YES
+2014-04-05 20:31:47.218 PhotoEditor[21985:80b] Unlimited access to network resources
+2014-04-05 20:31:47.232 PhotoEditor[21985:80b] [CDVTimer][canvas2imageplugin] 0.036001ms
+2014-04-05 20:31:47.233 PhotoEditor[21985:80b] [CDVTimer][TotalPluginStartup] 0.294983ms
+2014-04-05 20:31:47.280 PhotoEditor[21985:80b] Resetting plugins due to page load.
+2014-04-05 20:31:47.455 PhotoEditor[21985:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/index.html
+2014-04-05 20:33:22.590 PhotoEditor[22370:80b] Multi-tasking -> Device: YES, App: YES
+2014-04-05 20:33:22.595 PhotoEditor[22370:80b] Unlimited access to network resources
+2014-04-05 20:33:22.610 PhotoEditor[22370:80b] [CDVTimer][canvas2imageplugin] 0.033021ms
+2014-04-05 20:33:22.611 PhotoEditor[22370:80b] [CDVTimer][TotalPluginStartup] 0.284970ms
+2014-04-05 20:33:22.652 PhotoEditor[22370:80b] Resetting plugins due to page load.
+2014-04-05 20:33:22.818 PhotoEditor[22370:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/index.html
+2014-04-05 20:33:58.672 PhotoEditor[22744:80b] Multi-tasking -> Device: YES, App: YES
+2014-04-05 20:33:58.677 PhotoEditor[22744:80b] Unlimited access to network resources
+2014-04-05 20:33:58.692 PhotoEditor[22744:80b] [CDVTimer][canvas2imageplugin] 0.033975ms
+2014-04-05 20:33:58.692 PhotoEditor[22744:80b] [CDVTimer][TotalPluginStartup] 0.295043ms
+2014-04-05 20:33:58.738 PhotoEditor[22744:80b] Resetting plugins due to page load.
+2014-04-05 20:33:58.913 PhotoEditor[22744:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/index.html
+2014-04-05 20:39:58.331 PhotoEditor[23197:80b] Multi-tasking -> Device: YES, App: YES
+2014-04-05 20:39:58.339 PhotoEditor[23197:80b] Unlimited access to network resources
+2014-04-05 20:39:58.361 PhotoEditor[23197:80b] [CDVTimer][canvas2imageplugin] 0.046968ms
+2014-04-05 20:39:58.362 PhotoEditor[23197:80b] [CDVTimer][TotalPluginStartup] 0.373960ms
+2014-04-05 20:39:58.469 PhotoEditor[23197:80b] Resetting plugins due to page load.
+2014-04-05 20:39:58.862 PhotoEditor[23197:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/index.html
+2014-04-05 20:40:05.515 PhotoEditor[23197:80b] THREAD WARNING: ['Camera'] took '38.574951' ms. Plugin should use a background thread.
+2014-04-05 20:42:53.666 PhotoEditor[23643:80b] Multi-tasking -> Device: YES, App: YES
+2014-04-05 20:42:53.674 PhotoEditor[23643:80b] Unlimited access to network resources
+2014-04-05 20:42:53.694 PhotoEditor[23643:80b] [CDVTimer][canvas2imageplugin] 0.049949ms
+2014-04-05 20:42:53.694 PhotoEditor[23643:80b] [CDVTimer][TotalPluginStartup] 0.384986ms
+2014-04-05 20:42:53.819 PhotoEditor[23643:80b] Resetting plugins due to page load.
+2014-04-05 20:42:54.068 PhotoEditor[23643:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/index.html
+2014-04-05 20:50:20.799 PhotoEditor[24105:80b] Multi-tasking -> Device: YES, App: YES
+2014-04-05 20:50:20.806 PhotoEditor[24105:80b] Unlimited access to network resources
+2014-04-05 20:50:20.830 PhotoEditor[24105:80b] [CDVTimer][canvas2imageplugin] 0.050962ms
+2014-04-05 20:50:20.830 PhotoEditor[24105:80b] [CDVTimer][TotalPluginStartup] 0.383019ms
+2014-04-05 20:50:20.923 PhotoEditor[24105:80b] Resetting plugins due to page load.
+2014-04-05 20:50:21.226 PhotoEditor[24105:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/index.html
+2014-04-05 20:53:32.951 PhotoEditor[24493:80b] Multi-tasking -> Device: YES, App: YES
+2014-04-05 20:53:32.956 PhotoEditor[24493:80b] Unlimited access to network resources
+2014-04-05 20:53:32.971 PhotoEditor[24493:80b] [CDVTimer][canvas2imageplugin] 0.034034ms
+2014-04-05 20:53:32.971 PhotoEditor[24493:80b] [CDVTimer][TotalPluginStartup] 0.268996ms
+2014-04-05 20:53:33.018 PhotoEditor[24493:80b] Resetting plugins due to page load.
+2014-04-05 20:53:33.193 PhotoEditor[24493:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/index.html
+2014-04-05 20:55:48.034 PhotoEditor[24873:80b] Multi-tasking -> Device: YES, App: YES
+2014-04-05 20:55:48.039 PhotoEditor[24873:80b] Unlimited access to network resources
+2014-04-05 20:55:48.055 PhotoEditor[24873:80b] [CDVTimer][canvas2imageplugin] 0.031948ms
+2014-04-05 20:55:48.055 PhotoEditor[24873:80b] [CDVTimer][TotalPluginStartup] 0.293016ms
+2014-04-05 20:55:48.108 PhotoEditor[24873:80b] Resetting plugins due to page load.
+2014-04-05 20:55:49.141 PhotoEditor[24873:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/index.html
+2014-04-05 20:56:38.266 PhotoEditor[25246:80b] Multi-tasking -> Device: YES, App: YES
+2014-04-05 20:56:38.271 PhotoEditor[25246:80b] Unlimited access to network resources
+2014-04-05 20:56:38.289 PhotoEditor[25246:80b] [CDVTimer][canvas2imageplugin] 0.034988ms
+2014-04-05 20:56:38.289 PhotoEditor[25246:80b] [CDVTimer][TotalPluginStartup] 0.303984ms
+2014-04-05 20:56:38.332 PhotoEditor[25246:80b] Resetting plugins due to page load.
+2014-04-05 20:56:38.513 PhotoEditor[25246:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/index.html
+2014-04-05 20:57:26.197 PhotoEditor[25631:80b] Multi-tasking -> Device: YES, App: YES
+2014-04-05 20:57:26.202 PhotoEditor[25631:80b] Unlimited access to network resources
+2014-04-05 20:57:26.217 PhotoEditor[25631:80b] [CDVTimer][canvas2imageplugin] 0.040054ms
+2014-04-05 20:57:26.217 PhotoEditor[25631:80b] [CDVTimer][TotalPluginStartup] 0.338972ms
+2014-04-05 20:57:26.264 PhotoEditor[25631:80b] Resetting plugins due to page load.
+2014-04-05 20:57:26.468 PhotoEditor[25631:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/index.html
+2014-04-05 20:58:50.469 PhotoEditor[26008:80b] Multi-tasking -> Device: YES, App: YES
+2014-04-05 20:58:50.474 PhotoEditor[26008:80b] Unlimited access to network resources
+2014-04-05 20:58:50.491 PhotoEditor[26008:80b] [CDVTimer][canvas2imageplugin] 0.033021ms
+2014-04-05 20:58:50.491 PhotoEditor[26008:80b] [CDVTimer][TotalPluginStartup] 0.293016ms
+2014-04-05 20:58:50.510 PhotoEditor[26008:80b] Resetting plugins due to page load.
+2014-04-05 20:58:50.655 PhotoEditor[26008:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/index.html
+2014-04-05 21:00:18.293 PhotoEditor[26390:80b] Multi-tasking -> Device: YES, App: YES
+2014-04-05 21:00:18.298 PhotoEditor[26390:80b] Unlimited access to network resources
+2014-04-05 21:00:18.315 PhotoEditor[26390:80b] [CDVTimer][canvas2imageplugin] 0.037014ms
+2014-04-05 21:00:18.315 PhotoEditor[26390:80b] [CDVTimer][TotalPluginStartup] 0.279963ms
+2014-04-05 21:00:18.359 PhotoEditor[26390:80b] Resetting plugins due to page load.
+2014-04-05 21:00:18.533 PhotoEditor[26390:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/index.html
+2014-04-05 21:03:21.035 PhotoEditor[26805:80b] Multi-tasking -> Device: YES, App: YES
+2014-04-05 21:03:21.040 PhotoEditor[26805:80b] Unlimited access to network resources
+2014-04-05 21:03:21.056 PhotoEditor[26805:80b] [CDVTimer][canvas2imageplugin] 0.030994ms
+2014-04-05 21:03:21.056 PhotoEditor[26805:80b] [CDVTimer][TotalPluginStartup] 0.277996ms
+2014-04-05 21:03:21.098 PhotoEditor[26805:80b] Resetting plugins due to page load.
+2014-04-05 21:03:21.263 PhotoEditor[26805:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/index.html
+2014-04-05 21:04:43.783 PhotoEditor[27187:80b] Multi-tasking -> Device: YES, App: YES
+2014-04-05 21:04:43.788 PhotoEditor[27187:80b] Unlimited access to network resources
+2014-04-05 21:04:43.805 PhotoEditor[27187:80b] [CDVTimer][canvas2imageplugin] 0.032008ms
+2014-04-05 21:04:43.805 PhotoEditor[27187:80b] [CDVTimer][TotalPluginStartup] 0.276983ms
+2014-04-05 21:04:43.846 PhotoEditor[27187:80b] Resetting plugins due to page load.
+2014-04-05 21:04:44.008 PhotoEditor[27187:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/index.html
+2014-04-05 21:50:45.114 PhotoEditor[27698:80b] Multi-tasking -> Device: YES, App: YES
+2014-04-05 21:50:45.119 PhotoEditor[27698:80b] Unlimited access to network resources
+2014-04-05 21:50:45.134 PhotoEditor[27698:80b] [CDVTimer][canvas2imageplugin] 0.033975ms
+2014-04-05 21:50:45.134 PhotoEditor[27698:80b] [CDVTimer][TotalPluginStartup] 0.270009ms
+2014-04-05 21:50:45.147 PhotoEditor[27698:80b] Resetting plugins due to page load.
+2014-04-05 21:50:45.284 PhotoEditor[27698:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/index.html
+2014-04-05 21:51:53.148 PhotoEditor[28090:80b] Multi-tasking -> Device: YES, App: YES
+2014-04-05 21:51:53.153 PhotoEditor[28090:80b] Unlimited access to network resources
+2014-04-05 21:51:53.169 PhotoEditor[28090:80b] [CDVTimer][canvas2imageplugin] 0.063956ms
+2014-04-05 21:51:53.169 PhotoEditor[28090:80b] [CDVTimer][TotalPluginStartup] 0.437975ms
+2014-04-05 21:51:53.185 PhotoEditor[28090:80b] Resetting plugins due to page load.
+2014-04-05 21:51:53.328 PhotoEditor[28090:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/index.html
+2014-04-05 21:54:11.609 PhotoEditor[28483:80b] Multi-tasking -> Device: YES, App: YES
+2014-04-05 21:54:11.614 PhotoEditor[28483:80b] Unlimited access to network resources
+2014-04-05 21:54:11.629 PhotoEditor[28483:80b] [CDVTimer][canvas2imageplugin] 0.030994ms
+2014-04-05 21:54:11.629 PhotoEditor[28483:80b] [CDVTimer][TotalPluginStartup] 0.265002ms
+2014-04-05 21:54:11.671 PhotoEditor[28483:80b] Resetting plugins due to page load.
+2014-04-05 21:54:11.853 PhotoEditor[28483:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/index.html
+2014-04-05 21:55:35.329 PhotoEditor[28483:80b] THREAD WARNING: ['Camera'] took '44.277100' ms. Plugin should use a background thread.
+2014-04-05 21:58:53.571 PhotoEditor[28899:80b] Multi-tasking -> Device: YES, App: YES
+2014-04-05 21:58:53.577 PhotoEditor[28899:80b] Unlimited access to network resources
+2014-04-05 21:58:53.592 PhotoEditor[28899:80b] [CDVTimer][canvas2imageplugin] 0.034034ms
+2014-04-05 21:58:53.592 PhotoEditor[28899:80b] [CDVTimer][TotalPluginStartup] 0.262976ms
+2014-04-05 21:58:53.604 PhotoEditor[28899:80b] Resetting plugins due to page load.
+2014-04-05 21:58:53.746 PhotoEditor[28899:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/index.html
+2014-04-05 21:59:36.911 PhotoEditor[28899:80b] THREAD WARNING: ['Camera'] took '38.847900' ms. Plugin should use a background thread.
+2014-04-05 22:01:13.718 PhotoEditor[29288:80b] Multi-tasking -> Device: YES, App: YES
+2014-04-05 22:01:13.726 PhotoEditor[29288:80b] Unlimited access to network resources
+2014-04-05 22:01:13.741 PhotoEditor[29288:80b] [CDVTimer][canvas2imageplugin] 0.032961ms
+2014-04-05 22:01:13.742 PhotoEditor[29288:80b] [CDVTimer][TotalPluginStartup] 0.281990ms
+2014-04-05 22:01:13.756 PhotoEditor[29288:80b] Resetting plugins due to page load.
+2014-04-05 22:01:13.923 PhotoEditor[29288:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/index.html
+2014-04-05 22:01:18.619 PhotoEditor[29288:80b] THREAD WARNING: ['Camera'] took '40.011963' ms. Plugin should use a background thread.
+2014-04-05 22:05:54.446 PhotoEditor[29698:80b] Multi-tasking -> Device: YES, App: YES
+2014-04-05 22:05:54.451 PhotoEditor[29698:80b] Unlimited access to network resources
+2014-04-05 22:05:54.467 PhotoEditor[29698:80b] [CDVTimer][canvas2imageplugin] 0.038981ms
+2014-04-05 22:05:54.467 PhotoEditor[29698:80b] [CDVTimer][TotalPluginStartup] 0.281990ms
+2014-04-05 22:05:54.514 PhotoEditor[29698:80b] Resetting plugins due to page load.
+2014-04-05 22:05:54.689 PhotoEditor[29698:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/index.html
+2014-04-05 22:06:13.403 PhotoEditor[29698:80b] THREAD WARNING: ['Camera'] took '38.548828' ms. Plugin should use a background thread.
+2014-04-05 22:11:09.625 PhotoEditor[30148:80b] Multi-tasking -> Device: YES, App: YES
+2014-04-05 22:11:09.633 PhotoEditor[30148:80b] Unlimited access to network resources
+2014-04-05 22:11:09.655 PhotoEditor[30148:80b] [CDVTimer][canvas2imageplugin] 0.048995ms
+2014-04-05 22:11:09.655 PhotoEditor[30148:80b] [CDVTimer][TotalPluginStartup] 0.382006ms
+2014-04-05 22:11:09.759 PhotoEditor[30148:80b] Resetting plugins due to page load.
+2014-04-05 22:11:10.063 PhotoEditor[30148:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/index.html
+2014-04-05 22:11:30.204 PhotoEditor[30148:80b] THREAD WARNING: ['Camera'] took '39.988770' ms. Plugin should use a background thread.
+2014-04-05 22:12:17.087 PhotoEditor[30148:80b] -[__NSCFString countByEnumeratingWithState:objects:count:]: unrecognized selector sent to instance 0xbeddaf0
+2014-04-05 22:12:17.087 PhotoEditor[30148:80b] EmailComposer - Cannot set TO recipients; error: -[__NSCFString countByEnumeratingWithState:objects:count:]: unrecognized selector sent to instance 0xbeddaf0

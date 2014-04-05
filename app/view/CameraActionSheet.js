@@ -7,7 +7,9 @@ Ext.define('PhotoEditor.view.CameraActionSheet', {
 		width: '100%',
 		padding: 10,
 
-		modal: true,
+		modal: {
+			cls: 'modal-view'
+		},
 		hidden: true,
 
 		cls: 'action-sheet-view overlay-view',

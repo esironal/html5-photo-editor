@@ -17,7 +17,8 @@ Ext.Loader.addClassPathMappings({
   "Ext.device.sqlite.SQLResultSetRowList": "touch/src/device/sqlite/Sencha.js",
   "Ext.device.sqlite.SQLTransaction": "touch/src/device/sqlite/Sencha.js",
   "Ext.draw.engine.SvgContext.Gradient": "touch/src/draw/engine/SvgContext.js",
-  "PhotoEditor": "app"
+  "PhotoEditor": "app",
+  "PhotoEditor.view.RulerPopup": "app/view/Ruler.js"
 });
 Ext.ClassManager.addNameAlternateMappings({
   "Ext.AbstractComponent": [],
@@ -753,6 +754,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "PhotoEditor.view.Info": [],
   "PhotoEditor.view.Main": [],
   "PhotoEditor.view.Ruler": [],
+  "PhotoEditor.view.RulerPopup": [],
   "PhotoEditor.view.ShareActionSheet": [],
   "PhotoEditor.view.Transform": [],
   "PhotoEditor.view.Tutorial": []
@@ -1714,6 +1716,9 @@ Ext.ClassManager.addNameAliasMappings({
   ],
   "PhotoEditor.view.Ruler": [
     "widget.ruler"
+  ],
+  "PhotoEditor.view.RulerPopup": [
+    "widget.rulerPopup"
   ],
   "PhotoEditor.view.ShareActionSheet": [
     "widget.shareActionSheet"

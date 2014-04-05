@@ -54,6 +54,9 @@ Ext.define('PhotoEditor.controller.Main', {
 
             // ruler
             rulerView: 'ruler',
+            rulerPopupView: 'rulerPopup',
+            popupOKBtn: 'rulerPopup button[cls=ruler_popup_btn ok_btn]',
+            popupShowAgainBtn: 'rulerPopup button[cls=ruler_popup_btn show_again_btn]',
 
             // info view
             infoView: 'info',
@@ -144,6 +147,12 @@ Ext.define('PhotoEditor.controller.Main', {
             // ruler
             rulerView: {
                 show: 'onRulerShow'
+            },
+            popupOKBtn: {
+                tap: 'onPopupOK'
+            },
+            popupShowAgainBtn: {
+                tap: 'onPopupShowAgain'
             },
 
             // info biew
@@ -465,7 +474,10 @@ Ext.define('PhotoEditor.controller.Main', {
 
     onShowShareActionSheet: function() {
         this.getShareActionSheetView().show();
-        // this.moveActionSheetUp(this.getShareActionSheetView());
+
+        var popupWidth = this.getShareActionSheetView().element.getWidth(),
+            viewWidth = this.getAdjustmentContainer().element.getWidth();
+        this.getShareActionSheetView().setLeft((viewWidth - popupWidth)/2);
     },
 
     onSave: function() {
@@ -507,11 +519,25 @@ Ext.define('PhotoEditor.controller.Main', {
     },
 
     onShareCancel: function() {
-        // this.moveActionSheetDown(this.getShareActionSheetView());
         this.getShareActionSheetView().hide();
     },
 
     onRulerShow: function() {
+        var popupView = this.getRulerPopupView()
+
+        // show popup
+        popupView.show();
+
+        // adjust popup
+        var popupWidth = popupView.element.getWidth()
+            popupHeight = popupView.element.getHeight(),
+            viewWidth = this.getRulerView().element.getWidth(),
+            viewHeight = this.getRulerView().element.getHeight();
+
+        popupView.setLeft((viewWidth - popupWidth)/2);
+        popupView.setTop((viewHeight - popupHeight)/2);
+
+        // add handler for swipe right
         this.getRulerView().element.on({
             scope: this,
             touchstart: this.onRulerTouchStart,
@@ -528,6 +554,10 @@ Ext.define('PhotoEditor.controller.Main', {
             this.getHomeView().pop();
         }
     },
+
+    onPopupOK: function() {},
+
+    onPopupShowAgain: function() {},
 
     /* HELPERS  */
     moveActionSheetUp: function(component) {
@@ -682,7 +712,7 @@ Ext.define('PhotoEditor.controller.Main', {
             });
             $(view.dom).append(this.overlayLayer);
         }
-        
+
         // render overlay + crop zone
         this.renderOverlay(frame);
         this.renderCropZone(frame);

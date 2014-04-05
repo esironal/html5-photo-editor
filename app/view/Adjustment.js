@@ -54,6 +54,7 @@ Ext.define('PhotoEditor.view.Adjustment', {
 			items: [{
 				xtype: 'button',
 				cls: 'share-btn',
+				pressedCls: 'default-button-pressed',
 			}]
 		}]
 	}
