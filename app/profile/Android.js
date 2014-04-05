@@ -7,6 +7,6 @@ Ext.define('PhotoEditor.profile.Android', {
     },
 
     isActive: function() {
-        return (Ext.os.deviceType === "Phone" && Ext.os.is.Android);
+        return Ext.os.is.Android;
     }
 });

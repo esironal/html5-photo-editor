@@ -5,18 +5,29 @@ Ext.define('PhotoEditor.view.Adjustment', {
 	config: {
 		layout: 'fit',
 		items: [{
-			xtype: 'titlebar',
+			xtype: 'panel',
 			docked: 'top',
+
+			cls: 'navbar',
+
+			layout: {
+				type: 'hbox',
+				align: 'center',
+				pack: 'justify'
+			},
+
 			items: [{
 				xtype: 'button',
-				cls: 'navbar-back-btn',
+				flex: 1,
+				cls: 'navbar-left-btn navbar-back-btn',
+				pressedCls: 'default-button-pressed',
 				text: 'Back',
-				align: 'left'
 			}, {
 				xtype: 'button',
-				cls: 'navbar-grayscale-btn',
+				flex: 1,
+				cls: 'navbar-right-btn navbar-grayscale-btn',
+				pressedCls: 'default-button-pressed',
 				text: 'Grayscale',
-				align: 'right'
 			}]
 		}, {
 			xtype: 'panel',
@@ -29,15 +40,20 @@ Ext.define('PhotoEditor.view.Adjustment', {
 			height: '100%',
 			cls: 'overlay-view'
 		}, {
-			xtype: 'toolbar',
+			xtype: 'panel',
+			docked: 'bottom',
+
+			cls: 'bottom-bar',
+
 			layout: {
+				type: 'hbox',
+				align: 'center',
 				pack: 'center'
 			},
-			docked: 'bottom',
+
 			items: [{
 				xtype: 'button',
 				cls: 'share-btn',
-				text: 'Share'
 			}]
 		}]
 	}

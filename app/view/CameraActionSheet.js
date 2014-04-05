@@ -5,13 +5,12 @@ Ext.define('PhotoEditor.view.CameraActionSheet', {
 	config: {
 		bottom: 0,
 		width: '100%',
-		height: 150,
 		padding: 10,
 
 		modal: true,
 		hidden: true,
 
-		style: '-webkit-transform: translate3d(0, 150px, 0)',
+		cls: 'action-sheet-view overlay-view',
 
 		layout: {
 			type: 'vbox',
@@ -24,18 +23,21 @@ Ext.define('PhotoEditor.view.CameraActionSheet', {
 		}, {
 			xtype: 'button',
 			cls: 'action-sheet-btn take-btn',
+			pressedCls: 'default-button-pressed',
 			text: 'Take Picture'
 		}, {
 			xtype: 'spacer'
 		}, {
 			xtype: 'button',
 			cls: 'action-sheet-btn choose-btn',
+			pressedCls: 'default-button-pressed',
 			text: 'Choose Existing'
 		}, {
 			xtype: 'spacer'
 		}, {
 			xtype: 'button',
 			cls: 'action-sheet-btn cancel-btn',
+			pressedCls: 'default-button-pressed',
 			text: 'Cancel'
 		}, {
 			xtype: 'spacer'

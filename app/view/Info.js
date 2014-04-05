@@ -4,11 +4,10 @@ Ext.define('PhotoEditor.view.Info', {
 
 	config: {
 		layout: 'fit',
-		style: 'background: black;',
+		style: 'background: white;',
 		items: [{
 			xtype: 'button',
-			cls: 'info-back-btn',
-			text: 'Back',
+			cls: 'info-back-btn info-btn',
 			bottom: 10,
 			right: 10
 		}]

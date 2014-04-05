@@ -13,26 +13,26 @@ Ext.define('PhotoEditor.view.Home', {
 				pack: 'center'
 			},
 
-			style: 'background: gray;',
+			style: 'background: white;',
 			
 			items: [{
 				xtype: 'spacer'
 			}, {
 				xtype: 'button',
 				cls: 'ruler-btn',
-				text: 'Ruler'
+				pressedCls: 'default-button-pressed'
 			}, {
 				xtype: 'spacer'
 			}, {
 				xtype: 'button',
 				cls: 'camera-btn',
-				text: 'Camera'
+				pressedCls: 'default-button-pressed'
 			}, {
 				xtype: 'spacer'
 			}, {
 				xtype: 'button',
 				cls: 'info-btn',
-				text: 'Info',
+				pressedCls: 'default-button-pressed',
 				bottom: 10,
 				right: 10
 			}]

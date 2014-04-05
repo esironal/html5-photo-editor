@@ -7,9 +7,12 @@ Ext.define('PhotoEditor.view.Main', {
             animation: 'fade'
         },
         items: [{
-            xtype: 'tutorial'
-        }, {
             xtype: 'home'
         }]
+        // items: [{
+        //     xtype: 'tutorial'
+        // }, {
+        //     xtype: 'home'
+        // }]
     }
 });

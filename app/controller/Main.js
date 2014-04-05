@@ -31,20 +31,20 @@ Ext.define('PhotoEditor.controller.Main', {
             // transform view
             transformView: 'transform',
             transformContainer: 'transform panel[cls=transform-container]',
-            navBarCancelBtn: 'titlebar button[cls=navbar-cancel-btn]',
-            navBarApplyBtn: 'titlebar button[cls=navbar-apply-btn]',
-            cropBtn1: 'toolbar button[cls=crop-btn crop1]',
-            cropBtn2: 'toolbar button[cls=crop-btn crop2]',
-            cropBtn3: 'toolbar button[cls=crop-btn crop3]',
-            cropBtn4: 'toolbar button[cls=crop-btn crop4]',
-            rotateBtn: 'toolbar button[cls=rotate-btn]',
+            navBarCancelBtn: 'transform button[cls=navbar-left-btn navbar-cancel-btn]',
+            navBarApplyBtn: 'transform button[cls=navbar-right-btn navbar-apply-btn]',
+            cropBtn1: 'transform button[cls=crop-btn crop1]',
+            cropBtn2: 'transform button[cls=crop-btn crop2]',
+            cropBtn3: 'transform button[cls=crop-btn crop3]',
+            cropBtn4: 'transform button[cls=crop-btn crop4]',
+            rotateBtn: 'transform button[cls=rotate-btn]',
 
             // adjustment view
             adjustmentView: 'adjustment',
             adjustmentContainer: 'adjustment panel[cls=transform-container]',
-            navBarBackBtn: 'titlebar button[cls=navbar-back-btn]',
-            navBarGrayscaleBtn: 'titlebar button[cls=navbar-grayscale-btn]',
-            shareBtn: 'toolbar button[cls=share-btn]',
+            navBarBackBtn: 'adjustment button[cls=navbar-left-btn navbar-back-btn]',
+            navBarGrayscaleBtn: 'adjustment button[cls=navbar-right-btn navbar-grayscale-btn]',
+            shareBtn: 'adjustment button[cls=share-btn]',
 
             // share action sheet
             shareActionSheetView: 'shareActionSheet',
@@ -57,7 +57,7 @@ Ext.define('PhotoEditor.controller.Main', {
 
             // info view
             infoView: 'info',
-            infoBackBtn: 'info button[cls=info-back-btn]',
+            infoBackBtn: 'info button[cls=info-back-btn info-btn]',
 
             // overlay for handling brightness
             overlayView: 'adjustment panel[cls=overlay-view]'
@@ -465,7 +465,7 @@ Ext.define('PhotoEditor.controller.Main', {
 
     onShowShareActionSheet: function() {
         this.getShareActionSheetView().show();
-        this.moveActionSheetUp(this.getShareActionSheetView());
+        // this.moveActionSheetUp(this.getShareActionSheetView());
     },
 
     onSave: function() {
@@ -507,7 +507,8 @@ Ext.define('PhotoEditor.controller.Main', {
     },
 
     onShareCancel: function() {
-        this.moveActionSheetDown(this.getShareActionSheetView());
+        // this.moveActionSheetDown(this.getShareActionSheetView());
+        this.getShareActionSheetView().hide();
     },
 
     onRulerShow: function() {
@@ -523,7 +524,7 @@ Ext.define('PhotoEditor.controller.Main', {
     },
 
     onRulerTouchEnd: function(e) {
-        if (e.pageX - this.rulerMoveX < 0) {
+        if (e.pageX - this.rulerMoveX > 0) {
             this.getHomeView().pop();
         }
     },
@@ -541,10 +542,12 @@ Ext.define('PhotoEditor.controller.Main', {
     },
 
     moveActionSheetDown: function(component) {
+        var height = this.getCameraActionSheetView().element.getHeight();
+
         new Ext.Anim({
             autoClear: false,
             to: {
-                '-webkit-transform': "translate3d(0, 150px, 0)",
+                '-webkit-transform': "translate3d(0, " + height + "px, 0)",
             },
             duration: 250,
             easing: 'ease-out'
@@ -598,16 +601,6 @@ Ext.define('PhotoEditor.controller.Main', {
             y1 = frame.top,
             y2 = frame.top + frame.height,
             y3 = view.getHeight();
-
-        // add overlay layer if no existed
-        if (!this.overlayLayer) {
-            this.overlayLayer = $('<div class="overlay-layer"></div>');
-            this.overlayLayer.css({
-                width: view.getWidth(),
-                height: view.getHeight()
-            });
-            $(view.dom).append(this.overlayLayer);
-        }
 
         // Upper rect
         var upperRect = this.rectWithId('upperRect');
@@ -679,6 +672,17 @@ Ext.define('PhotoEditor.controller.Main', {
     },
 
     doCropping: function(frame) {
+        if (!this.overlayLayer) {
+            var view = this.getTransformContainer().element;
+
+            this.overlayLayer = $('<div class="overlay-layer"></div>');
+            this.overlayLayer.css({
+                width: view.getWidth(),
+                height: view.getHeight()
+            });
+            $(view.dom).append(this.overlayLayer);
+        }
+        
         // render overlay + crop zone
         this.renderOverlay(frame);
         this.renderCropZone(frame);
