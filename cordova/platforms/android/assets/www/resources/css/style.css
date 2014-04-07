@@ -20,6 +20,7 @@
 /* HOME VIEW */
 .ruler-btn, .camera-btn, .info-btn {
 	border: none !important;
+	border-radius: 0 !important;
 	padding: 0;
 }
 .ruler-btn, .camera-btn {
@@ -57,6 +58,7 @@
 	padding: 0;
 	color: white;
 	border: none !important;
+	border-radius: 0 !important;
 }
 .action-sheet-btn.take-btn {
 	background: url(../images/tablet/camera_actionsheet_take_btn.png) no-repeat !important;
@@ -113,7 +115,7 @@
 }
 .rotate-btn {
 	border: none !important;
-	border-radius: 0;
+	border-radius: 0 !important;
 	height: 91px;
 	background: url(../images/tablet/rotate_btn.png) no-repeat center center !important;
 	background-size: 37px 39px !important;
