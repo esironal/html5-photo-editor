@@ -20,6 +20,7 @@
 /* HOME VIEW */
 .ruler-btn, .camera-btn, .info-btn {
 	border: none !important;
+	border-radius: 0 !important;
 	padding: 0;
 }
 .ruler-btn, .camera-btn {
@@ -57,6 +58,11 @@
 	padding: 0;
 	color: white;
 	border: none !important;
+	border-radius: 0 !important;
+	font-size: 28px;
+}
+.action-sheet-btn .x-button-label {
+	font-weight: normal !important;
 }
 .action-sheet-btn.take-btn {
 	background: url(../images/tablet/camera_actionsheet_take_btn.png) no-repeat !important;
@@ -79,10 +85,11 @@
 .navbar-left-btn, .navbar-right-btn {
 	height: 81px !important;
 	border: none !important;
-	background: #4cff6b !important;
+	background: #3eba8f !important;
 	padding: 0;
 	border-radius: 0 !important;
 	color: white;
+	font-size: 26px;
 }
 .navbar-left-btn {
 	border-bottom-right-radius: 25px !important;
@@ -90,12 +97,15 @@
 .navbar-right-btn {
 	border-bottom-left-radius: 25px !important;
 }
+.navbar-left-btn .x-button-label , .navbar-right-btn .x-button-label  {
+	font-weight: normal !important;
+}
 .navbar-left-btn .x-button-label {
-	border-right: 1px solid #33c551;
+	border-right: 1px solid #2f9472;
 }
 
 .bottom-bar {
-	background: #4cff6b !important;
+	background: #3eba8f !important;
 }
 .crop-btn {
 	height: 81px !important;
@@ -104,15 +114,15 @@
 	border-radius: 0 !important;
 	color: white;
 	background: transparent !important;
-	font-size: 38px;
-	font-weight: normal !important;
+	font-size: 30px;
 }
 .crop-btn .x-button-label {
-	border-right: 1px solid #33c551;
+	border-right: 1px solid #2f9472;
 	font-weight: normal !important;
 }
 .rotate-btn {
 	border: none !important;
+	border-radius: 0 !important;
 	height: 91px;
 	background: url(../images/tablet/rotate_btn.png) no-repeat center center !important;
 	background-size: 37px 39px !important;
@@ -151,7 +161,7 @@
 	-webkit-box-align: center;
 	-webkit-box-pack: justify;
 
-	border: 1px solid rgba(45,149,114,0.7);
+	border: 1px solid #2f9472;
 }
 
 .crop-zone .box-row {
@@ -163,7 +173,7 @@
 	-webkit-box-align: center;
 	-webkit-box-pack: justify;
 
-	border-bottom: 1px solid #2d9572;
+	border-bottom: 1px solid #2f9472;
 }
 .crop-zone .box-row:last-child {
 	border-bottom: none;
@@ -172,7 +182,7 @@
 .box-row .box {
 	-webkit-box-flex: 1;
 
-	border-right: 1px solid #2d9572;
+	border-right: 1px solid #2f9472;
 }
 .box-row .box:last-child {
 	border-right: none;
@@ -203,6 +213,10 @@
 	background: transparent !important;
 	color: white;
 	width: 100% !important;
+	font-size: 28px;
+}
+.share-action-sheet-btn .x-button-label {
+	font-weight: normal !important;
 }
 .share-action-sheet-btn.email-btn, 
 .share-action-sheet-btn.save-btn,
@@ -210,11 +224,12 @@
 	padding: 10px 0;
 }
 .share-action-sheet-btn.email-btn {
-	border-top: 1px solid #33c551 !important;
-	border-bottom: 1px solid #33c551 !important;
+	border-top: 1px solid #2f9472 !important;
+	border-bottom: 1px solid #2f9472 !important;
 }
 .share-btn {
 	border: none !important;
+	border-radius: 0;
 	width: 33px;
 	height: 47px;
 	background: url(../images/tablet/share_btn.png) no-repeat !important;
@@ -227,6 +242,7 @@
     box-shadow: none !important;
     padding: 10px 0 0 0 !important;
     color: white;
+    font-size: 28px;
 
     width: 409px;
     height: 335px;
@@ -248,14 +264,14 @@
 	border-radius: 0;
 	color: white;
 	width: 100%;
+	padding: 35px 0;
+}
+.ruler_popup_btn .x-button-label {
+	font-weight: normal !important;
 }
 .ruler_popup_btn.ok_btn {
-	padding: 35px 0;
-	border-top: 1px solid #33c551 !important;
-	border-bottom: 1px solid #33c551 !important;
-}
-.ruler_popup_btn.show_again_btn {
-	padding: 35px 0;
+	border-top: 1px solid #2f9472 !important;
+	border-bottom: 1px solid #2f9472 !important;
 }
 .ruler-tri-btn {
 	border: none;
@@ -297,6 +313,7 @@
 	.action-sheet-btn {
 		width: 257px;
 		height: 47px;
+		font-size: 18px;
 	}
 	.action-sheet-btn.take-btn {
 		background: url(../images/phone/camera_actionsheet_take_btn.png) no-repeat !important;
@@ -317,6 +334,7 @@
 	}
 	.navbar-left-btn, .navbar-right-btn {
 		height: 57px !important;
+		font-size: 17px;
 	}
 	.navbar-left-btn {
 		border-bottom-right-radius: 20px !important;
@@ -326,7 +344,7 @@
 	}
 	.crop-btn {
 		height: 57px !important;
-		font-size: 22px;
+		font-size: 18px;
 	}
 	.rotate-btn {
 		height: 57px;
@@ -349,6 +367,9 @@
 		background: url(../images/phone/share_btn.png) no-repeat !important;
 		background-size: 23px 33px !important;
 	}
+	.share-action-sheet-btn {
+		font-size: 18px;
+	}
 	.share-action-sheet-btn.email-btn, 
 	.share-action-sheet-btn.save-btn,
 	.share-action-sheet-btn.cancel-btn {
@@ -359,6 +380,7 @@
 	.ruler-popup-view {
 		width: 310px;
 	    height: 254px;
+	    font-size: 18px;
 	    background: url(../images/phone/ruler_popup_bg.png) no-repeat !important;
 	    background-size: 310px 254px !important;
 	}
@@ -368,7 +390,7 @@
 		background: url(../images/phone/slide_to_left_icon.png) no-repeat;
 		background-size: 61px 56px;
 	}
-	.ruler_popup_btn.ok_btn, .ruler_popup_btn.show_again_btn {
+	.ruler_popup_btn {
 		padding: 20px 0;
 	}
 }

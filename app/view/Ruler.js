@@ -44,6 +44,7 @@ Ext.define('PhotoEditor.view.RulerPopup', {
 			html: 'Slide to the left'
 		}, {
 			xtype: 'panel',
+			margin: '10px 0 0 0',
 			html: '<div class="slide_to_left_icon"></div>'
 		}, {
 			xtype: 'spacer'
