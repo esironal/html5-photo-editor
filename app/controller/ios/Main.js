@@ -3,12 +3,24 @@ Ext.define('PhotoEditor.controller.ios.Main', {
 
 	config: {
         refs: {},
-        control: {}
+        control: {
+            homeView: {
+                show: 'onHomeViewShow'
+            }
+        }
     },
 
     init: function() {
 		this.callParent();
 	},
+
+    onHomeViewShow: function() {
+        // device ios version for brightness and contrast
+        var version = device.version,
+            major = parseInt(version.split(".")[0], 10);
+        
+        this.iOS7 = (major >= 7);
+    },
 
     onChooseExisting: function() {
         // for iPad
@@ -85,31 +97,34 @@ Ext.define('PhotoEditor.controller.ios.Main', {
             this.onCrop1();
         }
 
-        this.contrast = 100;
-        this.brightness = 100;
+        this.resetBrightnessContrast();
     },
 
     onAdjustBrightness: function(e, target, eOpts) {
         var distanceX = e.pageX - e.previousX,
-            distanceY = e.pageY - e.previousY;
+            distanceY = e.pageY - e.previousY,
+            bMax = this.iOS7 ? 200 : 30,
+            bMin = this.iOS7 ? 0 : -100,
+            cMax = this.iOS7 ? 200 : 150,
+            increase = 2;
         
         if (distanceX > 0) {
-            this.brightness += 1;
-            if (this.brightness >= 200) this.brightness = 200;
+            this.brightness += increase;
+            if (this.brightness >= bMax) this.brightness = bMax;
         } else {
-            this.brightness -= 1;
-            if (this.brightness <= 0) this.brightness = 0;
+            this.brightness -= increase;
+            if (this.brightness <= bMin) this.brightness = bMin;
         }
 
         if (distanceY > 0) {
-            this.contrast -= 1;
+            this.contrast -= increase;
             if (this.contrast <= 0) this.contrast = 0;
         } else {
-            this.contrast += 1;
-            if (this.contrast >= 200) this.contrast = 200;
+            this.contrast += increase;
+            if (this.contrast >= cMax) this.contrast = cMax;
         }
-
-        this.adjustImage.css('-webkit-filter', 'brightness(' + this.brightness + '%) contrast(' + this.contrast + '%)');
+        console.log(this.brightness, this.contrast);
+        $('#adjust-image').css('-webkit-filter', 'brightness(' + this.brightness + '%) contrast(' + this.contrast + '%)');
         this.getNavBarGrayscaleBtn().setText("Grayscale");
     },
 
@@ -119,8 +134,7 @@ Ext.define('PhotoEditor.controller.ios.Main', {
             this.getNavBarGrayscaleBtn().setText("Grayscale");
             this.adjustImage.css('-webkit-filter', 'grayscale(0%)');
 
-            this.brightness = 100;
-            this.contrast = 100;
+            this.resetBrightnessContrast();
         } else {
             this.getNavBarGrayscaleBtn().setText("Normal");
             this.adjustImage.css('-webkit-filter', 'grayscale(100%)');
@@ -139,7 +153,10 @@ Ext.define('PhotoEditor.controller.ios.Main', {
         if (this.getNavBarGrayscaleBtn().getText() === "Normal") {
             Pixastic.process(imgClone[0], "desaturate", {average : false});
         } else {
-            Pixastic.process(imgClone[0], "brightness", {brightness: this.brightness - 100, contrast: (this.contrast - 100)/100});
+            var brightness = this.iOS7 ? this.brightness - 100 : (this.brightness > 0 ? this.brightness + 70 : this.brightness),
+                contrast = this.iOS7 ? (this.contrast - 100)/100 : (this.contrast > 100 ? (this.contrast - 50)/100 : (this.contrast - 100)/100);
+            
+            Pixastic.process(imgClone[0], "brightness", {brightness: brightness, contrast: contrast});
         }
 
         // canvas to return
@@ -150,6 +167,11 @@ Ext.define('PhotoEditor.controller.ios.Main', {
 
         return canvas;
     },
+
+    resetBrightnessContrast: function() {
+        this.brightness = this.iOS7 ? 100 : 0;
+        this.contrast = 100;
+    }
 });
 
 
