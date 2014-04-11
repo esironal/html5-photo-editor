@@ -30,5 +30,10 @@
 /Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/camera/ExifHelper.class \
 /Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/camera/FileHelper.class \
 /Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/device/Device.class \
+/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/plugin/Brightness/BrightnessPlugin$1.class \
+/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/plugin/Brightness/BrightnessPlugin$Action.class \
+/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/plugin/Brightness/BrightnessPlugin$KeepOnTask.class \
+/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/plugin/Brightness/BrightnessPlugin$SetTask.class \
+/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/plugin/Brightness/BrightnessPlugin.class \
 /Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/devgeeks/Canvas2ImagePlugin/Canvas2ImagePlugin.class \
 /Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/dexedLibs/classes-decf1c6007a4b17b4e4e33c6f7cc9fc6.jar \

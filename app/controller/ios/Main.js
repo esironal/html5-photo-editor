@@ -3,24 +3,21 @@ Ext.define('PhotoEditor.controller.ios.Main', {
 
 	config: {
         refs: {},
-        control: {
-            homeView: {
-                show: 'onHomeViewShow'
-            }
-        }
+        control: {}
     },
 
     init: function() {
 		this.callParent();
-	},
 
-    onHomeViewShow: function() {
         // device ios version for brightness and contrast
         var version = device.version,
             major = parseInt(version.split(".")[0], 10);
         
         this.iOS7 = (major >= 7);
-    },
+
+        // avoid status bar overlap
+        // if (this.iOS7) $('body').addClass('cordova-ios-7');
+	},
 
     onChooseExisting: function() {
         // for iPad

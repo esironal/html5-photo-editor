@@ -57,6 +57,8 @@
 		608F998C7FC9442EABCE0772 /* Canvas2ImagePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 92EE6A95A3C742008E746FA3 /* Canvas2ImagePlugin.m */; settings = {COMPILER_FLAGS = -fno-objc-arc; }; };
 		B8D7F2FF8E0240C7875D0107 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53A441BAA653475B8F7FFF1F /* MessageUI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		D107FC386E59417295D9D8CE /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F0B6173BEA04A6199F873CF /* ImageIO.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		C8DB71556BBC4508A842F407 /* Brightness.m in Sources */ = {isa = PBXBuildFile; fileRef = 088A9C81CCD34DE8A977F800 /* Brightness.m */; };
+		EA0E3B9CE81943ED9F063AEF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0BAE2951783460B8C70D621 /* UIKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,6 +157,9 @@
 		6C5DCFBED08D47BFB0C154FA /* Canvas2ImagePlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Canvas2ImagePlugin.h"; path = "org.devgeeks.Canvas2ImagePlugin/Canvas2ImagePlugin.h"; sourceTree = "<group>"; fileEncoding = 4; };
 		53A441BAA653475B8F7FFF1F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "MessageUI.framework"; path = "System/Library/Frameworks/MessageUI.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
 		7F0B6173BEA04A6199F873CF /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "ImageIO.framework"; path = "System/Library/Frameworks/ImageIO.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
+		088A9C81CCD34DE8A977F800 /* Brightness.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "Brightness.m"; path = "cordova.plugin.Brightness/Brightness.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		C8D93E18D2F44D168FCC4372 /* Brightness.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Brightness.h"; path = "cordova.plugin.Brightness/Brightness.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		A0BAE2951783460B8C70D621 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "UIKit.framework"; path = "System/Library/Frameworks/UIKit.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +174,7 @@
 				5AEE5B35173C68D80009041E /* CoreLocation.framework in Frameworks */,
 				B8D7F2FF8E0240C7875D0107 /* MessageUI.framework in Frameworks */,
 				D107FC386E59417295D9D8CE /* ImageIO.framework in Frameworks */,
+				EA0E3B9CE81943ED9F063AEF /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +275,7 @@
 				305D5FD0115AB8F900A74A75 /* MobileCoreServices.framework */,
 				53A441BAA653475B8F7FFF1F /* MessageUI.framework */,
 				7F0B6173BEA04A6199F873CF /* ImageIO.framework */,
+				A0BAE2951783460B8C70D621 /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -311,6 +318,8 @@
 				921143B0490D414CA7DE1CE0 /* CDVDevice.h */,
 				92EE6A95A3C742008E746FA3 /* Canvas2ImagePlugin.m */,
 				6C5DCFBED08D47BFB0C154FA /* Canvas2ImagePlugin.h */,
+				088A9C81CCD34DE8A977F800 /* Brightness.m */,
+				C8D93E18D2F44D168FCC4372 /* Brightness.h */,
 			);
 			name = Plugins;
 			path = "PhotoEditor/Plugins";
@@ -522,6 +531,7 @@
 				F8AC1245A1284F40898C76EF /* CDVJpegHeaderWriter.m in Sources */,
 				F046832BDC2F40EDACD7873E /* CDVDevice.m in Sources */,
 				608F998C7FC9442EABCE0772 /* Canvas2ImagePlugin.m in Sources */,
+				C8DB71556BBC4508A842F407 /* Brightness.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

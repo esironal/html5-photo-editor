@@ -22,6 +22,9 @@
             },
             "MobileCoreServices.framework": {
                 "false": 1
+            },
+            "UIKit.framework": {
+                "true": 1
             }
         },
         "config.xml": {
@@ -30,7 +33,8 @@
                 "<feature name=\"ImagePicker\"><param name=\"ios-package\" value=\"SOSPicker\" /></feature>": 1,
                 "<feature name=\"Camera\"><param name=\"ios-package\" value=\"CDVCamera\" /></feature>": 1,
                 "<feature name=\"Device\"><param name=\"ios-package\" value=\"CDVDevice\" /></feature>": 1,
-                "<feature name=\"Canvas2ImagePlugin\"><param name=\"ios-package\" value=\"Canvas2ImagePlugin\" /><param name=\"onload\" value=\"true\" /></feature>": 1
+                "<feature name=\"Canvas2ImagePlugin\"><param name=\"ios-package\" value=\"Canvas2ImagePlugin\" /><param name=\"onload\" value=\"true\" /></feature>": 1,
+                "<feature name=\"Brightness\"><param name=\"ios-package\" value=\"Brightness\" /></feature>": 1
             }
         }
     },
@@ -48,6 +52,9 @@
             "PACKAGE_NAME": "com.cordova.photoeditor"
         },
         "org.devgeeks.Canvas2ImagePlugin": {
+            "PACKAGE_NAME": "com.cordova.photoeditor"
+        },
+        "cordova.plugin.Brightness": {
             "PACKAGE_NAME": "com.cordova.photoeditor"
         }
     },

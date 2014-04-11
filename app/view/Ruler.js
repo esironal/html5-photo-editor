@@ -2,17 +2,30 @@ Ext.define('PhotoEditor.view.Ruler', {
 	extend: 'Ext.Panel',
 	xtype: 'ruler',
 
+	requires: [
+		'Ext.Audio'
+	],
+
 	config: {
 		layout: 'fit',
 		style: 'background: white;',
+
 		items: [{
 			xtype: 'rulerPopup'
 		}, {
-			xtype: 'button',
-			bottom: 10,
-			left: 10,
-			cls: 'ruler-tri-btn'
+			xtype: 'audio',
+			top: -9999,
+			url: 'resources/images/crash.mp3'
 		}]
+
+		// items: [{
+		// 	xtype: 'rulerPopup'
+		// }, {
+		// 	xtype: 'button',
+		// 	bottom: 10,
+		// 	left: 10,
+		// 	cls: 'ruler-tri-btn'
+		// }]
 	}
 });
 
@@ -41,23 +54,23 @@ Ext.define('PhotoEditor.view.RulerPopup', {
 
 		items: [{
 			xtype: 'panel',
-			html: 'Slide to the left'
+			html: 'Slide to the right to return.'
 		}, {
 			xtype: 'panel',
 			margin: '10px 0 0 0',
-			html: '<div class="slide_to_left_icon"></div>'
+			html: '<div class="slide-to-left-icon"></div>'
 		}, {
 			xtype: 'spacer'
 		}, {
 			xtype: 'button',
 			flex: 1,
-			cls: 'ruler_popup_btn ok_btn',
+			cls: 'ruler-popup-btn ok-btn',
 			pressedCls: 'default-button-pressed',
 			text: 'OK'
 		}, {
 			xtype: 'button',
 			flex: 1,
-			cls: 'ruler_popup_btn show_again_btn',
+			cls: 'ruler-popup-btn show-again-btn',
 			pressedCls: 'default-button-pressed',
 			text: 'Show again next time'
 		}]

@@ -10,7 +10,8 @@
                 "<feature name=\"ImagePicker\"><param name=\"android-package\" value=\"com.synconset.ImagePicker\" /></feature>": 1,
                 "<feature name=\"Camera\"><param name=\"android-package\" value=\"org.apache.cordova.camera.CameraLauncher\" /></feature>": 1,
                 "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>": 1,
-                "<feature name=\"Canvas2ImagePlugin\"><param name=\"android-package\" value=\"org.devgeeks.Canvas2ImagePlugin.Canvas2ImagePlugin\" /></feature>": 1
+                "<feature name=\"Canvas2ImagePlugin\"><param name=\"android-package\" value=\"org.devgeeks.Canvas2ImagePlugin.Canvas2ImagePlugin\" /></feature>": 1,
+                "<feature name=\"Brightness\"><param name=\"android-package\" value=\"org.apache.cordova.plugin.Brightness.BrightnessPlugin\" /></feature>": 1
             }
         },
         "AndroidManifest.xml": {
@@ -22,6 +23,9 @@
             },
             "/manifest": {
                 "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />": 1
+            },
+            "/*": {
+                "<uses-permission android:name=\"android.permission.WRITE_SETTINGS\" />": 1
             }
         }
     },
@@ -39,6 +43,9 @@
             "PACKAGE_NAME": "com.cordova.photoeditor"
         },
         "org.devgeeks.Canvas2ImagePlugin": {
+            "PACKAGE_NAME": "com.cordova.photoeditor"
+        },
+        "cordova.plugin.Brightness": {
             "PACKAGE_NAME": "com.cordova.photoeditor"
         }
     },

@@ -10,6 +10,7 @@ Ext.define('PhotoEditor.controller.Main', {
         refs: {
             // main view
         	mainView: 'main',
+            lockOverlayView: 'main panel[cls=lock-overlay overlay-view]',
 
             // tutorial view
         	tutorialView: 'tutorial',
@@ -55,8 +56,9 @@ Ext.define('PhotoEditor.controller.Main', {
             // ruler
             rulerView: 'ruler',
             rulerPopupView: 'rulerPopup',
-            popupOKBtn: 'rulerPopup button[cls=ruler_popup_btn ok_btn]',
-            popupShowAgainBtn: 'rulerPopup button[cls=ruler_popup_btn show_again_btn]',
+            rulerAudio: 'ruler audio',
+            popupOKBtn: 'rulerPopup button[cls=ruler-popup-btn ok-btn]',
+            popupShowAgainBtn: 'rulerPopup button[cls=ruler-popup-btn show-again-btn]',
 
             // info view
             infoView: 'info',
@@ -164,6 +166,9 @@ Ext.define('PhotoEditor.controller.Main', {
 
     init: function() {
 		this.callParent();
+
+        // set default ruler popup show again or not
+        if (!localStorage.showAgain) localStorage.showAgain = "true";
 	},
 
 	onStart: function() {
@@ -177,19 +182,16 @@ Ext.define('PhotoEditor.controller.Main', {
 
     onShowRuler: function() {
         this.getHomeView().getLayout().setAnimation('slide');
-        this.getHomeView().push({
-            xtype: 'ruler'
-        });
+        this.pushView('ruler');
     },
 
     onShowInfo: function() {
         this.getHomeView().getLayout().setAnimation('flip');
-        this.getHomeView().push({
-            xtype: 'info'
-        });
+        this.pushView('info');
     },
 
-    onInfoBack: function() {
+    onInfoBack: function(sender) {
+        sender.setDisabled(true);
         this.getHomeView().pop();
     },
 
@@ -294,8 +296,8 @@ Ext.define('PhotoEditor.controller.Main', {
         }
     },
 
-    onNavBarCancel: function() {
-        this.onNavBarBack();
+    onNavBarCancel: function(sender) {
+        this.onNavBarBack(sender);
 
         // free all unused variables
         this.transformImage = null;
@@ -306,14 +308,13 @@ Ext.define('PhotoEditor.controller.Main', {
         this.lastDist = null;
     },
 
-    onNavBarBack: function() {
+    onNavBarBack: function(sender) {
+        sender.setDisabled(true);
         this.getHomeView().pop();
     },
 
     onNavBarApply: function() {
-        this.getHomeView().push({
-            xtype: 'adjustment'
-        });
+        this.pushView('adjustment');
     },
 
     onCrop1: function() {
@@ -523,19 +524,24 @@ Ext.define('PhotoEditor.controller.Main', {
     },
 
     onRulerShow: function() {
-        var popupView = this.getRulerPopupView()
+        if (!window.brightness) 
+            window.brightness = cordova.require("cordova.plugin.Brightness.Brightness");
 
-        // show popup
-        popupView.show();
+        if (localStorage.showAgain === "true") {
+            var popupView = this.getRulerPopupView()
 
-        // adjust popup
-        var popupWidth = popupView.element.getWidth()
-            popupHeight = popupView.element.getHeight(),
-            viewWidth = this.getRulerView().element.getWidth(),
-            viewHeight = this.getRulerView().element.getHeight();
+            // show popup
+            popupView.show();
 
-        popupView.setLeft((viewWidth - popupWidth)/2);
-        popupView.setTop((viewHeight - popupHeight)/2);
+            // adjust popup
+            var popupWidth = popupView.element.getWidth()
+                popupHeight = popupView.element.getHeight(),
+                viewWidth = this.getRulerView().element.getWidth(),
+                viewHeight = this.getRulerView().element.getHeight();
+
+            popupView.setLeft((viewWidth - popupWidth)/2);
+            popupView.setTop((viewHeight - popupHeight)/2);
+        }
 
         // add handler for swipe right
         this.getRulerView().element.on({
@@ -543,6 +549,18 @@ Ext.define('PhotoEditor.controller.Main', {
             touchstart: this.onRulerTouchStart,
             touchend: this.onRulerTouchEnd
         });
+
+        // play sound
+        var audio = this.getRulerAudio();
+        setTimeout(function() {
+            audio.toggle();
+        }, 250)
+
+        // screen brightness
+        brightness.setBrightness(50);
+        setTimeout(function() {
+            brightness.setBrightness(100);
+        }, 2000);
     },
 
     onRulerTouchStart: function(e) {
@@ -555,9 +573,15 @@ Ext.define('PhotoEditor.controller.Main', {
         }
     },
 
-    onPopupOK: function() {},
+    onPopupOK: function() {
+        localStorage.showAgain = "false";
+        this.getRulerPopupView().hide();
+    },
 
-    onPopupShowAgain: function() {},
+    onPopupShowAgain: function() {
+        localStorage.showAgain = "true";
+        this.getRulerPopupView().hide();
+    },
 
     /* HELPERS  */
     moveActionSheetUp: function(component) {
@@ -730,6 +754,23 @@ Ext.define('PhotoEditor.controller.Main', {
             text += possible.charAt(Math.floor(Math.random() * possible.length));
 
         return text;
+    },
+
+    pushView: function(xtype) {
+        var lockOverlayView = this.getLockOverlayView();
+
+        // lock the screen from multiple taps
+        lockOverlayView.show();
+
+        // push new view
+        this.getHomeView().push({
+            xtype: xtype
+        });
+
+        // hide lock view after a period of time
+        setTimeout(function() {
+            lockOverlayView.hide();
+        }, 1000);
     }
 });
 
