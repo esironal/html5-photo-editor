@@ -157,6 +157,13 @@ Ext.define('PhotoEditor.controller.android.Main', {
 
         return $('#adjust-image')[0];
     },
+
+    initSound: function() {
+        if (!this.media) {
+            var src = '/android_asset/www/resources/audio/flick.mp3';
+            this.media = new Media(src);
+        }
+    }
 });
 
 

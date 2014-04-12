@@ -169,9 +169,16 @@ Ext.define('PhotoEditor.controller.Main', {
 
         // set default ruler popup show again or not
         if (!localStorage.showAgain) localStorage.showAgain = "true";
+
+        // set default tutorial page
+        if (!localStorage.isFirstTime) localStorage.isFirstTime = "true";
+
+        // inti the sound right away
+        this.initSound();
 	},
 
 	onStart: function() {
+        localStorage.isFirstTime = "false";
 		this.getMainView().setActiveItem(1);
 	},
 
@@ -551,16 +558,13 @@ Ext.define('PhotoEditor.controller.Main', {
         });
 
         // play sound
-        var audio = this.getRulerAudio();
-        setTimeout(function() {
-            audio.toggle();
-        }, 250)
+        this.media.play();
 
         // screen brightness
-        brightness.setBrightness(50);
+        brightness.setBrightness(0);
         setTimeout(function() {
             brightness.setBrightness(100);
-        }, 2000);
+        }, 1000);
     },
 
     onRulerTouchStart: function(e) {
@@ -569,6 +573,7 @@ Ext.define('PhotoEditor.controller.Main', {
 
     onRulerTouchEnd: function(e) {
         if (e.pageX - this.rulerMoveX > 0) {
+            this.media.stop();
             this.getHomeView().pop();
         }
     },

@@ -128,7 +128,7 @@
      */
     "resources": [
 		"config.xml",
-		"config.xml",
+		"resources/audio",
         "resources/images",
         "resources/icons",
         "resources/startup"

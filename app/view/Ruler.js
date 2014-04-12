@@ -12,10 +12,6 @@ Ext.define('PhotoEditor.view.Ruler', {
 
 		items: [{
 			xtype: 'rulerPopup'
-		}, {
-			xtype: 'audio',
-			top: -9999,
-			url: 'resources/images/crash.mp3'
 		}]
 
 		// items: [{

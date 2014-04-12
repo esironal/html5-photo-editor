@@ -168,6 +168,13 @@ Ext.define('PhotoEditor.controller.ios.Main', {
     resetBrightnessContrast: function() {
         this.brightness = this.iOS7 ? 100 : 0;
         this.contrast = 100;
+    },
+
+    initSound: function() {
+        if (!this.media) {
+            var src = 'resources/audio/flick.mp3';
+            this.media = new Media(src);
+        }
     }
 });
 

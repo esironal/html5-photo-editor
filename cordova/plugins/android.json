@@ -11,7 +11,9 @@
                 "<feature name=\"Camera\"><param name=\"android-package\" value=\"org.apache.cordova.camera.CameraLauncher\" /></feature>": 1,
                 "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>": 1,
                 "<feature name=\"Canvas2ImagePlugin\"><param name=\"android-package\" value=\"org.devgeeks.Canvas2ImagePlugin.Canvas2ImagePlugin\" /></feature>": 1,
-                "<feature name=\"Brightness\"><param name=\"android-package\" value=\"org.apache.cordova.plugin.Brightness.BrightnessPlugin\" /></feature>": 1
+                "<feature name=\"Brightness\"><param name=\"android-package\" value=\"org.apache.cordova.plugin.Brightness.BrightnessPlugin\" /></feature>": 1,
+                "<feature name=\"Media\"><param name=\"android-package\" value=\"org.apache.cordova.media.AudioHandler\" /></feature>": 1,
+                "<feature name=\"File\"><param name=\"android-package\" value=\"org.apache.cordova.file.FileUtils\" /><param name=\"onload\" value=\"true\" /></feature>": 1
             }
         },
         "AndroidManifest.xml": {
@@ -25,7 +27,11 @@
                 "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />": 1
             },
             "/*": {
-                "<uses-permission android:name=\"android.permission.WRITE_SETTINGS\" />": 1
+                "<uses-permission android:name=\"android.permission.WRITE_SETTINGS\" />": 1,
+                "<uses-permission android:name=\"android.permission.RECORD_AUDIO\" />": 1,
+                "<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\" />": 1,
+                "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />": 2,
+                "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\" />": 1
             }
         }
     },
@@ -46,6 +52,12 @@
             "PACKAGE_NAME": "com.cordova.photoeditor"
         },
         "cordova.plugin.Brightness": {
+            "PACKAGE_NAME": "com.cordova.photoeditor"
+        },
+        "org.apache.cordova.media": {
+            "PACKAGE_NAME": "com.cordova.photoeditor"
+        },
+        "org.apache.cordova.file": {
             "PACKAGE_NAME": "com.cordova.photoeditor"
         }
     },

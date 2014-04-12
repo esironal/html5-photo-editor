@@ -59,6 +59,10 @@
 		D107FC386E59417295D9D8CE /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F0B6173BEA04A6199F873CF /* ImageIO.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		C8DB71556BBC4508A842F407 /* Brightness.m in Sources */ = {isa = PBXBuildFile; fileRef = 088A9C81CCD34DE8A977F800 /* Brightness.m */; };
 		EA0E3B9CE81943ED9F063AEF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0BAE2951783460B8C70D621 /* UIKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		383A66E1FB0B463399606C4E /* CDVSound.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FCD3332F574D35B595FE4E /* CDVSound.m */; };
+		3EFBF279CFE1415F9DB9180E /* CDVFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 6567D91734C44D67ACC5D32B /* CDVFile.m */; };
+		D2100B58350C48C68655C676 /* CDVLocalFilesystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B0ABBEFC56E4FB093570346 /* CDVLocalFilesystem.m */; };
+		2DFB81B329E9421DAE1E893A /* CDVAssetLibraryFilesystem.m in Sources */ = {isa = PBXBuildFile; fileRef = C94094508D194BCCB254D3BA /* CDVAssetLibraryFilesystem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,6 +164,14 @@
 		088A9C81CCD34DE8A977F800 /* Brightness.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "Brightness.m"; path = "cordova.plugin.Brightness/Brightness.m"; sourceTree = "<group>"; fileEncoding = 4; };
 		C8D93E18D2F44D168FCC4372 /* Brightness.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Brightness.h"; path = "cordova.plugin.Brightness/Brightness.h"; sourceTree = "<group>"; fileEncoding = 4; };
 		A0BAE2951783460B8C70D621 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "UIKit.framework"; path = "System/Library/Frameworks/UIKit.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
+		F0FCD3332F574D35B595FE4E /* CDVSound.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVSound.m"; path = "org.apache.cordova.media/CDVSound.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		584BBC1E8AB94159B86B2AD1 /* CDVSound.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVSound.h"; path = "org.apache.cordova.media/CDVSound.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		6567D91734C44D67ACC5D32B /* CDVFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVFile.m"; path = "org.apache.cordova.file/CDVFile.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		0B0ABBEFC56E4FB093570346 /* CDVLocalFilesystem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVLocalFilesystem.m"; path = "org.apache.cordova.file/CDVLocalFilesystem.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		C94094508D194BCCB254D3BA /* CDVAssetLibraryFilesystem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVAssetLibraryFilesystem.m"; path = "org.apache.cordova.file/CDVAssetLibraryFilesystem.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		5FAE6D8267B442A29093E1B3 /* CDVFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVFile.h"; path = "org.apache.cordova.file/CDVFile.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		B193206F884E43A2B2BFE045 /* CDVLocalFilesystem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVLocalFilesystem.h"; path = "org.apache.cordova.file/CDVLocalFilesystem.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		5C1C3FE9744543D4B32D5D30 /* CDVAssetLibraryFilesystem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVAssetLibraryFilesystem.h"; path = "org.apache.cordova.file/CDVAssetLibraryFilesystem.h"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -320,6 +332,14 @@
 				6C5DCFBED08D47BFB0C154FA /* Canvas2ImagePlugin.h */,
 				088A9C81CCD34DE8A977F800 /* Brightness.m */,
 				C8D93E18D2F44D168FCC4372 /* Brightness.h */,
+				F0FCD3332F574D35B595FE4E /* CDVSound.m */,
+				584BBC1E8AB94159B86B2AD1 /* CDVSound.h */,
+				6567D91734C44D67ACC5D32B /* CDVFile.m */,
+				0B0ABBEFC56E4FB093570346 /* CDVLocalFilesystem.m */,
+				C94094508D194BCCB254D3BA /* CDVAssetLibraryFilesystem.m */,
+				5FAE6D8267B442A29093E1B3 /* CDVFile.h */,
+				B193206F884E43A2B2BFE045 /* CDVLocalFilesystem.h */,
+				5C1C3FE9744543D4B32D5D30 /* CDVAssetLibraryFilesystem.h */,
 			);
 			name = Plugins;
 			path = "PhotoEditor/Plugins";
@@ -532,6 +552,10 @@
 				F046832BDC2F40EDACD7873E /* CDVDevice.m in Sources */,
 				608F998C7FC9442EABCE0772 /* Canvas2ImagePlugin.m in Sources */,
 				C8DB71556BBC4508A842F407 /* Brightness.m in Sources */,
+				383A66E1FB0B463399606C4E /* CDVSound.m in Sources */,
+				3EFBF279CFE1415F9DB9180E /* CDVFile.m in Sources */,
+				D2100B58350C48C68655C676 /* CDVLocalFilesystem.m in Sources */,
+				2DFB81B329E9421DAE1E893A /* CDVAssetLibraryFilesystem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

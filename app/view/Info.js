@@ -19,7 +19,8 @@ Ext.define('PhotoEditor.view.Info', {
 			items: [{
 				scrollable: {
 					direction: 'vertical',
-					directionLock: true
+					directionLock: true,
+					scrollbar: false,
 				},
 				html: '<div class="info-page">\
 					<div class="title" style="margin-bottom: 10px;">\
@@ -65,7 +66,8 @@ Ext.define('PhotoEditor.view.Info', {
 			}, {
 				scrollable: {
 					direction: 'vertical',
-					directionLock: true
+					directionLock: true,
+					scrollbar: false,
 				},
 				html: '<div class="info-page">\
 					<div class="title">\
@@ -106,7 +108,7 @@ Ext.define('PhotoEditor.view.Info', {
 							</p>\
 							<p>\
 								3. Scan and email an x-ray film to patients, \
-								colleagues and insurance companies for opinions. \
+								colleagues and insurance companies for opinions, \
 								consultations or predeterminations.\
 							</p>\
 						</div>\
@@ -115,7 +117,8 @@ Ext.define('PhotoEditor.view.Info', {
 			}, {
 				scrollable: {
 					direction: 'vertical',
-					directionLock: true
+					directionLock: true,
+					scrollbar: false,
 				},
 				html: '<div class="info-page">\
 					<div class="title">\
@@ -129,7 +132,7 @@ Ext.define('PhotoEditor.view.Info', {
 							<p>\
 								2. Select and viewbox icon on first device and \
 								place your film on the white screen. Toggle the \
-								by tapping on it.\
+								ruler by tapping on it.\
 							</p>\
 							<p>\
 								3. Select the camera icon on the second device, \
@@ -153,7 +156,7 @@ Ext.define('PhotoEditor.view.Info', {
 						</div>\
 						<div class="message-para">\
 							That\'s it, very simple, yet very useful. Take \
-							advantage of the higt-resolution camera and \
+							advantage of the high-resolution camera and \
 							bright LCD display on your phone or tablet to \
 							capture crisp images of plain file x-rays.\
 						</div>\
@@ -162,7 +165,8 @@ Ext.define('PhotoEditor.view.Info', {
 			}, {
 				scrollable: {
 					direction: 'vertical',
-					directionLock: true
+					directionLock: true,
+					scrollbar: false,
 				},
 				html: '<div class="info-page">\
 					<div class="message">\
@@ -188,7 +192,7 @@ Ext.define('PhotoEditor.view.Info', {
 							</div>\
 						</div>\
 						<div class="message-para">\
-							To provide feedbacks and suggestions or view \
+							To provide feedback and suggestions or view \
 							more sample iamges digitized with this method, \
 							please visit http://www.forestcity.ca.\
 						</div>\

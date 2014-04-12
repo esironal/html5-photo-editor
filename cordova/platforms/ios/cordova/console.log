@@ -2151,3 +2151,180 @@ Apr 11 23:43:58 My-MacBook-Pro.local PhotoEditor[11528] <Error>: CGImageCreate: 
 2014-04-11 23:46:49.964 PhotoEditor[12359:80b] setting movie path: 
 2014-04-11 23:46:49.967 PhotoEditor[12359:80b] setting movie path: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/resources/images/crash.mp3
 Apr 11 23:56:45 My-MacBook-Pro.local PhotoEditor[12359] <Error>: CGImageCreate: invalid image size: 0 x 0.
+2014-04-12 09:39:07.549 PhotoEditor[1202:80b] Multi-tasking -> Device: YES, App: YES
+2014-04-12 09:39:08.284 PhotoEditor[1202:80b] Unlimited access to network resources
+2014-04-12 09:39:10.598 PhotoEditor[1202:80b] [CDVTimer][canvas2imageplugin] 0.051022ms
+2014-04-12 09:39:10.598 PhotoEditor[1202:80b] [CDVTimer][TotalPluginStartup] 0.678003ms
+2014-04-12 09:39:10.875 PhotoEditor[1202:80b] Resetting plugins due to page load.
+2014-04-12 09:39:11.543 PhotoEditor[1202:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/index.html
+2014-04-12 09:40:41.554 PhotoEditor[1202:80b] setting movie path: 
+2014-04-12 09:40:41.774 PhotoEditor[1202:80b] setting movie path: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/resources/images/crash.mp3
+2014-04-12 09:40:41.839 PhotoEditor[1202:80b] setting movie path: 
+2014-04-12 09:40:41.842 PhotoEditor[1202:80b] setting movie path: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/resources/images/crash.mp3
+2014-04-12 09:42:47.087 PhotoEditor[1202:80b] setting movie path: 
+2014-04-12 09:42:47.127 PhotoEditor[1202:80b] setting movie path: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/resources/images/crash.mp3
+2014-04-12 09:42:47.133 PhotoEditor[1202:80b] setting movie path: 
+2014-04-12 09:42:47.137 PhotoEditor[1202:80b] setting movie path: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/resources/images/crash.mp3
+2014-04-12 09:50:14.667 PhotoEditor[1202:80b] THREAD WARNING: ['Camera'] took '154.199219' ms. Plugin should use a background thread.
+Apr 12 10:34:48 My-MacBook-Pro.local PhotoEditor[1202] <Error>: CGImageCreate: invalid image size: 0 x 0.
+Apr 12 10:34:48 My-MacBook-Pro.local PhotoEditor[1202] <Error>: CGImageCreate: invalid image size: 0 x 0.
+2014-04-12 10:35:02.727 PhotoEditor[1669:80b] Multi-tasking -> Device: YES, App: YES
+2014-04-12 10:35:02.733 PhotoEditor[1669:80b] Unlimited access to network resources
+2014-04-12 10:35:02.748 PhotoEditor[1669:80b] [CDVTimer][canvas2imageplugin] 0.030994ms
+2014-04-12 10:35:02.748 PhotoEditor[1669:80b] [CDVTimer][TotalPluginStartup] 0.483990ms
+2014-04-12 10:35:02.793 PhotoEditor[1669:80b] Resetting plugins due to page load.
+2014-04-12 10:35:02.963 PhotoEditor[1669:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/index.html
+2014-04-12 10:35:09.406 PhotoEditor[1669:80b] setting movie path: 
+2014-04-12 10:35:12.145 PhotoEditor[1669:80b] THREAD WARNING: ['Brightness'] took '2725.854248' ms. Plugin should use a background thread.
+2014-04-12 10:35:12.171 PhotoEditor[1669:80b] setting movie path: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/resources/images/crash.mp3
+2014-04-12 10:35:12.181 PhotoEditor[1669:80b] setting movie path: 
+2014-04-12 10:35:12.183 PhotoEditor[1669:80b] setting movie path: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/resources/images/crash.mp3
+2014-04-12 10:35:31.375 PhotoEditor[1669:80b] setting movie path: 
+2014-04-12 10:35:33.712 PhotoEditor[1669:80b] THREAD WARNING: ['Brightness'] took '2328.141846' ms. Plugin should use a background thread.
+2014-04-12 10:35:33.731 PhotoEditor[1669:80b] setting movie path: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/resources/images/crash.mp3
+2014-04-12 10:35:33.735 PhotoEditor[1669:80b] setting movie path: 
+2014-04-12 10:35:33.737 PhotoEditor[1669:80b] setting movie path: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/resources/images/crash.mp3
+Apr 12 10:36:07 My-MacBook-Pro.local PhotoEditor[1669] <Error>: CGImageCreate: invalid image size: 0 x 0.
+Apr 12 10:36:07 My-MacBook-Pro.local PhotoEditor[1669] <Error>: CGImageCreate: invalid image size: 0 x 0.
+2014-04-12 10:36:19.256 PhotoEditor[2071:80b] Multi-tasking -> Device: YES, App: YES
+2014-04-12 10:36:19.261 PhotoEditor[2071:80b] Unlimited access to network resources
+2014-04-12 10:36:19.277 PhotoEditor[2071:80b] [CDVTimer][canvas2imageplugin] 0.043988ms
+2014-04-12 10:36:19.278 PhotoEditor[2071:80b] [CDVTimer][TotalPluginStartup] 0.510037ms
+2014-04-12 10:36:19.321 PhotoEditor[2071:80b] Resetting plugins due to page load.
+2014-04-12 10:36:19.485 PhotoEditor[2071:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/index.html
+2014-04-12 10:36:28.075 PhotoEditor[2071:80b] setting movie path: 
+2014-04-12 10:36:29.897 PhotoEditor[2071:80b] THREAD WARNING: ['Brightness'] took '1808.087158' ms. Plugin should use a background thread.
+2014-04-12 10:36:29.916 PhotoEditor[2071:80b] setting movie path: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/resources/images/crash.mp3
+2014-04-12 10:36:29.928 PhotoEditor[2071:80b] setting movie path: 
+2014-04-12 10:36:29.931 PhotoEditor[2071:80b] setting movie path: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/resources/images/crash.mp3
+2014-04-12 11:01:23.051 PhotoEditor[2556:80b] Multi-tasking -> Device: YES, App: YES
+2014-04-12 11:01:23.058 PhotoEditor[2556:80b] Unlimited access to network resources
+2014-04-12 11:01:23.075 PhotoEditor[2556:80b] [CDVTimer][canvas2imageplugin] 0.035048ms
+2014-04-12 11:01:23.076 PhotoEditor[2556:80b] [CDVTimer][TotalPluginStartup] 0.504017ms
+2014-04-12 11:01:23.089 PhotoEditor[2556:80b] Resetting plugins due to page load.
+2014-04-12 11:01:23.230 PhotoEditor[2556:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/index.html
+2014-04-12 11:03:08.648 PhotoEditor[2984:80b] Multi-tasking -> Device: YES, App: YES
+2014-04-12 11:03:08.655 PhotoEditor[2984:80b] Unlimited access to network resources
+2014-04-12 11:03:08.672 PhotoEditor[2984:80b] [CDVTimer][canvas2imageplugin] 0.051022ms
+2014-04-12 11:03:08.672 PhotoEditor[2984:80b] [CDVTimer][TotalPluginStartup] 0.555992ms
+2014-04-12 11:03:08.688 PhotoEditor[2984:80b] Resetting plugins due to page load.
+2014-04-12 11:03:08.827 PhotoEditor[2984:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/index.html
+2014-04-12 11:30:38.607 PhotoEditor[3655:80b] Multi-tasking -> Device: YES, App: YES
+2014-04-12 11:30:38.612 PhotoEditor[3655:80b] Unlimited access to network resources
+2014-04-12 11:30:38.627 PhotoEditor[3655:80b] [CDVTimer][canvas2imageplugin] 0.033975ms
+2014-04-12 11:30:38.628 PhotoEditor[3655:80b] [CDVTimer][TotalPluginStartup] 0.449002ms
+2014-04-12 11:30:38.668 PhotoEditor[3655:80b] Resetting plugins due to page load.
+2014-04-12 11:30:38.838 PhotoEditor[3655:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/index.html
+2014-04-12 11:30:44.995 PhotoEditor[3655:80b] setting movie path: 
+2014-04-12 11:30:46.576 PhotoEditor[3655:80b] THREAD WARNING: ['Brightness'] took '1566.923828' ms. Plugin should use a background thread.
+2014-04-12 11:30:46.603 PhotoEditor[3655:80b] setting movie path: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/resources/audio/crash.mp3
+2014-04-12 11:30:46.612 PhotoEditor[3655:80b] setting movie path: 
+2014-04-12 11:30:46.614 PhotoEditor[3655:80b] setting movie path: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/resources/audio/crash.mp3
+2014-04-12 11:31:53.188 PhotoEditor[3655:80b] Resetting plugins due to page load.
+2014-04-12 11:31:53.453 PhotoEditor[3655:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/index.html
+2014-04-12 11:32:03.384 PhotoEditor[3655:80b] setting movie path: 
+2014-04-12 11:32:05.417 PhotoEditor[3655:80b] THREAD WARNING: ['Brightness'] took '2011.299072' ms. Plugin should use a background thread.
+2014-04-12 11:32:05.442 PhotoEditor[3655:80b] setting movie path: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/resources/audio/crash.mp3
+2014-04-12 11:32:05.448 PhotoEditor[3655:80b] setting movie path: 
+2014-04-12 11:32:05.452 PhotoEditor[3655:80b] setting movie path: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/resources/audio/crash.mp3
+Apr 12 11:35:26 My-MacBook-Pro.local PhotoEditor[3655] <Error>: CGImageCreate: invalid image size: 0 x 0.
+2014-04-12 11:39:12.161 PhotoEditor[4112:80b] Multi-tasking -> Device: YES, App: YES
+2014-04-12 11:39:12.166 PhotoEditor[4112:80b] Unlimited access to network resources
+2014-04-12 11:39:12.181 PhotoEditor[4112:80b] [CDVTimer][canvas2imageplugin] 0.033975ms
+2014-04-12 11:39:12.182 PhotoEditor[4112:80b] [CDVTimer][TotalPluginStartup] 0.467002ms
+2014-04-12 11:39:12.195 PhotoEditor[4112:80b] Resetting plugins due to page load.
+2014-04-12 11:39:12.332 PhotoEditor[4112:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/index.html
+2014-04-12 11:40:08.072 PhotoEditor[4112:80b] setting movie path: 
+2014-04-12 11:40:09.827 PhotoEditor[4112:80b] THREAD WARNING: ['Brightness'] took '1735.552246' ms. Plugin should use a background thread.
+2014-04-12 11:40:11.956 PhotoEditor[4112:80b] setting movie path: http://try.sencha.com/touch/2.0.0/docs/Ext.Audio.2/audio/crash.mp3
+2014-04-12 11:40:11.960 PhotoEditor[4112:80b] setting movie path: 
+2014-04-12 11:40:11.962 PhotoEditor[4112:80b] setting movie path: http://try.sencha.com/touch/2.0.0/docs/Ext.Audio.2/audio/crash.mp3
+2014-04-12 11:40:26.648 PhotoEditor[4112:80b] Resetting plugins due to page load.
+2014-04-12 11:40:26.883 PhotoEditor[4112:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/index.html
+2014-04-12 11:40:55.893 PhotoEditor[4112:80b] setting movie path: 
+2014-04-12 11:40:57.585 PhotoEditor[4112:80b] THREAD WARNING: ['Brightness'] took '1675.151123' ms. Plugin should use a background thread.
+2014-04-12 11:40:58.978 PhotoEditor[4112:80b] setting movie path: http://try.sencha.com/touch/2.0.0/docs/Ext.Audio.2/audio/crash.mp3
+2014-04-12 11:40:58.981 PhotoEditor[4112:80b] setting movie path: 
+2014-04-12 11:40:58.983 PhotoEditor[4112:80b] setting movie path: http://try.sencha.com/touch/2.0.0/docs/Ext.Audio.2/audio/crash.mp3
+Apr 12 11:41:28 My-MacBook-Pro.local PhotoEditor[4112] <Error>: CGImageCreate: invalid image size: 0 x 0.
+2014-04-12 11:44:37.565 PhotoEditor[4525:80b] Multi-tasking -> Device: YES, App: YES
+2014-04-12 11:44:37.570 PhotoEditor[4525:80b] Unlimited access to network resources
+2014-04-12 11:44:37.586 PhotoEditor[4525:80b] [CDVTimer][canvas2imageplugin] 0.030994ms
+2014-04-12 11:44:37.587 PhotoEditor[4525:80b] [CDVTimer][TotalPluginStartup] 0.453949ms
+2014-04-12 11:44:37.712 PhotoEditor[4525:80b] Resetting plugins due to page load.
+2014-04-12 11:44:37.906 PhotoEditor[4525:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/index.html
+2014-04-12 11:45:46.378 PhotoEditor[4921:80b] Multi-tasking -> Device: YES, App: YES
+2014-04-12 11:45:46.384 PhotoEditor[4921:80b] Unlimited access to network resources
+2014-04-12 11:45:46.399 PhotoEditor[4921:80b] [CDVTimer][canvas2imageplugin] 0.033975ms
+2014-04-12 11:45:46.399 PhotoEditor[4921:80b] [CDVTimer][TotalPluginStartup] 0.487983ms
+2014-04-12 11:45:46.439 PhotoEditor[4921:80b] Resetting plugins due to page load.
+2014-04-12 11:45:46.596 PhotoEditor[4921:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/95ADD4BA-BDBC-46DA-A433-C9FCAA6CE3E3/PhotoEditor.app/www/index.html
+2014-04-12 11:45:51.731 PhotoEditor[4921:80b] setting movie path: 
+2014-04-12 11:45:53.249 PhotoEditor[4921:80b] THREAD WARNING: ['Brightness'] took '1503.940186' ms. Plugin should use a background thread.
+2014-04-12 11:45:54.690 PhotoEditor[4921:80b] setting movie path: http://try.sencha.com/touch/2.0.0/docs/Ext.Audio.2/audio/crash.mp3
+2014-04-12 11:45:54.694 PhotoEditor[4921:80b] setting movie path: 
+2014-04-12 11:45:54.696 PhotoEditor[4921:80b] setting movie path: http://try.sencha.com/touch/2.0.0/docs/Ext.Audio.2/audio/crash.mp3
+2014-04-12 11:46:57.759 PhotoEditor[5309:80b] Multi-tasking -> Device: YES, App: YES
+2014-04-12 11:46:57.764 PhotoEditor[5309:80b] Unlimited access to network resources
+2014-04-12 11:46:57.780 PhotoEditor[5309:80b] [CDVTimer][canvas2imageplugin] 0.033975ms
+2014-04-12 11:46:57.780 PhotoEditor[5309:80b] [CDVTimer][TotalPluginStartup] 0.465035ms
+2014-04-12 11:46:57.850 PhotoEditor[5309:80b] Resetting plugins due to page load.
+2014-04-12 11:46:58.012 PhotoEditor[5309:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/AB2C407A-FDD7-4F46-BDAA-AB2E5DD43AEF/PhotoEditor.app/www/index.html
+2014-04-12 12:06:05.989 PhotoEditor[6198:80b] Multi-tasking -> Device: YES, App: YES
+2014-04-12 12:06:05.994 PhotoEditor[6198:80b] Unlimited access to network resources
+2014-04-12 12:06:06.009 PhotoEditor[6198:80b] [CDVTimer][canvas2imageplugin] 0.036001ms
+2014-04-12 12:06:06.010 PhotoEditor[6198:80b] [CDVTimer][TotalPluginStartup] 0.454009ms
+2014-04-12 12:06:06.054 PhotoEditor[6198:80b] Resetting plugins due to page load.
+2014-04-12 12:06:06.217 PhotoEditor[6198:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/AB2C407A-FDD7-4F46-BDAA-AB2E5DD43AEF/PhotoEditor.app/www/index.html
+2014-04-12 12:06:19.933 PhotoEditor[6198:80b] setting movie path: 
+2014-04-12 12:06:19.972 PhotoEditor[6198:80b] setting movie path: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/AB2C407A-FDD7-4F46-BDAA-AB2E5DD43AEF/PhotoEditor.app/www/resources/audio/crash.mp3
+2014-04-12 12:06:19.984 PhotoEditor[6198:80b] setting movie path: 
+2014-04-12 12:06:19.987 PhotoEditor[6198:80b] setting movie path: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/AB2C407A-FDD7-4F46-BDAA-AB2E5DD43AEF/PhotoEditor.app/www/resources/audio/crash.mp3
+2014-04-12 12:06:40.128 PhotoEditor[6198:80b] setting movie path: 
+2014-04-12 12:06:40.169 PhotoEditor[6198:80b] setting movie path: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/AB2C407A-FDD7-4F46-BDAA-AB2E5DD43AEF/PhotoEditor.app/www/resources/audio/crash.mp3
+2014-04-12 12:06:40.176 PhotoEditor[6198:80b] setting movie path: 
+2014-04-12 12:06:40.178 PhotoEditor[6198:80b] setting movie path: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/AB2C407A-FDD7-4F46-BDAA-AB2E5DD43AEF/PhotoEditor.app/www/resources/audio/crash.mp3
+Apr 12 12:41:48 My-MacBook-Pro.local PhotoEditor[6198] <Error>: CGImageCreate: invalid image size: 0 x 0.
+Apr 12 12:41:48 My-MacBook-Pro.local PhotoEditor[6198] <Error>: CGImageCreate: invalid image size: 0 x 0.
+2014-04-12 12:41:57.741 PhotoEditor[8033:80b] Multi-tasking -> Device: YES, App: YES
+2014-04-12 12:41:57.747 PhotoEditor[8033:80b] Unlimited access to network resources
+2014-04-12 12:41:57.764 PhotoEditor[8033:80b] [CDVTimer][canvas2imageplugin] 0.041008ms
+2014-04-12 12:41:57.766 PhotoEditor[8033:80b] [CDVTimer][file] 0.813961ms
+2014-04-12 12:41:57.766 PhotoEditor[8033:80b] [CDVTimer][TotalPluginStartup] 1.955986ms
+2014-04-12 12:41:57.834 PhotoEditor[8033:80b] Resetting plugins due to page load.
+2014-04-12 12:41:58.076 PhotoEditor[8033:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/AB2C407A-FDD7-4F46-BDAA-AB2E5DD43AEF/PhotoEditor.app/www/index.html
+2014-04-12 12:42:10.317 PhotoEditor[8033:80b] setting movie path: 
+2014-04-12 12:42:10.332 PhotoEditor[8033:80b] Will attempt to use file resource '/android_asset/www/resources/audio/flick.mp3'
+2014-04-12 12:42:10.332 PhotoEditor[8033:80b] Unknown resource '/android_asset/www/resources/audio/flick.mp3'
+2014-04-12 12:42:10.358 PhotoEditor[8033:80b] setting movie path: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/AB2C407A-FDD7-4F46-BDAA-AB2E5DD43AEF/PhotoEditor.app/www/resources/audio/crash.mp3
+2014-04-12 12:42:10.369 PhotoEditor[8033:80b] setting movie path: 
+2014-04-12 12:42:10.372 PhotoEditor[8033:80b] setting movie path: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/AB2C407A-FDD7-4F46-BDAA-AB2E5DD43AEF/PhotoEditor.app/www/resources/audio/crash.mp3
+2014-04-12 12:42:20.751 PhotoEditor[8033:80b] setting movie path: 
+2014-04-12 12:42:20.760 PhotoEditor[8033:80b] Will attempt to use file resource '/android_asset/www/resources/audio/flick.mp3'
+2014-04-12 12:42:20.760 PhotoEditor[8033:80b] Unknown resource '/android_asset/www/resources/audio/flick.mp3'
+2014-04-12 12:42:20.777 PhotoEditor[8033:80b] setting movie path: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/AB2C407A-FDD7-4F46-BDAA-AB2E5DD43AEF/PhotoEditor.app/www/resources/audio/crash.mp3
+2014-04-12 12:42:20.782 PhotoEditor[8033:80b] setting movie path: 
+2014-04-12 12:42:20.785 PhotoEditor[8033:80b] setting movie path: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/AB2C407A-FDD7-4F46-BDAA-AB2E5DD43AEF/PhotoEditor.app/www/resources/audio/crash.mp3
+2014-04-12 12:42:34.626 PhotoEditor[8033:80b] Resetting plugins due to page load.
+2014-04-12 12:42:34.867 PhotoEditor[8033:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/AB2C407A-FDD7-4F46-BDAA-AB2E5DD43AEF/PhotoEditor.app/www/index.html
+2014-04-12 12:42:39.967 PhotoEditor[8033:80b] setting movie path: 
+2014-04-12 12:42:39.990 PhotoEditor[8033:80b] Will attempt to use file resource '/android_asset/www/resources/audio/flick.mp3'
+2014-04-12 12:42:39.990 PhotoEditor[8033:80b] Unknown resource '/android_asset/www/resources/audio/flick.mp3'
+2014-04-12 12:42:40.028 PhotoEditor[8033:80b] setting movie path: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/AB2C407A-FDD7-4F46-BDAA-AB2E5DD43AEF/PhotoEditor.app/www/resources/audio/crash.mp3
+2014-04-12 12:42:40.036 PhotoEditor[8033:80b] setting movie path: 
+2014-04-12 12:42:40.039 PhotoEditor[8033:80b] setting movie path: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/AB2C407A-FDD7-4F46-BDAA-AB2E5DD43AEF/PhotoEditor.app/www/resources/audio/crash.mp3
+2014-04-12 12:43:27.678 PhotoEditor[8493:80b] Multi-tasking -> Device: YES, App: YES
+2014-04-12 12:43:27.683 PhotoEditor[8493:80b] Unlimited access to network resources
+2014-04-12 12:43:27.699 PhotoEditor[8493:80b] [CDVTimer][canvas2imageplugin] 0.029981ms
+2014-04-12 12:43:27.700 PhotoEditor[8493:80b] [CDVTimer][file] 0.548005ms
+2014-04-12 12:43:27.700 PhotoEditor[8493:80b] [CDVTimer][TotalPluginStartup] 1.381040ms
+2014-04-12 12:43:27.745 PhotoEditor[8493:80b] Resetting plugins due to page load.
+2014-04-12 12:43:27.902 PhotoEditor[8493:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/AB2C407A-FDD7-4F46-BDAA-AB2E5DD43AEF/PhotoEditor.app/www/index.html
+2014-04-12 12:43:41.499 PhotoEditor[8493:80b] Resetting plugins due to page load.
+2014-04-12 12:43:41.750 PhotoEditor[8493:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/AB2C407A-FDD7-4F46-BDAA-AB2E5DD43AEF/PhotoEditor.app/www/index.html
+2014-04-12 12:43:47.325 PhotoEditor[8493:80b] Will attempt to use file resource '/android_asset/www/resources/audio/flick.mp3'
+2014-04-12 12:43:47.326 PhotoEditor[8493:80b] Unknown resource '/android_asset/www/resources/audio/flick.mp3'
+2014-04-12 12:49:04.083 PhotoEditor[8493:80b] Will attempt to use file resource '/android_asset/www/resources/audio/flick.mp3'
+2014-04-12 12:49:04.084 PhotoEditor[8493:80b] Unknown resource '/android_asset/www/resources/audio/flick.mp3'
+2014-04-12 12:50:31.447 PhotoEditor[8493:80b] Will attempt to use file resource '/android_asset/www/resources/audio/flick.mp3'
+2014-04-12 12:50:31.447 PhotoEditor[8493:80b] Unknown resource '/android_asset/www/resources/audio/flick.mp3'
