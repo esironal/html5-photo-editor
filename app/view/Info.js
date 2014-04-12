@@ -193,7 +193,7 @@ Ext.define('PhotoEditor.view.Info', {
 						</div>\
 						<div class="message-para">\
 							To provide feedback and suggestions or view \
-							more sample iamges digitized with this method, \
+							more sample images digitized with this method, \
 							please visit http://www.forestcity.ca.\
 						</div>\
 					</div>\
