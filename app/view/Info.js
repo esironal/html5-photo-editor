@@ -53,7 +53,7 @@ Ext.define('PhotoEditor.view.Info', {
 							have the luxury of digital radiography in our clinic. \
 							This app still proves useful when incorporating \
 							older x-rays into PowerPoint presentations. I hope \
-							you find this app useful in your pratice.\
+							you find this app useful in your practice.\
 						</div>\
 						<div class="message-para">\
 							Sincerely,\
