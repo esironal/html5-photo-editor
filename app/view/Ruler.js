@@ -13,15 +13,6 @@ Ext.define('PhotoEditor.view.Ruler', {
 		items: [{
 			xtype: 'rulerPopup'
 		}]
-
-		// items: [{
-		// 	xtype: 'rulerPopup'
-		// }, {
-		// 	xtype: 'button',
-		// 	bottom: 10,
-		// 	left: 10,
-		// 	cls: 'ruler-tri-btn'
-		// }]
 	}
 });
 

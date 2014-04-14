@@ -136,7 +136,17 @@ Ext.define('PhotoEditor.view.Tutorial', {
 						</div>\
 						<div class="step-img step-img-6"></div>\
 					</div>'
-				}, {
+				}]
+			}, {
+				xtype: 'panel',
+
+				layout: {
+					type: 'vbox',
+					align: 'center',
+					pack: 'center'
+				},
+
+				items: [{
 					xtype: 'button',
 					margin: '30px 0 0',
 					cls: 'start-btn',

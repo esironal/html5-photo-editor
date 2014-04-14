@@ -568,7 +568,6 @@ Ext.define('PhotoEditor.controller.Main', {
         brightness.setBrightness(0.1);
         setTimeout(function() {
             brightness.setBrightness(currentBrightness);
-            alert('change brightness back to: ' + currentBrightness);
         }, 1000);
     },
 

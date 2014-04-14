@@ -130,7 +130,6 @@
 /Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/assets/www/resources/icons/Icon~ipad.png \
 /Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/assets/www/resources/icons/Icon~ipad@2x.png \
 /Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/assets/www/resources/icons/iTunesArtwork.png \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/assets/www/resources/images/crash.mp3 \
 /Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/assets/www/resources/images/phone \
 /Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/assets/www/resources/images/tablet \
 /Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/assets/www/resources/images/phone/camera_actionsheet_cancel_btn.png \
@@ -146,6 +145,7 @@
 /Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/assets/www/resources/images/phone/share_actionsheet_bg.png \
 /Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/assets/www/resources/images/phone/share_btn.png \
 /Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/assets/www/resources/images/phone/slide_to_left_icon.png \
+/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/assets/www/resources/images/phone/splash.png \
 /Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/assets/www/resources/images/phone/step_img_1.png \
 /Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/assets/www/resources/images/phone/step_img_2.png \
 /Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/assets/www/resources/images/phone/step_img_3.png \
@@ -168,6 +168,7 @@
 /Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/assets/www/resources/images/tablet/share_actionsheet_bg.png \
 /Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/assets/www/resources/images/tablet/share_btn.png \
 /Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/assets/www/resources/images/tablet/slide_to_left_icon.png \
+/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/assets/www/resources/images/tablet/splash.png \
 /Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/assets/www/resources/images/tablet/step_img_1.png \
 /Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/assets/www/resources/images/tablet/step_img_2.png \
 /Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/assets/www/resources/images/tablet/step_img_3.png \

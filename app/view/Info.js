@@ -78,39 +78,60 @@ Ext.define('PhotoEditor.view.Info', {
 							<div class="message-para-title">\
 								This app allows users to:\
 							</div>\
-							<p>\
-								1. Use the bright LED screen of your device as a \
-								light source.\
-							</p>\
-							<p>\
-								2. Capture, crop and rotate image of an x-ray to \
-								predefined ISO film sizes.\
-							</p>\
-							<p>\
-								3. Adjust the brightness and the contrast of the \
-								film and convert the image to grayscale.\
-							</p>\
-							<p>\
-								4. Save and email the file as .jpg\
-							</p>\
+							<div class="para-step">\
+								<div class="num">1.</div>\
+								<div class="desc">\
+									Use the bright LED screen of your device as a \
+									light source.\
+								</div>\
+							</div>\
+							<div class="para-step">\
+								<div class="num">2.</div>\
+								<div class="desc">\
+									Capture, crop and rotate image of an x-ray to \
+									predefined ISO film sizes.\
+								</div>\
+							</div>\
+							<div class="para-step">\
+								<div class="num">3.</div>\
+								<div class="desc">\
+									Adjust the brightness and the contrast of the \
+									film and convert the image to grayscale.\
+								</div>\
+							</div>\
+							<div class="para-step">\
+								<div class="num">4.</div>\
+								<div class="desc">\
+									Save and email the file as .jpg\
+								</div>\
+							</div>\
 						</div>\
 						<div class="message-para">\
 							<div class="message-para-title">\
 								Possible uses of this app include:\
 							</div>\
-							<p>\
-								1. Scanning copies of x-rays you\'ve received \
-								from referring practitioners to upload to a patient\'s \
-								files.\
-							</p>\
-							<p>\
-								2. Digitizing your existing x-ray films for backup.\
-							</p>\
-							<p>\
-								3. Scan and email an x-ray film to patients, \
-								colleagues and insurance companies for opinions, \
-								consultations or predeterminations.\
-							</p>\
+							<div class="para-step">\
+								<div class="num">1.</div>\
+								<div class="desc">\
+									Scanning copies of x-rays you\'ve received \
+									from referring practitioners to upload to a patient\'s \
+									files.\
+								</div>\
+							</div>\
+							<div class="para-step">\
+								<div class="num">2.</div>\
+								<div class="desc">\
+									Digitizing your existing x-ray films for backup.\
+								</div>\
+							</div>\
+							<div class="para-step">\
+								<div class="num">3.</div>\
+								<div class="desc">\
+									Scan and email an x-ray film to patients, \
+									colleagues and insurance companies for opinions, \
+									consultations or predeterminations.\
+								</div>\
+							</div>\
 						</div>\
 					</div>\
 				</div>'
@@ -124,35 +145,57 @@ Ext.define('PhotoEditor.view.Info', {
 					<div class="title">\
 						Instructions\
 					</div>\
+					<div class="simulate-btn"><span>Simulate</span></div>\
 					<div class="message">\
 						<div class="message-para">\
-							<p>\
-								1. Open the app on both devices.\
-							</p>\
-							<p>\
-								2. Select and viewbox icon on first device and \
-								place your film on the white screen. Toggle the \
-								ruler by tapping on it.\
-							</p>\
-							<p>\
-								3. Select the camera icon on the second device, \
-								focus on the radiograph by tapping the screen \
-								and capture the image.\
-							</p>\
-							<p>\
-								4. Select file size (size 0-3) for appropriate \
-								aspect ratio.\
-							</p>\
-							<p>\
-								5. Pinch to zoom and crop radiograph.\
-							</p>\
-							<p>\
-								6. Slide your finger on the image to adjust \
-								brightness and contrast.\
-							</p>\
-							<p>\
-								7. Save or email your image.\
-							</p>\
+							<div class="para-step">\
+								<div class="num">1.</div>\
+								<div class="desc">\
+									Open the app on both devices.\
+								</div>\
+							</div>\
+							<div class="para-step">\
+								<div class="num">2.</div>\
+								<div class="desc">\
+									Select and viewbox icon on first device and \
+									place your film on the white screen. Toggle the \
+									ruler by tapping on it.\
+								</div>\
+							</div>\
+							<div class="para-step">\
+								<div class="num">3.</div>\
+								<div class="desc">\
+									Select the camera icon on the second device, \
+									focus on the radiograph by tapping the screen \
+									and capture the image.\
+								</div>\
+							</div>\
+							<div class="para-step">\
+								<div class="num">4.</div>\
+								<div class="desc">\
+									Select file size (size 0-3) for appropriate \
+									aspect ratio.\
+								</div>\
+							</div>\
+							<div class="para-step">\
+								<div class="num">5.</div>\
+								<div class="desc">\
+									Pinch to zoom and crop radiograph.\
+								</div>\
+							</div>\
+							<div class="para-step">\
+								<div class="num">6.</div>\
+								<div class="desc">\
+									Slide your finger on the image to adjust \
+									brightness and contrast.\
+								</div>\
+							</div>\
+							<div class="para-step">\
+								<div class="num">7.</div>\
+								<div class="desc">\
+									Save or email your image.\
+								</div>\
+							</div>\
 						</div>\
 						<div class="message-para">\
 							That\'s it, very simple, yet very useful. Take \

@@ -385,9 +385,23 @@ body.cordova-ios-7{
 	font-size: 24px;
 }
 .info-page .title {
-	text-align: center;
 	color: #3eba8f;
 	margin-bottom: 40px;
+}
+.info-page .simulate-btn {
+	display: -webkit-box;
+	-webkit-box-align: center;
+	-webkit-box-pack: center;
+
+	width: 368px;
+	height: 70px;
+	margin: 0 auto;
+	color: white;
+	font-size: 28px;
+	margin-bottom: 30px;
+
+	background: url(../images/tablet/camera_actionsheet_choose_btn.png) no-repeat;
+	background-size: 368px 70px;
 }
 .info-page .message {
 	color: #676767;
@@ -399,10 +413,19 @@ body.cordova-ios-7{
 	color: #444445;
 	margin-bottom: 30px;
 }
-.message-para p {
+.message-para .para-step {
+	display: -webkit-box;
+	-webkit-box-align: start;
+
 	margin-bottom: 30px;
 }
-.message-para p:last-child {
+.para-step .num {
+	width: 20px;
+}
+.para-step .desc {
+	-webkit-box-flex: 1;
+}
+.message-para .para-step:last-child {
 	margin-bottom: 0;
 }
 .message-para-img {
@@ -600,16 +623,25 @@ body.cordova-ios-7{
 	.info-page .title {
 		margin-bottom: 20px;
 	}
+	.info-page .simulate-btn {
+		width: 257px;
+		height: 47px;
+		font-size: 18px;
+		margin-bottom: 10px;
+
+		background: url(../images/phone/camera_actionsheet_choose_btn.png) no-repeat;
+		background-size: 257px 47px;
+	}
 	.message .message-para {
 		margin-bottom: 10px;
 	}
 	.message-para .message-para-title {
 		margin-bottom: 10px;
 	}
-	.message-para p {
+	.message-para .para-step {
 		margin-bottom: 10px;
 	}
-	.message-para p:last-child {
+	.message-para .para-step:last-child {
 		margin-bottom: 0;
 	}
 	.x-ray-film1 {
