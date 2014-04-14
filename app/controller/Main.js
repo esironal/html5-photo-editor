@@ -561,8 +561,9 @@ Ext.define('PhotoEditor.controller.Main', {
         this.media.play();
 
         // screen brightness
-        brightness.setBrightness(0);
+        brightness.setBrightness(50);
         setTimeout(function() {
+            alert('change brightness back');
             brightness.setBrightness(100);
         }, 1000);
     },
