@@ -557,7 +557,7 @@ Ext.define('PhotoEditor.controller.Main', {
             window.brightness = cordova.require("cordova.plugin.Brightness.Brightness");
 
         if (localStorage.showAgain === "true") {
-            var popupView = this.getRulerPopupView()
+            var popupView = this.getRulerPopupView();
 
             // show popup
             popupView.show();
@@ -587,10 +587,10 @@ Ext.define('PhotoEditor.controller.Main', {
         brightness.getBrightness(function(value) {
             self.currentBrightness = value;
         });
-        brightness.setBrightness(0.1);
-        setTimeout(function() {
-            brightness.setBrightness(1);
-        }, 1000);
+        brightness.setBrightness(1.0);
+        // setTimeout(function() {
+        //     brightness.setBrightness(1);
+        // }, 1000);
     },
 
     onRulerTouchStart: function(e) {
