@@ -587,7 +587,15 @@ Ext.define('PhotoEditor.controller.Main', {
         brightness.getBrightness(function(value) {
             self.currentBrightness = value;
         });
-        brightness.setBrightness(1.0);
+        brightness.setBrightness(1.0, function(msg) {
+            setTimeout(function() {
+                alert(msg);
+            }, 0);
+        }, function(msg) {
+            setTimeout(function() {
+                alert(msg);
+            }, 0);
+        });
         // setTimeout(function() {
         //     brightness.setBrightness(1);
         // }, 1000);
@@ -600,7 +608,16 @@ Ext.define('PhotoEditor.controller.Main', {
     onRulerTouchEnd: function(e) {
         if (e.pageX - this.rulerMoveX > 0) {
             this.media.stop();
-            brightness.setBrightness(this.currentBrightness);
+            alert('current brightness: ' + this.currentBrightness);
+            brightness.setBrightness(this.currentBrightness, function(msg) {
+                setTimeout(function() {
+                    alert(msg);
+                }, 0);
+            }, function(msg) {
+                setTimeout(function() {
+                    alert(msg);
+                }, 0);
+            });
             this.getHomeView().pop();
         }
     },
