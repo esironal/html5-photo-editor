@@ -2574,3 +2574,17 @@ Apr 12 12:41:48 My-MacBook-Pro.local PhotoEditor[6198] <Error>: CGImageCreate: i
 2014-04-15 11:56:16.297 PhotoEditor[10198:80b] [CDVTimer][TotalPluginStartup] 1.224995ms
 2014-04-15 11:56:16.348 PhotoEditor[10198:80b] Resetting plugins due to page load.
 2014-04-15 11:56:16.504 PhotoEditor[10198:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/3B1D2A1A-0EF7-4D39-9680-70A1B2D64620/PhotoEditor.app/www/index.html
+2014-04-15 17:48:08.596 PhotoEditor[1606:80b] Multi-tasking -> Device: YES, App: YES
+2014-04-15 17:48:08.821 PhotoEditor[1606:80b] Unlimited access to network resources
+2014-04-15 17:48:10.910 PhotoEditor[1606:80b] [CDVTimer][canvas2imageplugin] 0.050008ms
+2014-04-15 17:48:10.911 PhotoEditor[1606:80b] [CDVTimer][file] 0.788033ms
+2014-04-15 17:48:10.912 PhotoEditor[1606:80b] [CDVTimer][TotalPluginStartup] 1.954019ms
+2014-04-15 17:48:11.119 PhotoEditor[1606:80b] Resetting plugins due to page load.
+2014-04-15 17:48:13.258 PhotoEditor[1606:80b] Finished load of: file:///Users/duyduong/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/3B1D2A1A-0EF7-4D39-9680-70A1B2D64620/PhotoEditor.app/www/index.html
+2014-04-15 17:48:13.317 PhotoEditor[1606:80b] THREAD WARNING: ['Device'] took '19.454834' ms. Plugin should use a background thread.
+2014-04-15 17:48:21.261 PhotoEditor[1606:80b] Found resource '/Users/duyduong/Library/Application Support/iPhone Simulator/7.0.3/Applications/3B1D2A1A-0EF7-4D39-9680-70A1B2D64620/PhotoEditor.app/www/resources/audio/flick.mp3' in the web folder.
+2014-04-15 17:48:22.700 PhotoEditor[1606:80b] Playing audio sample 'resources/audio/flick.mp3'
+2014-04-15 17:48:22.707 PhotoEditor[1606:80b] THREAD WARNING: ['Media'] took '1446.696045' ms. Plugin should use a background thread.
+2014-04-15 17:48:22.732 PhotoEditor[1606:80b] THREAD WARNING: ['Brightness'] took '23.683838' ms. Plugin should use a background thread.
+2014-04-15 17:48:24.160 PhotoEditor[1606:80b] Finished playing audio sample 'resources/audio/flick.mp3'
+2014-04-15 17:48:30.068 PhotoEditor[1606:80b] Stopped playing audio sample 'resources/audio/flick.mp3'
