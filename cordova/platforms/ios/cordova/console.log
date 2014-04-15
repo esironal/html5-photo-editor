@@ -2588,3 +2588,4 @@ Apr 12 12:41:48 My-MacBook-Pro.local PhotoEditor[6198] <Error>: CGImageCreate: i
 2014-04-15 17:48:22.732 PhotoEditor[1606:80b] THREAD WARNING: ['Brightness'] took '23.683838' ms. Plugin should use a background thread.
 2014-04-15 17:48:24.160 PhotoEditor[1606:80b] Finished playing audio sample 'resources/audio/flick.mp3'
 2014-04-15 17:48:30.068 PhotoEditor[1606:80b] Stopped playing audio sample 'resources/audio/flick.mp3'
+2014-04-15 19:16:59.494 PhotoEditor[1606:80b] Received memory warning.
