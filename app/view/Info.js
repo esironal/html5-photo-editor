@@ -22,6 +22,9 @@ Ext.define('PhotoEditor.view.Info', {
 					directionLock: true,
 					scrollbar: false,
 				},
+
+				cls: 'info-page-container',
+
 				html: '<div class="info-page">\
 					<div class="title" style="margin-bottom: 10px;">\
 						Pocket X-ray Digitizer\
@@ -69,6 +72,9 @@ Ext.define('PhotoEditor.view.Info', {
 					directionLock: true,
 					scrollbar: false,
 				},
+
+				cls: 'info-page-container',
+
 				html: '<div class="info-page">\
 					<div class="title">\
 						Description and Functionality\
@@ -136,11 +142,16 @@ Ext.define('PhotoEditor.view.Info', {
 					</div>\
 				</div>'
 			}, {
+				xtype: 'panel',
+
 				scrollable: {
 					direction: 'vertical',
 					directionLock: true,
 					scrollbar: false,
 				},
+
+				cls: 'info-page-container instructions-page',
+
 				html: '<div class="info-page">\
 					<div class="title">\
 						Instructions\
@@ -211,6 +222,9 @@ Ext.define('PhotoEditor.view.Info', {
 					directionLock: true,
 					scrollbar: false,
 				},
+
+				cls: 'info-page-container',
+
 				html: '<div class="info-page">\
 					<div class="message">\
 						<div class="message-para">\

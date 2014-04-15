@@ -379,6 +379,9 @@ body.cordova-ios-7{
 }
 
 /* INFO VIEW */
+.info-page-container {
+	height: calc(100% - 27px);
+}
 .info-page {
 	width: 80%;
 	margin: 80px auto;
@@ -402,6 +405,9 @@ body.cordova-ios-7{
 
 	background: url(../images/tablet/camera_actionsheet_choose_btn.png) no-repeat;
 	background-size: 368px 70px;
+}
+.info-page .simulate-btn:active, .info-page .simulate-btn:focus {
+	opacity: 0.6;
 }
 .info-page .message {
 	color: #676767;

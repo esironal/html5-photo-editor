@@ -118,7 +118,6 @@
 /Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/assets/www/resources/images \
 /Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/assets/www/resources/js \
 /Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/assets/www/resources/startup \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/assets/www/resources/audio/crash.mp3 \
 /Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/assets/www/resources/audio/flick.mp3 \
 /Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/assets/www/resources/css/app.css \
 /Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/assets/www/resources/css/style.css \

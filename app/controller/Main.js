@@ -14,6 +14,7 @@ Ext.define('PhotoEditor.controller.Main', {
 
             // tutorial view
         	tutorialView: 'tutorial',
+            tutorialCarouselView: 'tutorial carousel',
             startBtn: 'tutorial panel button',
 
             // home view
@@ -62,6 +63,7 @@ Ext.define('PhotoEditor.controller.Main', {
 
             // info view
             infoView: 'info',
+            instructionsPage: 'info panel[cls=info-page-container instructions-page]',
             infoBackBtn: 'info button[cls=info-back-btn info-btn]',
 
             // overlay for handling brightness
@@ -158,6 +160,9 @@ Ext.define('PhotoEditor.controller.Main', {
             },
 
             // info biew
+            infoView: {
+                show: 'onInfoShow'
+            },
             infoBackBtn: {
                 tap: 'onInfoBack'
             }
@@ -195,6 +200,23 @@ Ext.define('PhotoEditor.controller.Main', {
     onShowInfo: function() {
         this.getHomeView().getLayout().setAnimation('flip');
         this.pushView('info');
+    },
+
+    onInfoShow: function() {
+        this.getInstructionsPage().element.down('.simulate-btn').on({
+            scope: this,
+            tap: this.onSimulateTap
+        });
+    },
+
+    onSimulateTap: function() {
+        this.getMainView().setActiveItem(0);
+        this.getTutorialCarouselView().setActiveItem(0);
+
+        var self = this;
+        setTimeout(function() {
+            self.getHomeView().pop();
+        }, 1000);
     },
 
     onInfoBack: function(sender) {
@@ -561,13 +583,13 @@ Ext.define('PhotoEditor.controller.Main', {
         this.media.play();
 
         // screen brightness
-        var currentBrightness;
+        var self = this;
         brightness.getBrightness(function(value) {
-            currentBrightness = value;
+            self.currentBrightness = value;
         });
         brightness.setBrightness(0.1);
         setTimeout(function() {
-            brightness.setBrightness(currentBrightness);
+            brightness.setBrightness(1);
         }, 1000);
     },
 
@@ -578,6 +600,7 @@ Ext.define('PhotoEditor.controller.Main', {
     onRulerTouchEnd: function(e) {
         if (e.pageX - this.rulerMoveX > 0) {
             this.media.stop();
+            brightness.setBrightness(this.currentBrightness);
             this.getHomeView().pop();
         }
     },

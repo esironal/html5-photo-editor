@@ -5,19 +5,11 @@ Ext.define('PhotoEditor.view.Main', {
         layout: {
             type: 'card',
             animation: 'fade'
-        }
-    },
+        },
 
-    initialize: function() {
-        this.callParent();
-
-        if (!localStorage.isFirstTime || localStorage.isFirstTime === "true") {
-            this.add({
-                xtype: 'tutorial'
-            });
-        }
-
-        this.add([{
+        items: [{
+            xtype: 'tutorial'
+        }, {
             xtype: 'home'
         }, {
             xtype: 'panel',
@@ -30,6 +22,16 @@ Ext.define('PhotoEditor.view.Main', {
             height: '100%',
 
             cls: 'lock-overlay overlay-view'
-        }]);
+        }]
+    },
+
+    initialize: function() {
+        this.callParent();
+
+        if (!localStorage.isFirstTime || localStorage.isFirstTime === "true") {
+            this.setActiveItem(0);
+        } else {
+            this.setActiveItem(1);
+        }
     }
 });
