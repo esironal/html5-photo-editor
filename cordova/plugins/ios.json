@@ -8,6 +8,9 @@
             "MessageUI.framework": {
                 "true": 1
             },
+            "UIKit.framework": {
+                "true": 1
+            },
             "ImageIO.framework": {
                 "true": 1
             },
@@ -22,21 +25,18 @@
             },
             "MobileCoreServices.framework": {
                 "false": 2
-            },
-            "UIKit.framework": {
-                "true": 1
             }
         },
         "config.xml": {
             "/*": {
                 "<feature name=\"EmailComposer\"><param name=\"ios-package\" value=\"EmailComposer\" /></feature>": 1,
                 "<feature name=\"ImagePicker\"><param name=\"ios-package\" value=\"SOSPicker\" /></feature>": 1,
+                "<feature name=\"Brightness\"><param name=\"ios-package\" value=\"Brightness\" /></feature>": 1,
                 "<feature name=\"Camera\"><param name=\"ios-package\" value=\"CDVCamera\" /></feature>": 1,
                 "<feature name=\"Device\"><param name=\"ios-package\" value=\"CDVDevice\" /></feature>": 1,
-                "<feature name=\"Canvas2ImagePlugin\"><param name=\"ios-package\" value=\"Canvas2ImagePlugin\" /><param name=\"onload\" value=\"true\" /></feature>": 1,
-                "<feature name=\"Brightness\"><param name=\"ios-package\" value=\"Brightness\" /></feature>": 1,
+                "<feature name=\"File\"><param name=\"ios-package\" value=\"CDVFile\" /><param name=\"onload\" value=\"true\" /></feature>": 1,
                 "<feature name=\"Media\"><param name=\"ios-package\" value=\"CDVSound\" /></feature>": 1,
-                "<feature name=\"File\"><param name=\"ios-package\" value=\"CDVFile\" /><param name=\"onload\" value=\"true\" /></feature>": 1
+                "<feature name=\"Canvas2ImagePlugin\"><param name=\"ios-package\" value=\"Canvas2ImagePlugin\" /><param name=\"onload\" value=\"true\" /></feature>": 1
             }
         }
     },
@@ -47,22 +47,22 @@
         "com.synconset.imagepicker": {
             "PACKAGE_NAME": "com.cordova.photoeditor"
         },
+        "cordova.plugin.Brightness": {
+            "PACKAGE_NAME": "com.cordova.photoeditor"
+        },
         "org.apache.cordova.camera": {
             "PACKAGE_NAME": "com.cordova.photoeditor"
         },
         "org.apache.cordova.device": {
             "PACKAGE_NAME": "com.cordova.photoeditor"
         },
-        "org.devgeeks.Canvas2ImagePlugin": {
-            "PACKAGE_NAME": "com.cordova.photoeditor"
-        },
-        "cordova.plugin.Brightness": {
+        "org.apache.cordova.file": {
             "PACKAGE_NAME": "com.cordova.photoeditor"
         },
         "org.apache.cordova.media": {
             "PACKAGE_NAME": "com.cordova.photoeditor"
         },
-        "org.apache.cordova.file": {
+        "org.devgeeks.Canvas2ImagePlugin": {
             "PACKAGE_NAME": "com.cordova.photoeditor"
         }
     },

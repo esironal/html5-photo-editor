@@ -175,6 +175,18 @@ Ext.define('PhotoEditor.controller.ios.Main', {
             var src = 'resources/audio/flick.mp3';
             this.media = new Media(src);
         }
+    },
+
+    setBrightness: function() {
+        var self = this;
+        brightness.getBrightness(function(value) {
+            self.currentBrightness = value;
+        });
+        brightness.setBrightness(1.0);
+    },
+
+    revertBrightness: function() {
+        brightness.setBrightness(this.currentBrightness);
     }
 });
 

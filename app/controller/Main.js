@@ -572,25 +572,20 @@ Ext.define('PhotoEditor.controller.Main', {
             popupView.setTop((viewHeight - popupHeight)/2);
         }
 
-        // add handler for swipe right
+        // add handlers for swipe right
         this.getRulerView().element.on({
             scope: this,
             touchstart: this.onRulerTouchStart,
             touchend: this.onRulerTouchEnd
         });
 
+        console.log(brightness);
+
         // play sound
         this.media.play();
 
-        // screen brightness
-        var self = this;
-        brightness.getBrightness(function(value) {
-            self.currentBrightness = value;
-        });
-        brightness.setBrightness(1.0);
-        // setTimeout(function() {
-        //     brightness.setBrightness(1);
-        // }, 1000);
+        // set screen brightness
+        this.setBrightness();
     },
 
     onRulerTouchStart: function(e) {
@@ -599,8 +594,10 @@ Ext.define('PhotoEditor.controller.Main', {
 
     onRulerTouchEnd: function(e) {
         if (e.pageX - this.rulerMoveX > 0) {
-            this.media.stop();
-            brightness.setBrightness(this.currentBrightness);
+            // revert the screen brightness
+            this.revertBrightness();
+
+            // pop back to previous view
             this.getHomeView().pop();
         }
     },

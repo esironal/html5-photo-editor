@@ -15,6 +15,13 @@ module.exports = [
         ]
     },
     {
+        "file": "plugins/cordova.plugin.Brightness/www/brightness.js",
+        "id": "cordova.plugin.Brightness.Brightness",
+        "clobbers": [
+            "Brightness"
+        ]
+    },
+    {
         "file": "plugins/org.apache.cordova.camera/www/CameraConstants.js",
         "id": "org.apache.cordova.camera.Camera",
         "clobbers": [
@@ -47,34 +54,6 @@ module.exports = [
         "id": "org.apache.cordova.device.device",
         "clobbers": [
             "device"
-        ]
-    },
-    {
-        "file": "plugins/org.devgeeks.Canvas2ImagePlugin/www/Canvas2ImagePlugin.js",
-        "id": "org.devgeeks.Canvas2ImagePlugin.Canvas2ImagePlugin",
-        "clobbers": [
-            "window.canvas2ImagePlugin"
-        ]
-    },
-    {
-        "file": "plugins/cordova.plugin.Brightness/www/brightness.js",
-        "id": "cordova.plugin.Brightness.Brightness",
-        "clobbers": [
-            "Brightness"
-        ]
-    },
-    {
-        "file": "plugins/org.apache.cordova.media/www/MediaError.js",
-        "id": "org.apache.cordova.media.MediaError",
-        "clobbers": [
-            "window.MediaError"
-        ]
-    },
-    {
-        "file": "plugins/org.apache.cordova.media/www/Media.js",
-        "id": "org.apache.cordova.media.Media",
-        "clobbers": [
-            "window.Media"
         ]
     },
     {
@@ -212,6 +191,27 @@ module.exports = [
         "merges": [
             "window.FileSystem"
         ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.media/www/MediaError.js",
+        "id": "org.apache.cordova.media.MediaError",
+        "clobbers": [
+            "window.MediaError"
+        ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.media/www/Media.js",
+        "id": "org.apache.cordova.media.Media",
+        "clobbers": [
+            "window.Media"
+        ]
+    },
+    {
+        "file": "plugins/org.devgeeks.Canvas2ImagePlugin/www/Canvas2ImagePlugin.js",
+        "id": "org.devgeeks.Canvas2ImagePlugin.Canvas2ImagePlugin",
+        "clobbers": [
+            "window.canvas2ImagePlugin"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -219,12 +219,12 @@ module.exports.metadata =
 {
     "com.jcjee.plugins.emailcomposer": "1.4.6",
     "com.synconset.imagepicker": "1.0.0",
+    "cordova.plugin.Brightness": "0.1.0",
     "org.apache.cordova.camera": "0.2.8",
     "org.apache.cordova.device": "0.2.8",
-    "org.devgeeks.Canvas2ImagePlugin": "0.4.1",
-    "cordova.plugin.Brightness": "0.1.0",
+    "org.apache.cordova.file": "1.0.1",
     "org.apache.cordova.media": "0.2.9",
-    "org.apache.cordova.file": "1.0.1"
+    "org.devgeeks.Canvas2ImagePlugin": "0.4.1"
 }
 // BOTTOM OF METADATA
 });

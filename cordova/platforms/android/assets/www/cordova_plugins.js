@@ -57,13 +57,6 @@ module.exports = [
         ]
     },
     {
-        "file": "plugins/cordova.plugin.Brightness/www/brightness.js",
-        "id": "cordova.plugin.Brightness.Brightness",
-        "clobbers": [
-            "Brightness"
-        ]
-    },
-    {
         "file": "plugins/org.apache.cordova.media/www/MediaError.js",
         "id": "org.apache.cordova.media.MediaError",
         "clobbers": [
@@ -205,6 +198,13 @@ module.exports = [
         "merges": [
             "window.FileSystem"
         ]
+    },
+    {
+        "file": "plugins/cordova.plugin.Brightness/www/brightness.js",
+        "id": "cordova.plugin.Brightness.Brightness",
+        "clobbers": [
+            "Brightness"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -215,9 +215,9 @@ module.exports.metadata =
     "org.apache.cordova.camera": "0.2.8",
     "org.apache.cordova.device": "0.2.8",
     "org.devgeeks.Canvas2ImagePlugin": "0.4.1",
-    "cordova.plugin.Brightness": "0.1.0",
     "org.apache.cordova.media": "0.2.9",
-    "org.apache.cordova.file": "1.0.1"
+    "org.apache.cordova.file": "1.0.1",
+    "cordova.plugin.Brightness": "0.1.0"
 }
 // BOTTOM OF METADATA
 });

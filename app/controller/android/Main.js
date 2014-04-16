@@ -163,6 +163,14 @@ Ext.define('PhotoEditor.controller.android.Main', {
             var src = '/android_asset/www/resources/audio/flick.mp3';
             this.media = new Media(src);
         }
+    },
+
+    setBrightness: function() {
+        brightness.setBrightness(1.0);
+    },
+
+    revertBrightness: function() {
+        brightness.setBrightness(-1.0);
     }
 });
 

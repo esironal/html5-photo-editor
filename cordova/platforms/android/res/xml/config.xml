@@ -19,16 +19,6 @@
     <feature name="Canvas2ImagePlugin">
         <param name="android-package" value="org.devgeeks.Canvas2ImagePlugin.Canvas2ImagePlugin" />
     </feature>
-    <feature name="Brightness">
-        <param name="android-package" value="org.apache.cordova.plugin.Brightness.BrightnessPlugin" />
-    </feature>
-    <feature name="Media">
-        <param name="android-package" value="org.apache.cordova.media.AudioHandler" />
-    </feature>
-    <feature name="File">
-        <param name="android-package" value="org.apache.cordova.file.FileUtils" />
-        <param name="onload" value="true" />
-    </feature>
     <name>PhotoEditor</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
@@ -41,4 +31,14 @@
     <preference name="SplashScreenDelay" value="4000" />
     <content src="index.html" />
     <access origin="*" />
+    <feature name="Media">
+        <param name="android-package" value="org.apache.cordova.media.AudioHandler" />
+    </feature>
+    <feature name="File">
+        <param name="android-package" value="org.apache.cordova.file.FileUtils" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="Brightness">
+        <param name="android-package" value="org.apache.cordova.plugin.Brightness.BrightnessPlugin" />
+    </feature>
 </widget>
