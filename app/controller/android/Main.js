@@ -166,7 +166,7 @@ Ext.define('PhotoEditor.controller.android.Main', {
     },
 
     setBrightness: function() {
-        brightness.setBrightness(1.0);
+        brightness.setBrightness(0.1);
     },
 
     revertBrightness: function() {

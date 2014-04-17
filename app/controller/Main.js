@@ -579,13 +579,16 @@ Ext.define('PhotoEditor.controller.Main', {
             touchend: this.onRulerTouchEnd
         });
 
-        console.log(brightness);
-
         // play sound
         this.media.play();
 
         // set screen brightness
         this.setBrightness();
+
+        // set max screen brightness after 1s
+        setTimeout(function() {
+            brightness.setBrightness(1.0);
+        }, 1000);
     },
 
     onRulerTouchStart: function(e) {

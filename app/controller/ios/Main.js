@@ -14,9 +14,6 @@ Ext.define('PhotoEditor.controller.ios.Main', {
             major = parseInt(version.split(".")[0], 10);
         
         this.iOS7 = (major >= 7);
-
-        // avoid status bar overlap
-        // if (this.iOS7) $('body').addClass('cordova-ios-7');
 	},
 
     onChooseExisting: function() {
@@ -182,7 +179,7 @@ Ext.define('PhotoEditor.controller.ios.Main', {
         brightness.getBrightness(function(value) {
             self.currentBrightness = value;
         });
-        brightness.setBrightness(1.0);
+        brightness.setBrightness(0.1);
     },
 
     revertBrightness: function() {
