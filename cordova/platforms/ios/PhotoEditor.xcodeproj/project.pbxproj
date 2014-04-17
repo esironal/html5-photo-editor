@@ -611,7 +611,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -637,6 +638,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = PhotoEditor;
+				PROVISIONING_PROFILE = "CA632FF3-CEDE-4166-AC6B-5E8AE32A26B0";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -646,7 +648,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PhotoEditor/PhotoEditor-Prefix.pch";
@@ -670,6 +673,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = PhotoEditor;
+				PROVISIONING_PROFILE = "CA632FF3-CEDE-4166-AC6B-5E8AE32A26B0";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -714,6 +718,7 @@
 					"\"$(BUILT_PRODUCTS_DIR)/libCordova.a\"",
 					"-ObjC",
 				);
+				PROVISIONING_PROFILE = "CA632FF3-CEDE-4166-AC6B-5E8AE32A26B0";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
 				USER_HEADER_SEARCH_PATHS = "";
@@ -759,6 +764,7 @@
 					"\"$(BUILT_PRODUCTS_DIR)/libCordova.a\"",
 					"-ObjC",
 				);
+				PROVISIONING_PROFILE = "CA632FF3-CEDE-4166-AC6B-5E8AE32A26B0";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
 				USER_HEADER_SEARCH_PATHS = "";
