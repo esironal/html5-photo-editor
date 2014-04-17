@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>79261D06-8911-4F6B-8118-DA7E40188379</string>
+	<key>IDESourceControlProjectName</key>
+	<string>PhotoEditor</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>481439FD-3F89-45E9-9D4F-BEA1028081DA</key>
+		<string>https://github.com/duyduong/html5-photo-editor.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>cordova/platforms/ios/PhotoEditor.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>481439FD-3F89-45E9-9D4F-BEA1028081DA</key>
+		<string>../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/duyduong/html5-photo-editor.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>481439FD-3F89-45E9-9D4F-BEA1028081DA</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>481439FD-3F89-45E9-9D4F-BEA1028081DA</string>
+			<key>IDESourceControlWCCName</key>
+			<string>PhotoEditor</string>
+		</dict>
+	</array>
+</dict>
+</plist>
