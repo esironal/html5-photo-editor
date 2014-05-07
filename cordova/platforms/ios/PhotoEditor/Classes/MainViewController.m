@@ -90,6 +90,18 @@
     return [super shouldAutorotateToInterfaceOrientation:interfaceOrientation];
 }
 
+- (BOOL)shouldAutorotate {
+    return NO;
+}
+
+- (NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+    return UIInterfaceOrientationPortrait;
+}
+
 /* Comment out the block below to over-ride */
 
 /*
