@@ -741,6 +741,10 @@ static NSSet* org_apache_cordova_validArrowDirections;
     return YES;
 }
 
+- (BOOL)shouldAutorotate {
+    return NO;
+}
+
 - (UIViewController*)childViewControllerForStatusBarHidden {
     return nil;
 }
