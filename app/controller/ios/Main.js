@@ -16,6 +16,10 @@ Ext.define('PhotoEditor.controller.ios.Main', {
         this.iOS7 = (major >= 7);
 	},
 
+    onTakePicture: function() {
+        this.onPhotoPicker(Camera.PictureSourceType.CAMERA);
+    },
+
     onChooseExisting: function() {
         // for iPad
         if (device.model.indexOf('iPad') >= 0) {
@@ -23,8 +27,27 @@ Ext.define('PhotoEditor.controller.ios.Main', {
             window.imagePicker.getPictures(successHandler, null, {maximumImagesCount: 1});
             this.onCameraCancel();
         } else {
-            this.onPhotoPicker('library');
+            this.onPhotoPicker(Camera.PictureSourceType.PHOTOLIBRARY);
         }
+    },
+
+    onPhotoPicker: function(source) {
+        var destination = Camera.DestinationType.FILE_URI;//'file';
+        if (this.androidVersionGT44) destination = Camera.DestinationType.DATA_URL;//'data';
+
+        this.onCameraCancel();
+
+        navigator.camera.getPicture(
+            Ext.bind(this.onPickPhotoSuccess, this), 
+            Ext.bind(this.onPickPhotoFailure, this), 
+            {
+                quality: 100,
+                sourceType : source,
+                encodingType: Camera.EncodingType.PNG,
+                destinationType: destination,
+                correctOrientation: true,
+            }
+        );
     },
 
     onPickPhotoSuccess: function(imgUrl) {

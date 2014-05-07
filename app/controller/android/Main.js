@@ -34,6 +34,29 @@ Ext.define('PhotoEditor.controller.android.Main', {
         this.onPhotoPicker('library');
     },
 
+    onTakePicture: function() {
+        this.onPhotoPicker('camera');
+    },
+
+    onPhotoPicker: function(source) {
+        var destination = 'file';
+        if (this.androidVersionGT44) destination = 'data';
+
+        this.onCameraCancel();
+
+        Ext.device.Camera.capture({
+            quality: 100,
+            source: source,
+            destination: destination,
+            encoding: 'png',
+            correctOrientation: true,
+
+            success: this.onPickPhotoSuccess,
+            failure: this.onPickPhotoFailure,
+            scope: this
+        });
+    },
+
     onPickPhotoSuccess: function(imgUrl) {
         this.getHomeView().getLayout().setAnimation('slide');
 

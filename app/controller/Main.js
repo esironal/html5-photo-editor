@@ -224,28 +224,6 @@ Ext.define('PhotoEditor.controller.Main', {
         this.getHomeView().pop();
     },
 
-    onTakePicture: function() {
-        this.onPhotoPicker('camera');
-    },
-
-    onPhotoPicker: function(source) {
-        var destination = 'file';
-        if (this.androidVersionGT44) destination = 'data';
-
-        this.onCameraCancel();
-
-        Ext.device.Camera.capture({
-            quality: 100,
-            source: source,
-            destination: destination,
-            encoding: 'png',
-
-            success: this.onPickPhotoSuccess,
-            failure: this.onPickPhotoFailure,
-            scope: this
-        });
-    },
-
     onCameraCancel: function() {
         this.moveActionSheetDown(this.getCameraActionSheetView());
     },
@@ -265,7 +243,7 @@ Ext.define('PhotoEditor.controller.Main', {
 
     onPinchOrMove: function(e) {
         if (this.isPinching && e.touches.length >= 2) {
-            var touch1 = e.touches[0];
+            var touch1 = e.touches[0],
                 touch2 = e.touches[1],
                 dist = this.getDistance({
                     x: touch1.pageX,

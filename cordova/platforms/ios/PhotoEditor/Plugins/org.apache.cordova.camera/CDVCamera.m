@@ -454,6 +454,7 @@ static NSSet* org_apache_cordova_validArrowDirections;
 
 - (UIImage*)imageCorrectedForCaptureOrientation:(UIImage*)anImage
 {
+    NSLog(@"correct orientation");
     float rotation_radians = 0;
     bool perpendicular = false;
 
