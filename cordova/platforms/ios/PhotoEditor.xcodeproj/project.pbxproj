@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		07196DB4BC76478DAD26D867 /* ELCAlbumPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C301562DE0E45B282F32A27 /* ELCAlbumPickerController.m */; };
 		10F9A61453C74759A1016C3F /* Overlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D0C5DE80AA943A68C935B99 /* Overlay@2x.png */; };

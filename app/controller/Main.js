@@ -358,6 +358,71 @@ Ext.define('PhotoEditor.controller.Main', {
         this.isRotating = false;
     },
 
+    onTransformViewShow: function() {
+        if (!this.transformImage) {
+            this.imageElement(this.imgUrl, function(imageEl) {
+                // add image to container
+                var container = this.getTransformContainer(),
+                    sWidth = container.element.getWidth(),
+                    sHeight = container.element.getHeight();
+
+                var image = Ext.create('widget.img', {
+                    src: this.imgUrl
+                });
+                container.add(image);
+                this.transformImage = $(image.element.dom);
+
+                if (this.androidVersionGT44) {
+                    this.imgUrl = null;
+                }
+
+                // keep track of transform image
+                var iContainer = $('<div style="position: absolute; top: -99999px; left: -99999px;"></div>');
+                iContainer.append(imageEl);
+                $(document.body).append(iContainer);
+
+                // resize image to fit the screen
+                this.realImageEl = $(imageEl);
+                if (this.realImageEl.width() > sWidth ||
+                    this.realImageEl.height() > sHeight) {
+                    var iWidth = this.realImageEl.width(),
+                        iHeight = this.realImageEl.height(),
+                        iRatio = iWidth/iHeight,
+                        sRatio = sWidth/sHeight;
+
+                    if (sRatio > iRatio) {
+                        this.transformImage.width(iWidth*sHeight/iHeight);
+                        this.transformImage.height(sHeight);
+                    } else {
+                        this.transformImage.width(sWidth);
+                        this.transformImage.height(iHeight*sWidth/iWidth);
+                    }
+                }
+                iContainer.remove();
+
+                // center image
+                this.transformImage.css({
+                    x: (sWidth - this.transformImage.width())/2,
+                    y: (sHeight - this.transformImage.height())/2
+                });
+            });
+
+            // handle for image zooming + moving
+            this.getTransformContainer().element.on({
+                scope: this,
+                touchstart: this.onPinchOrMoveStart,
+                touchmove: this.onPinchOrMove,
+                touchend: this.onPinchOrMoveEnd
+            });
+
+            // show crop frame as default
+            this.onCrop1();
+        }
+
+        this.contrast = 0;
+        this.brightness = 0;
+    },
+
     onAdjustmentViewShow: function() {
         // get image data from crop zone
         var imageData = this.exportTransformImageData();
@@ -391,82 +456,6 @@ Ext.define('PhotoEditor.controller.Main', {
         }
     },
 
-    exportTransformImageData: function() {
-        var view = this.getTransformContainer().element,
-            container = document.createElement('div'),
-            canvasWidth = view.getWidth(),
-            canvasHeight = view.getHeight(),
-            imgWidth = this.transformImage.width(),
-            imgHeight = this.transformImage.height(),
-            imgScale = parseFloat(this.transformImage.css('scale')),
-            imgDeg = parseInt(this.transformImage.css('rotate'), 10),
-            translate = this.transformImage.css('translate'),
-            imgX = imgY = 0;
-
-        if (translate) {
-            translate = translate.split(",");
-            imgX = parseInt(translate[0], 10);
-            imgY = parseInt(translate[1], 10);
-        }
-
-        var stage = new Kinetic.Stage({
-            container: container,
-            width: canvasWidth,
-            height: canvasHeight
-        });
-
-        var layer = new Kinetic.Layer();
-
-        var image = new Kinetic.Image({
-            width: imgWidth,
-            height: imgHeight,
-            x: imgWidth/2 + imgX,
-            y: imgHeight/2 + imgY,
-            image: (this.realImageEl ? this.realImageEl[0] : this.transformImage[0]),
-            offset: {
-                x: imgWidth/2,
-                y: imgHeight/2
-            },
-            scale: {
-                x: imgScale,
-                y: imgScale
-            }
-        });
-        image.rotate(imgDeg);
-
-        layer.add(image);
-        stage.add(layer);
-
-        // check whether image is inside the crop zone
-        var iWidth, iHeight;
-        if (imgDeg == 90 || imgDeg == 270) {
-            iHeight = image.width()*imgScale;
-            iWidth = image.height()*imgScale;
-        } else {
-            iWidth = image.width()*imgScale;
-            iHeight = image.height()*imgScale;
-        }
-        
-        var imageRect = {
-            x: image.x() - iWidth/2,
-            y: image.y() - iHeight/2,
-            width: iWidth,
-            height: iHeight
-        };
-
-        var cropRect = {
-            x: this.cropZone.position().left,
-            y: this.cropZone.position().top,
-            width: this.cropZone.width(),
-            height: this.cropZone.height()
-        };
-
-        var intersectingRect = this.intersectingRect(imageRect, cropRect);
-        return image.toDataURL(intersectingRect);
-
-        return false;
-    },
-
     intersectingRect: function(r1, r2) {
         var x = Math.max(r1.x, r2.x);
         var y = Math.max(r1.y, r2.y);
@@ -476,7 +465,8 @@ Ext.define('PhotoEditor.controller.Main', {
             x: x,
             y: y,
             width: xx - x,
-            height: yy - y
+            height: yy - y,
+            mimeType: "image/jpeg"
         });
     },
 

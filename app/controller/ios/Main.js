@@ -21,20 +21,10 @@ Ext.define('PhotoEditor.controller.ios.Main', {
     },
 
     onChooseExisting: function() {
-        // for iPad
-        if (device.model.indexOf('iPad') >= 0) {
-            var successHandler = Ext.bind(this.onPickPhotoSuccess, this);
-            window.imagePicker.getPictures(successHandler, null, {maximumImagesCount: 1});
-            this.onCameraCancel();
-        } else {
-            this.onPhotoPicker(Camera.PictureSourceType.PHOTOLIBRARY);
-        }
+        this.onPhotoPicker(Camera.PictureSourceType.PHOTOLIBRARY);
     },
 
     onPhotoPicker: function(source) {
-        var destination = Camera.DestinationType.FILE_URI;//'file';
-        if (this.androidVersionGT44) destination = Camera.DestinationType.DATA_URL;//'data';
-
         this.onCameraCancel();
 
         navigator.camera.getPicture(
@@ -43,78 +33,101 @@ Ext.define('PhotoEditor.controller.ios.Main', {
             {
                 quality: 100,
                 sourceType : source,
-                encodingType: Camera.EncodingType.PNG,
-                destinationType: destination,
-                correctOrientation: true,
+                encodingType: Camera.EncodingType.JPG,
+                destinationType: Camera.DestinationType.FILE_URI,
+                correctOrientation: true
             }
         );
     },
 
-    onPickPhotoSuccess: function(imgUrl) {
-        if (imgUrl !== "Canceled") {
-            this.getHomeView().getLayout().setAnimation('slide');
+    onPickPhotoSuccess: function(responseObject) {
+        responseObject = eval("(" + responseObject + ")");
+        console.log(responseObject);
+        this.getHomeView().getLayout().setAnimation('slide');
 
-            // save the img from picker
-            this.imgUrl = imgUrl;
+        // save the img from picker
+        this.imgUrl = responseObject.url;
+        this.imageHasTransformed = responseObject.isTransform;
 
-            // push transform view
-            this.getHomeView().push({
-                xtype: 'transform'
-            });
-        }
+        // push transform view
+        this.getHomeView().push({
+            xtype: 'transform'
+        });
     },
 
-    onTransformViewShow: function() {
-        if (!this.transformImage) {
-            this.imageElement(this.imgUrl, function(imageEl) {
-                this.imgUrl = null;
+    exportTransformImageData: function(callback) {
+        var view = this.getTransformContainer().element,
+            container = document.createElement('div'),
+            canvasWidth = view.getWidth(),
+            canvasHeight = view.getHeight(),
+            imgWidth = this.transformImage.width(),
+            imgHeight = this.transformImage.height(),
+            imgScale = parseFloat(this.transformImage.css('scale')),
+            imgDeg = parseInt(this.transformImage.css('rotate'), 10),
+            translate = this.transformImage.css('translate'),
+            imgX = imgY = 0;
 
-                // add image to container
-                var container = this.getTransformContainer(),
-                    sWidth = container.element.getWidth(),
-                    sHeight = container.element.getHeight();
-                container.setHtml(imageEl);
-
-                // keep track of transform image
-                this.transformImage = $(imageEl);
-
-                // resize image to fit the screen
-                if (this.transformImage.width() > sWidth ||
-                    this.transformImage.height() > sHeight) {
-                    var iWidth = this.transformImage.width(),
-                        iHeight = this.transformImage.height(),
-                        iRatio = iWidth/iHeight,
-                        sRatio = sWidth/sHeight;
-
-                    if (sRatio > iRatio) {
-                        this.transformImage.width(iWidth*sHeight/iHeight);
-                        this.transformImage.height(sHeight);
-                    } else {
-                        this.transformImage.width(sWidth);
-                        this.transformImage.height(iHeight*sWidth/iWidth);
-                    }
-                }
-
-                // center image
-                this.transformImage.css({
-                    x: (sWidth - this.transformImage.width())/2,
-                    y: (sHeight - this.transformImage.height())/2
-                });
-            });
-
-            // handle for image zooming + moving
-            this.getTransformContainer().element.on({
-                scope: this,
-                touchstart: this.onPinchOrMoveStart,
-                touchmove: this.onPinchOrMove,
-                touchend: this.onPinchOrMoveEnd
-            });
-
-            // show crop frame as default
-            this.onCrop1();
+        if (translate) {
+            translate = translate.split(",");
+            imgX = parseInt(translate[0], 10);
+            imgY = parseInt(translate[1], 10);
         }
+        view.append(new Ext.Element(container));
 
-        this.resetBrightnessContrast();
+        var stage = new Kinetic.Stage({
+            container: container,
+            width: canvasWidth,
+            height: canvasHeight
+        });
+
+        var layer = new Kinetic.Layer();
+
+        var image = new Kinetic.Image({
+            width: imgWidth,
+            height: this.imageHasTransformed ? imgHeight*2 : imgHeight,
+            x: imgWidth/2 + imgX,
+            y: imgHeight/2 + imgY,
+            image: this.realImageEl[0],
+            offset: {
+                x: imgWidth/2,
+                y: imgHeight/2
+            },
+            scale: {
+                x: imgScale,
+                y: imgScale
+            }
+        });
+        image.rotate(imgDeg);
+
+        layer.add(image);
+        stage.add(layer);
+
+        // check whether image is inside the crop zone
+        var iWidth, iHeight;
+        if (imgDeg == 90 || imgDeg == 270) {
+            iHeight = image.width()*imgScale;
+            iWidth = image.height()*imgScale;
+        } else {
+            iWidth = image.width()*imgScale;
+            iHeight = image.height()*imgScale;
+        }
+        
+        var imageRect = {
+            x: image.x() - iWidth/2,
+            y: image.y() - iHeight/2,
+            width: iWidth,
+            height: iHeight
+        };
+
+        var cropRect = {
+            x: this.cropZone.position().left,
+            y: this.cropZone.position().top,
+            width: this.cropZone.width(),
+            height: this.cropZone.height()
+        };
+
+        var intersectingRect = this.intersectingRect(imageRect, cropRect);
+        return image.toDataURL(intersectingRect);
     },
 
     onAdjustBrightness: function(e, target, eOpts) {
@@ -140,7 +153,7 @@ Ext.define('PhotoEditor.controller.ios.Main', {
             this.contrast += increase;
             if (this.contrast >= cMax) this.contrast = cMax;
         }
-        console.log(this.brightness, this.contrast);
+        
         $('#adjust-image').css('-webkit-filter', 'brightness(' + this.brightness + '%) contrast(' + this.contrast + '%)');
         this.getNavBarGrayscaleBtn().setText("Grayscale");
     },

@@ -33,7 +33,9 @@
 
 static NSSet* org_apache_cordova_validArrowDirections;
 
-@interface CDVCamera ()
+@interface CDVCamera () {
+    BOOL isTransform;
+}
 
 @property (readwrite, assign) BOOL hasPendingOperation;
 
@@ -325,7 +327,7 @@ static NSSet* org_apache_cordova_validArrowDirections;
                     if (EXIFDictionary)	[self.metadata setObject:EXIFDictionary forKey:(NSString *)kCGImagePropertyExifDictionary];
                     
                     [[self locationManager] startUpdatingLocation];
-                    return;
+//                    return;
                 }
             }
             
@@ -352,10 +354,10 @@ static NSSet* org_apache_cordova_validArrowDirections;
                 if (![data writeToFile:filePath options:NSAtomicWrite error:&err]) {
                     result = [CDVPluginResult resultWithStatus:CDVCommandStatus_IO_EXCEPTION messageAsString:[err localizedDescription]];
                 } else {
-                    result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:[[NSURL fileURLWithPath:filePath] absoluteString]];
+                    result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:[NSString stringWithFormat:@"{isTransform: %d, url: \"%@\"}", isTransform, [[NSURL fileURLWithPath:filePath] absoluteString]]];
                 }
             } else {
-                result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:[data base64EncodedString]];
+                result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:[NSString stringWithFormat:@"{isTransform: %d, url: \"%@\"}", isTransform, [data base64EncodedString]]];
             }
         }
     }
@@ -371,6 +373,7 @@ static NSSet* org_apache_cordova_validArrowDirections;
 
     self.hasPendingOperation = NO;
     self.pickerController = nil;
+    isTransform = NO;
 }
 
 // older api calls newer didFinishPickingMediaWithInfo
@@ -454,7 +457,6 @@ static NSSet* org_apache_cordova_validArrowDirections;
 
 - (UIImage*)imageCorrectedForCaptureOrientation:(UIImage*)anImage
 {
-    NSLog(@"correct orientation");
     float rotation_radians = 0;
     bool perpendicular = false;
 
@@ -465,16 +467,19 @@ static NSSet* org_apache_cordova_validArrowDirections;
 
         case UIImageOrientationDown:
             rotation_radians = M_PI; // don't be scared of radians, if you're reading this, you're good at math
+            isTransform = YES;
             break;
 
         case UIImageOrientationRight:
             rotation_radians = M_PI_2;
             perpendicular = true;
+            isTransform = YES;
             break;
 
         case UIImageOrientationLeft:
             rotation_radians = -M_PI_2;
             perpendicular = true;
+            isTransform = YES;
             break;
 
         default:
