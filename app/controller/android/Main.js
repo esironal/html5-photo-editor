@@ -87,9 +87,6 @@ Ext.define('PhotoEditor.controller.android.Main', {
             imgX = parseInt(translate[0], 10);
             imgY = parseInt(translate[1], 10);
         }
-        view.append(new Ext.Element(container));
-
-        console.log(canvasWidth, canvasHeight);
 
         var stage = new Kinetic.Stage({
             container: container,
@@ -101,7 +98,7 @@ Ext.define('PhotoEditor.controller.android.Main', {
 
         var image = new Kinetic.Image({
             width: imgWidth,
-            // height: imgHeight,
+            height: imgHeight,
             x: imgWidth/2 + imgX,
             y: imgHeight/2 + imgY,
             image: this.realImageEl[0],
@@ -109,13 +106,12 @@ Ext.define('PhotoEditor.controller.android.Main', {
                 x: imgWidth/2,
                 y: imgHeight/2
             },
-            // scale: {
-            //     x: imgScale,
-            //     y: imgScale
-            // }
+            scale: {
+                x: imgScale,
+                y: imgScale
+            }
         });
         image.rotate(imgDeg);
-        console.log(image.width(), image.height());
 
         layer.add(image);
         stage.add(layer);

@@ -1,85 +1,85 @@
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes.dex : \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/com/cordova/photoeditor/BuildConfig.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/com/cordova/photoeditor/PhotoEditor.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/com/cordova/photoeditor/R$anim.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/com/cordova/photoeditor/R$attr.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/com/cordova/photoeditor/R$drawable.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/com/cordova/photoeditor/R$id.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/com/cordova/photoeditor/R$layout.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/com/cordova/photoeditor/R$string.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/com/cordova/photoeditor/R$style.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/com/cordova/photoeditor/R$xml.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/com/cordova/photoeditor/R.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/com/jcjee/plugins/EmailAttachmentProvider.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/com/jcjee/plugins/EmailComposer.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/com/synconset/FakeR.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/com/synconset/ImageFetcher$1.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/com/synconset/ImageFetcher$2.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/com/synconset/ImageFetcher$BitmapFetcherTask.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/com/synconset/ImageFetcher$DownloadedDrawable.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/com/synconset/ImageFetcher.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/com/synconset/ImagePicker.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/com/synconset/MultiImageChooserActivity$1.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/com/synconset/MultiImageChooserActivity$2.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/com/synconset/MultiImageChooserActivity$3.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/com/synconset/MultiImageChooserActivity$4.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/com/synconset/MultiImageChooserActivity$ImageAdapter.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/com/synconset/MultiImageChooserActivity$SquareImageView.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/com/synconset/MultiImageChooserActivity.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/camera/CameraLauncher.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/camera/ExifHelper.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/camera/FileHelper.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/device/Device.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/ContentFilesystem.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/DirectoryManager.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/EncodingException.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileExistsException.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileHelper.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/Filesystem$1.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/Filesystem$LimitedInputStream.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/Filesystem$ReadFileCallback.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/Filesystem.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileUtils$1.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileUtils$10.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileUtils$11.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileUtils$12.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileUtils$13.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileUtils$14.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileUtils$15.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileUtils$16.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileUtils$17.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileUtils$18.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileUtils$19.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileUtils$2.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileUtils$20.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileUtils$21.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileUtils$22.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileUtils$23.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileUtils$24.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileUtils$3.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileUtils$4.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileUtils$5.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileUtils$6.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileUtils$7.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileUtils$8.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileUtils$9.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileUtils$FileOp.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileUtils.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/InvalidModificationException.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/LocalFilesystem.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/LocalFilesystemURL.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/NoModificationAllowedException.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/TypeMismatchException.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/media/AudioHandler.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/media/AudioPlayer$1.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/media/AudioPlayer$MODE.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/media/AudioPlayer$STATE.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/media/AudioPlayer.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/media/FileHelper.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/plugin/Brightness/BrightnessPlugin$1.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/plugin/Brightness/BrightnessPlugin$Action.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/plugin/Brightness/BrightnessPlugin$KeepOnTask.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/plugin/Brightness/BrightnessPlugin$SetTask.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/plugin/Brightness/BrightnessPlugin.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/classes/org/devgeeks/Canvas2ImagePlugin/Canvas2ImagePlugin.class \
-/Users/duyduong/My Public/PhotoEditor/cordova/platforms/android/ant-build/dexedLibs/classes-decf1c6007a4b17b4e4e33c6f7cc9fc6.jar \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes.dex : \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/com/cordova/photoeditor/BuildConfig.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/com/cordova/photoeditor/PhotoEditor.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/com/cordova/photoeditor/R$anim.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/com/cordova/photoeditor/R$attr.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/com/cordova/photoeditor/R$drawable.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/com/cordova/photoeditor/R$id.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/com/cordova/photoeditor/R$layout.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/com/cordova/photoeditor/R$string.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/com/cordova/photoeditor/R$style.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/com/cordova/photoeditor/R$xml.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/com/cordova/photoeditor/R.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/com/jcjee/plugins/EmailAttachmentProvider.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/com/jcjee/plugins/EmailComposer.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/com/synconset/FakeR.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/com/synconset/ImageFetcher$1.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/com/synconset/ImageFetcher$2.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/com/synconset/ImageFetcher$BitmapFetcherTask.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/com/synconset/ImageFetcher$DownloadedDrawable.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/com/synconset/ImageFetcher.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/com/synconset/ImagePicker.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/com/synconset/MultiImageChooserActivity$1.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/com/synconset/MultiImageChooserActivity$2.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/com/synconset/MultiImageChooserActivity$3.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/com/synconset/MultiImageChooserActivity$4.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/com/synconset/MultiImageChooserActivity$ImageAdapter.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/com/synconset/MultiImageChooserActivity$SquareImageView.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/com/synconset/MultiImageChooserActivity.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/camera/CameraLauncher.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/camera/ExifHelper.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/camera/FileHelper.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/device/Device.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/ContentFilesystem.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/DirectoryManager.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/EncodingException.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileExistsException.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileHelper.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/Filesystem$1.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/Filesystem$LimitedInputStream.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/Filesystem$ReadFileCallback.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/Filesystem.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileUtils$1.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileUtils$10.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileUtils$11.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileUtils$12.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileUtils$13.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileUtils$14.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileUtils$15.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileUtils$16.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileUtils$17.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileUtils$18.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileUtils$19.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileUtils$2.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileUtils$20.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileUtils$21.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileUtils$22.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileUtils$23.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileUtils$24.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileUtils$3.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileUtils$4.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileUtils$5.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileUtils$6.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileUtils$7.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileUtils$8.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileUtils$9.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileUtils$FileOp.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/FileUtils.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/InvalidModificationException.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/LocalFilesystem.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/LocalFilesystemURL.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/NoModificationAllowedException.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/file/TypeMismatchException.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/media/AudioHandler.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/media/AudioPlayer$1.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/media/AudioPlayer$MODE.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/media/AudioPlayer$STATE.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/media/AudioPlayer.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/media/FileHelper.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/plugin/Brightness/BrightnessPlugin$1.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/plugin/Brightness/BrightnessPlugin$Action.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/plugin/Brightness/BrightnessPlugin$KeepOnTask.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/plugin/Brightness/BrightnessPlugin$SetTask.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/apache/cordova/plugin/Brightness/BrightnessPlugin.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/classes/org/devgeeks/Canvas2ImagePlugin/Canvas2ImagePlugin.class \
+/Users/duyduong/Projects/PhotoEditor/cordova/platforms/android/ant-build/dexedLibs/classes-35e0c7ba8199d330603c9f27a9c9247d.jar \
