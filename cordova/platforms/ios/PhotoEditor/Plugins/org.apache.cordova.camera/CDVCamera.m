@@ -34,7 +34,7 @@
 static NSSet* org_apache_cordova_validArrowDirections;
 
 @interface CDVCamera () {
-    BOOL isTransform;
+    NSString *imageRotation;
 }
 
 @property (readwrite, assign) BOOL hasPendingOperation;
@@ -354,10 +354,10 @@ static NSSet* org_apache_cordova_validArrowDirections;
                 if (![data writeToFile:filePath options:NSAtomicWrite error:&err]) {
                     result = [CDVPluginResult resultWithStatus:CDVCommandStatus_IO_EXCEPTION messageAsString:[err localizedDescription]];
                 } else {
-                    result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:[NSString stringWithFormat:@"{isTransform: %d, url: \"%@\"}", isTransform, [[NSURL fileURLWithPath:filePath] absoluteString]]];
+                    result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:[NSString stringWithFormat:@"{imageRotation: \"%@\", url: \"%@\"}", imageRotation, [[NSURL fileURLWithPath:filePath] absoluteString]]];
                 }
             } else {
-                result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:[NSString stringWithFormat:@"{isTransform: %d, url: \"%@\"}", isTransform, [data base64EncodedString]]];
+                result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:[NSString stringWithFormat:@"{imageRotation: \"%@\", url: \"%@\"}", imageRotation, [data base64EncodedString]]];
             }
         }
     }
@@ -373,7 +373,7 @@ static NSSet* org_apache_cordova_validArrowDirections;
 
     self.hasPendingOperation = NO;
     self.pickerController = nil;
-    isTransform = NO;
+    imageRotation = @"";
 }
 
 // older api calls newer didFinishPickingMediaWithInfo
@@ -467,25 +467,25 @@ static NSSet* org_apache_cordova_validArrowDirections;
 
         case UIImageOrientationDown:
             rotation_radians = M_PI; // don't be scared of radians, if you're reading this, you're good at math
-            isTransform = YES;
+            imageRotation = @"down";
             break;
 
         case UIImageOrientationRight:
             rotation_radians = M_PI_2;
             perpendicular = true;
-            isTransform = YES;
+            imageRotation = @"right";
             break;
 
         case UIImageOrientationLeft:
             rotation_radians = -M_PI_2;
             perpendicular = true;
-            isTransform = YES;
+            imageRotation = @"left";
             break;
 
         default:
             break;
     }
-
+    NSLog(@"imageRotation: %@", imageRotation);
     UIGraphicsBeginImageContext(CGSizeMake(anImage.size.width, anImage.size.height));
     CGContextRef context = UIGraphicsGetCurrentContext();
 

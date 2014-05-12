@@ -42,12 +42,11 @@ Ext.define('PhotoEditor.controller.ios.Main', {
 
     onPickPhotoSuccess: function(responseObject) {
         responseObject = eval("(" + responseObject + ")");
-        console.log(responseObject);
         this.getHomeView().getLayout().setAnimation('slide');
 
         // save the img from picker
         this.imgUrl = responseObject.url;
-        this.imageHasTransformed = responseObject.isTransform;
+        this.imageRotation = responseObject.imageRotation;
 
         // push transform view
         this.getHomeView().push({
@@ -55,7 +54,7 @@ Ext.define('PhotoEditor.controller.ios.Main', {
         });
     },
 
-    exportTransformImageData: function(callback) {
+    exportTransformImageData: function() {
         var view = this.getTransformContainer().element,
             container = document.createElement('div'),
             canvasWidth = view.getWidth(),
@@ -82,9 +81,15 @@ Ext.define('PhotoEditor.controller.ios.Main', {
 
         var layer = new Kinetic.Layer();
 
+        // height for image from camera
+        var calHeight = imgHeight;
+        if (this.imageRotation !== "") {
+            calHeight *= 2;
+        }
+        console.log(calHeight);
         var image = new Kinetic.Image({
             width: imgWidth,
-            height: this.imageHasTransformed ? imgHeight*2 : imgHeight,
+            height: calHeight,
             x: imgWidth/2 + imgX,
             y: imgHeight/2 + imgY,
             image: this.realImageEl[0],
